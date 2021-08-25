@@ -159,10 +159,10 @@ get_header();
 					$popular_places_query = new WP_Query( array(
 						'post_type' => 'places',
 						'orderby' => 'date',
-						'posts_per_page' => 3,
+						'posts_per_page' => 8,
 					));
 					if ($popular_places_query->have_posts()) : while ($popular_places_query->have_posts()) : $popular_places_query->the_post(); ?>
-						<div class="w-full lg:w-1/4 mb-6 lg:mb-0 lg:px-2">
+						<div class="w-full lg:w-1/4 mb-6 lg:mb-4 lg:px-2">
 							<?php get_template_part('template-parts/place-item'); ?>
 						</div>
 				<?php endwhile; endif; wp_reset_postdata(); ?>
