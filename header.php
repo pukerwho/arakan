@@ -18,6 +18,7 @@
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
 	<?php wp_head(); ?>
+	<?php echo carbon_get_theme_option('crb_google_analytics'); ?>
 </head>
 
 <body <?php body_class(); ?>>
