@@ -121,7 +121,7 @@ get_header();
 						$popular_places_query = new WP_Query( array(
 							'post_type' => 'places',
 							'orderby' => 'date',
-							'post_per_page' => 3,
+							'posts_per_page' => 3,
 						));
 						if ($popular_places_query->have_posts()) : while ($popular_places_query->have_posts()) : $popular_places_query->the_post(); ?>
 							<div class="w-full lg:w-1/3 mb-6 lg:mb-0 lg:px-4">
@@ -159,7 +159,7 @@ get_header();
 					$popular_places_query = new WP_Query( array(
 						'post_type' => 'places',
 						'orderby' => 'date',
-						'post_per_page' => 3,
+						'posts_per_page' => 3,
 					));
 					if ($popular_places_query->have_posts()) : while ($popular_places_query->have_posts()) : $popular_places_query->the_post(); ?>
 						<div class="w-full lg:w-1/4 mb-6 lg:mb-0 lg:px-2">
