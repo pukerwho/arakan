@@ -400,6 +400,21 @@ input[type="number"] {
     background-repeat: no-repeat;
     background-size: 60%; }
 
+.lang {
+  border: 1px solid #ef6f70;
+  border-radius: 8px; }
+  .lang-item {
+    list-style-type: none;
+    opacity: 0.35;
+    padding: 0.375rem 0; }
+    .lang-item a {
+      padding: 1.2rem; }
+  .lang .current-lang {
+    color: #ffffff;
+    background-color: #ef6f70;
+    border-radius: 8px;
+    opacity: 1; }
+
 .content h2 {
   font-size: 28px;
   padding: 20px 0 10px 0; }

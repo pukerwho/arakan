@@ -89,6 +89,25 @@
 	}
 }
 
+.lang {
+	border: 1px solid #ef6f70;
+  border-radius: 8px;
+	&-item {
+		list-style-type: none;
+    opacity: 0.35;
+    padding: 0.375rem 0;
+    a {
+    	padding: 1.2rem;
+    }
+	}
+	.current-lang {
+		color: #ffffff;
+		background-color: #ef6f70;
+    border-radius: 8px;
+    opacity: 1;
+	}
+}
+
 .content {
 	h2 {
 		font-size: 28px;

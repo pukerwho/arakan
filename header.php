@@ -86,8 +86,9 @@
 
 				<!-- Right Side -->
 				<div class="flex items-center">
+
 					<!-- Кнопка Добавить -->
-					<div class="flex items-center bg-indigo-500 rounded text-white text-sm lg:text-md px-4 lg:px-6 py-2">
+					<div class="flex items-center bg-indigo-500 rounded text-white text-sm lg:text-md px-4 lg:px-6 py-2 mr-4">
 						<div class="mr-2">
 							<?php _e('Добавить', 'tarakan'); ?>
 						</div>
@@ -98,6 +99,15 @@
 						</div>
 					</div>
 					<!-- END Кнопка Добавить -->
+					
+					<!-- Переключатель языка -->
+					<div class="lang flex items-center shadow">
+            <?php if (function_exists('pll_the_languages')) { 
+              pll_the_languages(); 
+            } ?>
+          </div>
+          <!-- END Переключатель языка -->
+
 				</div>
 				<!-- END Right Side -->
 
