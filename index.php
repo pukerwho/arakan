@@ -24,7 +24,7 @@ get_header();
 							<?php _e('Более', 'tarakan'); ?> <span class="uppercase font-semibold">1000</span> <?php _e('отзывов', 'tarakan'); ?> <?php _e('о заведениях', 'tarakan'); ?> <span class="uppercase font-semibold"><?php _e('вашего', 'tarakan'); ?></span> <?php _e('города', 'tarakan'); ?>
 						</h1>
 						<div class="text-xl font-extralight text-white mb-12">
-							<?php _e('Контроле качества общественных заведений Украины', 'tarakan'); ?>
+							<?php _e('Контроль качества общественных заведений Украины', 'tarakan'); ?>
 						</div>
 						<div class="inline-flex items-center bg-red-400 rounded text-white px-6 py-3">
 							<div class="text-xl mr-2">
