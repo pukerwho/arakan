@@ -120,9 +120,15 @@ get_header();
 					 <?php 
 						$popular_places_query = new WP_Query( array(
 							'post_type' => 'places',
-							'orderby' => 'crb_place_rating',
-							'order' => 'ASC',
+							'orderby' => 'rand',
 							'posts_per_page' => 3,
+							'meta_query' => array(
+								array(
+									'key'       => '_crb_place_rating',
+									'value'     => 4,
+									'compare'   => '>'
+					      )
+							)
 						));
 						if ($popular_places_query->have_posts()) : while ($popular_places_query->have_posts()) : $popular_places_query->the_post(); ?>
 							<div class="w-full lg:w-1/3 mb-6 lg:mb-0 lg:px-4">
