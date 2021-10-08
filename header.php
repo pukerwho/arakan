@@ -9,10 +9,32 @@
  * @package G-Info
  */
 
+$current_title = wp_get_document_title();
+if ( is_singular( 'places' ) ) {
+	//Название заведения
+	$place_title = get_the_title();
+	//Город
+	$current_cities = wp_get_post_terms(  get_the_ID() , 'city', array( 'parent' => 0 ) );
+  foreach (array_slice($current_cities, 0,1) as $city) {
+	  if ($city) {
+	  	$current_city = $city->name;
+	  }	
+  } 
+  //SEO
+  if (get_locale() === 'ru_RU') {
+  	$after_title = 'Отзывы, контакты, телефоны';
+  } else {
+  	$after_title = 'Відгуки, контакти, телефони';
+  }
+	
+	$current_title = $place_title . ' (' . $current_city . ') - ' . $after_title;
+}
+
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
+	<title><?php echo $current_title; ?></title>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
