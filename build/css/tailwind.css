@@ -1040,14 +1040,14 @@ video {
 .pr-4 {
 	padding-right: 1rem;
 }
-.pl-10 {
-	padding-left: 2.5rem;
-}
 .pb-32 {
 	padding-bottom: 8rem;
 }
 .pl-8 {
 	padding-left: 2rem;
+}
+.pl-10 {
+	padding-left: 2.5rem;
 }
 .pb-6 {
 	padding-bottom: 1.5rem;
@@ -1394,16 +1394,17 @@ video {
 		padding-right: 2.5rem;
 	}
 
+	.lg\:py-6 {
+		padding-top: 1.5rem;
+		padding-bottom: 1.5rem;
+	}
+
 	.lg\:pt-52 {
 		padding-top: 13rem;
 	}
 
 	.lg\:pb-0 {
 		padding-bottom: 0px;
-	}
-
-	.lg\:pt-32 {
-		padding-top: 8rem;
 	}
 
 	.lg\:text-5xl {

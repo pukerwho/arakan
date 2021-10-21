@@ -92,8 +92,12 @@ if ( is_singular( 'places' ) ) {
 					<!-- END Категории -->
 
 					<!-- Блог -->
-					<div class="hidden lg:block mr-6">
-						<?php _e('Блог', 'tarakan'); ?>
+					<div class="header-menu hidden lg:block mr-6">
+						<?php wp_nav_menu([
+              'theme_location' => 'menu-1',
+              'container' => 'div',
+              'menu_class' => 'flex',
+            ]); ?> 
 					</div>
 					<!-- END Блог -->
 

@@ -326,6 +326,14 @@ input[type="number"] {
   -moz-appearance: none;
   appearance: none; }
 
+.header-menu li {
+  margin-right: 15px; }
+  .header-menu li:last-of-type {
+    margin-right: 0; }
+
+.header-menu a:hover {
+  color: #ef6f70; }
+
 .top-menu:hover .sub-menu {
   opacity: 1;
   visibility: visible;
@@ -343,6 +351,8 @@ input[type="number"] {
   -webkit-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s; }
+  .top-menu .sub-menu a:hover {
+    color: #ef6f70; }
 
 .breadcrumbs_item {
   position: relative;
