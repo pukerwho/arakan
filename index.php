@@ -158,7 +158,7 @@ get_header();
 					<?php _e('Новые места', 'tarakan'); ?>
 				</h2>
 				<div>
-					<a href="#" class="text-gray-700 border rounded px-6 py-3"><?php _e('Все места', 'tarakan'); ?></a>
+					<a href="<?php echo get_post_type_archive_link('places'); ?>" class="text-gray-700 border rounded px-6 py-3"><?php _e('Все места', 'tarakan'); ?></a>
 				</div>
 			</div>
 			<div class="flex flex-wrap lg:-mx-2 mb-8">

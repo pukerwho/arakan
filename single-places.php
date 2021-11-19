@@ -16,7 +16,7 @@
               <meta itemprop="position" content="1">
             </li>
             <li itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem' class="breadcrumbs_item mr-8">
-              <a itemprop="item" href="#" class="text-white opacity-90">
+              <a itemprop="item" href="<?php echo get_post_type_archive_link('places'); ?>" class="text-white opacity-90">
                 <span itemprop="name"><?php _e( 'Каталог', 'restx' ); ?></span>
               </a>                        
               <meta itemprop="position" content="2">
@@ -120,6 +120,12 @@
               <div class="text-gray-700 mb-4">
                 <span class="font-semibold"><?php _e('Сайт', 'tarakan'); ?></span>: <span class=""><?php echo carbon_get_the_post_meta('crb_place_url'); ?></span>
               </div>
+
+              <?php if (carbon_get_the_post_meta('crb_place_price')); ?>
+                <div class="text-gray-700 mb-4">
+                  <span class="font-semibold"><?php _e('Средний чек', 'tarakan'); ?></span>: <span class=""><?php echo carbon_get_the_post_meta('crb_place_price'); ?></span>
+                </div>
+              <?php endif; ?>
 
               <div class="text-gray-700 font-semibold">
                 <?php _e('Категория', 'tarakan'); ?>: <a href="<?php echo get_term_link($myterm->term_id, 'place-type') ?>" class="text-red-400"><?php echo $myterm->name; ?></a>
@@ -352,7 +358,7 @@
             <?php _e('Похожие места', 'tarakan'); ?>
           </h2>
           <div>
-            <a href="#" class="text-indigo-500 border border-indigo-500 rounded px-5 py-2">
+            <a href="<?php echo get_post_type_archive_link('places'); ?>" class="text-indigo-500 border border-indigo-500 rounded px-5 py-2">
               <?php _e('Больше мест', 'tarakan'); ?>
             </a>
           </div>

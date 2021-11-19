@@ -15,6 +15,7 @@ function crb_post_theme_options() {
       Field::make( 'text', 'crb_place_rating', 'Рейтинг места' ),
       Field::make( 'text', 'crb_place_reviews_count', 'Кол-во отзывов' ),
       Field::make( 'text', 'crb_place_views_count', 'Кол-во просмотров' ),
+      Field::make( 'text', 'crb_place_price', 'Средний чек' ),
       
       Field::make( 'text', 'crb_place_domain_status', 'Статус домена' ),
       Field::make( 'text', 'crb_place_domain_year_start', 'Год регистрации' ),
