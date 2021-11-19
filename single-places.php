@@ -121,7 +121,7 @@
                 <span class="font-semibold"><?php _e('Сайт', 'tarakan'); ?></span>: <span class=""><?php echo carbon_get_the_post_meta('crb_place_url'); ?></span>
               </div>
 
-              <?php if (carbon_get_the_post_meta('crb_place_price')); ?>
+              <?php if (carbon_get_the_post_meta('crb_place_price')): ?>
                 <div class="text-gray-700 mb-4">
                   <span class="font-semibold"><?php _e('Средний чек', 'tarakan'); ?></span>: <span class=""><?php echo carbon_get_the_post_meta('crb_place_price'); ?></span>
                 </div>
