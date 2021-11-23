@@ -8,7 +8,7 @@
       <ul class="flex items-center flex-wrap">
         <li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem' class="breadcrumbs_item mr-8 pl-8">
           <a itemprop="item" href="<?php echo home_url(); ?>" class="text-white opacity-90">
-            <span itemprop="name"><?php _e( 'Главная', 'restx' ); ?></span>
+            <span itemprop="name"><?php _e( 'Главная', 'tarakan' ); ?></span>
           </a>                        
           <meta itemprop="position" content="1">
         </li>
