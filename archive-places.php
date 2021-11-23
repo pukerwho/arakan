@@ -12,13 +12,13 @@
           <meta itemprop="position" content="1">
         </li>
         <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="breadcrumbs_item" >
-          <span itemprop="name" class="text-white opacity-90"><?php the_title(); ?></span>
+          <span itemprop="name" class="text-white opacity-90"><?php _e('Все места', 'restx'); ?></span>
           <meta itemprop="position" content="2" />
         </li>
       </ul>
     </div>
     <!-- END Хлебные крошки -->
-    <h1 class="text-2xl lg:text-4xl text-white font-semibold"><?php the_title(); ?></h1>
+    <h1 class="text-2xl lg:text-4xl text-white font-semibold"><?php _e('Все места', 'restx'); ?></h1>
   </div>  
 </div>
 
