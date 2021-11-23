@@ -87,10 +87,10 @@
     <div class="container mx-auto px-2 lg:px-5">
       <div class="flex flex-col-reverse lg:flex-row lg:items-center lg:justify-between lg:border-t lg:border-gray-600 text-white py-6">
         <div>
-          Копирайт
+          © Tarakan — <?php _e('все права защищены', 'tarakan'); ?>
         </div>
         <div class="mb-4 lg:mb-0">
-          Меню
+          <?php _e('Пишите нам на почту', 'tarakan'); ?> — <a href="mailto:hello@tarakan.org.ua">hello@tarakan.org.ua</a>
         </div>
       </div>
     </div>

@@ -7,18 +7,18 @@
       <ul class="flex items-center flex-wrap">
         <li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem' class="breadcrumbs_item mr-8 pl-8">
           <a itemprop="item" href="<?php echo home_url(); ?>" class="text-white opacity-90">
-            <span itemprop="name"><?php _e( 'Главная', 'restx' ); ?></span>
+            <span itemprop="name"><?php _e( 'Главная', 'tarakan' ); ?></span>
           </a>                        
           <meta itemprop="position" content="1">
         </li>
         <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="breadcrumbs_item" >
-          <span itemprop="name" class="text-white opacity-90"><?php _e('Все места', 'restx'); ?></span>
+          <span itemprop="name" class="text-white opacity-90"><?php _e('Все места', 'tarakan'); ?></span>
           <meta itemprop="position" content="2" />
         </li>
       </ul>
     </div>
     <!-- END Хлебные крошки -->
-    <h1 class="text-2xl lg:text-4xl text-white font-semibold"><?php _e('Все места', 'restx'); ?></h1>
+    <h1 class="text-2xl lg:text-4xl text-white font-semibold"><?php _e('Все места', 'tarakan'); ?></h1>
   </div>  
 </div>
 
