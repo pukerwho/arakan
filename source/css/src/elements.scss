@@ -242,3 +242,19 @@
 		}
 	}
 }
+
+.treba-links {
+	a {
+		width: 20%;
+		font-size: 14px;
+		text-align: center;
+		padding: 0 15px;
+		&:hover {
+			color: rgba(248, 113, 113, 1);
+		}
+		@include for-phone {
+			width: 100%;
+			padding: 0;
+		}
+	}
+}
