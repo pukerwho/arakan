@@ -245,7 +245,6 @@
 
 .treba-links {
 	a {
-		width: 20%;
 		font-size: 14px;
 		text-align: center;
 		padding: 0 15px;
@@ -254,6 +253,7 @@
 		}
 		@include for-phone {
 			width: 100%;
+			text-align: left;
 			padding: 0;
 		}
 	}
