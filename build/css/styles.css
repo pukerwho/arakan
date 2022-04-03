@@ -439,7 +439,7 @@ input[type="number"] {
   .content a:hover {
     color: #f95146; }
 
-.content p {
+.content p, .content li {
   color: #1b1b1b;
   font-size: 18px;
   line-height: 1.5;
