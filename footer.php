@@ -14,7 +14,7 @@
 <footer>
 
   <!-- Treba links -->
-  <div class="none container mx-auto px-2 lg:px-5  mb-5">
+  <div class="hidden container mx-auto px-2 lg:px-5  mb-5">
     <h3 class="text-2xl text-gray-700 font-bold mb-2"><?php _e('Популярные сайты', 'tarakan'); ?></h3>
     <div class="treba-links flex flex-wrap items-center bg-white border border-gray-300 py-2 px-4">
       <!-- do_shortcode('[render-treba-links]'); 
