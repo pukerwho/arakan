@@ -13,14 +13,31 @@
 
 <footer>
 
+  <?php if (is_home()): ?>
   <!-- Treba links -->
-  <div class="hidden container mx-auto px-2 lg:px-5  mb-5">
+  <div class="container mx-auto px-2 lg:px-5  mb-5">
     <h3 class="text-2xl text-gray-700 font-bold mb-2"><?php _e('Популярные сайты', 'tarakan'); ?></h3>
     <div class="treba-links flex flex-wrap items-center bg-white border border-gray-300 py-2 px-4">
+      <div>
+        <a href="https://webgolovolomki.com/all-about-title/">Что такое Title в SEO?</a>
+      </div>
+      <div>
+        <a href="https://akvalekar.com/prorashchivatel-mikroferma-easygreen-light-55/">Купить электрический проращиватель</a>
+      </div>
+      <div>
+        <a href="https://midsun-aroma.com/aromatizatsuya_pomishenia">Ароматизация помещений</a>
+      </div>
+      <div>
+        <a href="https://airq.com.ua/ru/flavors/">ТОП лучших ароматов</a>
+      </div>
+      <div>
+        <a href="https://uaphilanthrop.com/products/for-space/aroma-diffusers/">Купить аромадиффузоры в Украине</a>
+      </div>
       <!-- do_shortcode('[render-treba-links]'); 
       echo do_shortcode('[render-treba-top-links]'); -->
     </div>
   </div>
+  <?php endif; ?>
   <!-- TOP -->
   <div class="bg-gray-600 text-white py-12">
     <div class="container mx-auto px-2 lg:px-5">
