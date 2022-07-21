@@ -17,7 +17,7 @@
       <?php endif; ?>
     <?php endforeach; ?>
   </td>
-  <td class="whitespace-nowrap px-2 py-3">
+  <td class="max-w-xs whitespace-nowrap overflow-hidden px-2 py-3">
     <div class="text-gray-500 font-light"><?php echo carbon_get_the_post_meta('crb_place_address'); ?></div>
   </td>
   <td class="whitespace-nowrap px-2 py-3">
