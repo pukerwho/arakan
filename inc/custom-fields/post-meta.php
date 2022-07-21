@@ -16,17 +16,23 @@ function crb_post_theme_options() {
       Field::make( 'text', 'crb_place_reviews_count', 'Кол-во отзывов' ),
       Field::make( 'text', 'crb_place_views_count', 'Кол-во просмотров' ),
       Field::make( 'text', 'crb_place_price', 'Средний чек' ),
+
+      Field::make( 'text', 'crb_cafe_parking', 'Паркинг' ),
+      Field::make( 'text', 'crb_cafe_wifi', 'Wi-fi' ),
+      Field::make( 'text', 'crb_cafe_banket', 'Банкет' ),
+      Field::make( 'text', 'crb_cafe_onlinemenu', 'Онлайн меню' ),
+      Field::make( 'text', 'crb_cafe_letnyayaploshadka', 'Летняя площадка' ),
+      Field::make( 'text', 'crb_cafe_zhivayamuzika', 'Живая музыка' ),
+      Field::make( 'text', 'crb_cafe_kalyan', 'Кальян' ),
+      Field::make( 'text', 'crb_cafe_vipkomnati', 'VIP-комната' ),
+      Field::make( 'text', 'crb_cafe_bizneslanch', 'Бизнес ланч' ),
+      Field::make( 'text', 'crb_cafe_dostavka', 'Доставка' ),
+      Field::make( 'text', 'crb_cafe_covidsafe', 'Антиковидные ограничения' ),
+      Field::make( 'text', 'crb_cafe_detskayakomnata', 'Детская комната' ),
+      Field::make( 'text', 'crb_cafe_korporativ', 'Корпоративы' ),
+      Field::make( 'text', 'crb_cafe_svadba', 'Свадьбы' ),
+      Field::make( 'text', 'crb_cafe_beznal', 'Безналичный расчет' ),
       
-      Field::make( 'text', 'crb_place_domain_status', 'Статус домена' ),
-      Field::make( 'text', 'crb_place_domain_year_start', 'Год регистрации' ),
-      Field::make( 'text', 'crb_place_domain_year_end', 'Домен заканчивается' ),
-      Field::make( 'text', 'crb_place_domain_age', 'Возраст домена' ),
-      Field::make( 'text', 'crb_place_domain_register', 'Регистратор домена' ),
-      Field::make( 'text', 'crb_place_domain_linkpad', 'Linkpad' ),
-      Field::make( 'text', 'crb_place_domain_title', 'Title' ),
-      Field::make( 'text', 'crb_place_domain_description', 'Description' ),
-      Field::make( 'text', 'crb_place_domain_h1', 'Заголовок H1' ),
-      Field::make( 'text', 'crb_place_domain_lang', 'Язык' ),
   ) );
 }
 

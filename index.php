@@ -116,25 +116,46 @@ get_header();
 						<?php _e('На основе отзывов полученных от пользователей', 'tarakan'); ?>
 					</div>
 				</div>
-				<div class="flex flex-wrap lg:-mx-4 mb-8">
-					 <?php 
-						$popular_places_query = new WP_Query( array(
-							'post_type' => 'places',
-							'orderby' => 'rand',
-							'posts_per_page' => 3,
-							'meta_query' => array(
-								array(
-									'key'       => '_crb_place_rating',
-									'value'     => 4,
-									'compare'   => '>'
-					      )
-							)
-						));
-						if ($popular_places_query->have_posts()) : while ($popular_places_query->have_posts()) : $popular_places_query->the_post(); ?>
-							<div class="w-full lg:w-1/3 mb-6 lg:mb-0 lg:px-4">
-								<?php get_template_part('template-parts/place-item'); ?>
-							</div>
-					<?php endwhile; endif; wp_reset_postdata(); ?>
+				<div class="overflow-x-auto mb-10">
+					<table class="w-full table-auto">
+						<thead class="bg-gray-100 text-gray-500 border border-gray-200 uppercase">
+							<tr>
+								<th class="text-left whitespace-nowrap px-2 py-3">
+									<div class="text-left font-bold"><?php _e("Название", "tarakan"); ?></div>
+								</th>
+								<th class="text-left whitespace-nowrap px-2 py-3">
+									<div class="text-left font-bold"><?php _e("Город", "tarakan"); ?></div>
+								</th>
+								<th class="text-left whitespace-nowrap px-2 py-3">
+									<div class="text-left font-bold"><?php _e("Адрес", "tarakan"); ?></div>
+								</th>
+								<th class="text-left whitespace-nowrap px-2 py-3">
+									<div class="text-left font-bold"><?php _e("Категория", "tarakan"); ?></div>
+								</th>
+								<th class="text-left whitespace-nowrap px-2 py-3">
+									<div class="text-left font-bold"><?php _e("Рейтинг", "tarakan"); ?></div>
+								</th>
+							</tr>
+						</thead>
+						<tbody class="text-sm shadow-2xl">
+							<?php 
+								$popular_places_query = new WP_Query( array(
+									'post_type' => 'places',
+									'orderby' => 'rand',
+									'posts_per_page' => 5,
+									'meta_query' => array(
+										array(
+											'key'       => '_crb_place_rating',
+											'value'     => 4,
+											'compare'   => '>'
+										)
+									)
+								));
+								if ($popular_places_query->have_posts()) : while ($popular_places_query->have_posts()) : $popular_places_query->the_post(); ?>
+									<?php get_template_part('template-parts/place-item-table'); ?>
+							<?php endwhile; endif; wp_reset_postdata(); ?>
+						</tbody>
+					</table>
 				</div>
 				<div class="relative flex justify-center">
 					<a href="<?php echo get_post_type_archive_link('places'); ?>" class="w-full h-full absolute top-0 left-0 z-10"></a>
@@ -161,18 +182,39 @@ get_header();
 					<a href="<?php echo get_post_type_archive_link('places'); ?>" class="text-gray-700 border rounded px-6 py-3"><?php _e('Все места', 'tarakan'); ?></a>
 				</div>
 			</div>
-			<div class="flex flex-wrap lg:-mx-2 mb-8">
-				<?php 
-					$popular_places_query = new WP_Query( array(
-						'post_type' => 'places',
-						'orderby' => 'date',
-						'posts_per_page' => 8,
-					));
-					if ($popular_places_query->have_posts()) : while ($popular_places_query->have_posts()) : $popular_places_query->the_post(); ?>
-						<div class="w-full lg:w-1/4 mb-6 lg:mb-4 lg:px-2">
-							<?php get_template_part('template-parts/place-item'); ?>
-						</div>
-				<?php endwhile; endif; wp_reset_postdata(); ?>
+			<div class="overflow-x-auto shadow-xl mb-10">
+				<table class="w-full table-auto">
+					<thead class="bg-gray-100 text-gray-500 border border-gray-200 uppercase">
+						<tr>
+							<th class="text-left whitespace-nowrap px-2 py-3">
+								<div class="text-left font-bold"><?php _e("Название", "tarakan"); ?></div>
+							</th>
+							<th class="text-left whitespace-nowrap px-2 py-3">
+								<div class="text-left font-bold"><?php _e("Город", "tarakan"); ?></div>
+							</th>
+							<th class="text-left whitespace-nowrap px-2 py-3">
+								<div class="text-left font-bold"><?php _e("Адрес", "tarakan"); ?></div>
+							</th>
+							<th class="text-left whitespace-nowrap px-2 py-3">
+								<div class="text-left font-bold"><?php _e("Категория", "tarakan"); ?></div>
+							</th>
+							<th class="text-left whitespace-nowrap px-2 py-3">
+								<div class="text-left font-bold"><?php _e("Рейтинг", "tarakan"); ?></div>
+							</th>
+						</tr>
+					</thead>
+					<tbody class="text-sm">
+						<?php 
+							$popular_places_query = new WP_Query( array(
+								'post_type' => 'places',
+								'orderby' => 'date',
+								'posts_per_page' => 10,
+							));
+							if ($popular_places_query->have_posts()) : while ($popular_places_query->have_posts()) : $popular_places_query->the_post(); ?>
+								<?php get_template_part('template-parts/place-item-table'); ?>
+						<?php endwhile; endif; wp_reset_postdata(); ?>
+					</tbody>
+				</table>
 			</div>
 			<div class="relative flex justify-center mb-20">
 				<a href="<?php echo get_post_type_archive_link('places'); ?>" class="w-full h-full absolute top-0 left-0 z-10"></a>

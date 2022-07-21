@@ -24,20 +24,41 @@
 
 <div class="container mx-auto px-2 lg:px-5 -mt-20">
   <div class="bg-white shadow-lg rounded-lg mb-12 pt-10 pb-5 px-8">
-    <div class="flex flex-wrap lg:-mx-4 mb-8">
-      <?php 
-        $current_page = !empty( $_GET['page'] ) ? $_GET['page'] : 1;
-        $query = new WP_Query( array( 
-          'post_type' => 'places', 
-          'posts_per_page' => 20,
-          'order'    => 'DESC',
-          'paged' => $current_page,
-        ) );
-      if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
-        <div class="w-full lg:w-1/4 mb-4 lg:px-4">
-          <?php get_template_part('template-parts/place-item'); ?>
-        </div>
-      <?php endwhile; endif; wp_reset_postdata(); ?>
+    <div class="overflow-x-auto shadow-xl mb-10">
+      <table class="w-full table-auto">
+        <thead class="bg-gray-100 text-gray-500 border border-gray-200 uppercase">
+          <tr>
+            <th class="text-left whitespace-nowrap px-2 py-3">
+              <div class="text-left font-bold"><?php _e("Название", "tarakan"); ?></div>
+            </th>
+            <th class="text-left whitespace-nowrap px-2 py-3">
+              <div class="text-left font-bold"><?php _e("Город", "tarakan"); ?></div>
+            </th>
+            <th class="text-left whitespace-nowrap px-2 py-3">
+              <div class="text-left font-bold"><?php _e("Адрес", "tarakan"); ?></div>
+            </th>
+            <th class="text-left whitespace-nowrap px-2 py-3">
+              <div class="text-left font-bold"><?php _e("Категория", "tarakan"); ?></div>
+            </th>
+            <th class="text-left whitespace-nowrap px-2 py-3">
+              <div class="text-left font-bold"><?php _e("Рейтинг", "tarakan"); ?></div>
+            </th>
+          </tr>
+        </thead>
+        <tbody class="text-sm">
+          <?php 
+            $current_page = !empty( $_GET['page'] ) ? $_GET['page'] : 1;
+            $query = new WP_Query( array( 
+              'post_type' => 'places', 
+              'posts_per_page' => 20,
+              'order'    => 'DESC',
+              'paged' => $current_page,
+            ) );
+          if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
+            <?php get_template_part('template-parts/place-item-table'); ?>
+          <?php endwhile; endif; wp_reset_postdata(); ?>
+        </tbody>
+			</table>
     </div>
     <div class="b_pagination text-center">
       <?php 
