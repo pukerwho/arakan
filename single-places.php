@@ -69,7 +69,7 @@
                   </div>
                   <div class="text-lg"><?php _e("Паркинг", "tarakan"); ?>:</div>
                 </div>
-                <?php if (carbon_get_the_post_meta('crb_cafe_parking') === "yes"): ?>
+                <?php if (carbon_get_the_post_meta('crb_cafe_parking') === "no"): ?>
                   <div class="w-1/2">
                     <div class="inline-flex items-center bg-green-200 rounded-xl px-4 py-1">
                       <div class="mr-2"><?php _e("Да", "tarakan"); ?></div>
@@ -105,7 +105,7 @@
                   </div>
                   <div class="text-lg"><?php _e("Wi-fi", "tarakan"); ?>:</div>
                 </div>
-                <?php if (carbon_get_the_post_meta('crb_cafe_wifi') === "yes"): ?>
+                <?php if (carbon_get_the_post_meta('crb_cafe_wifi') === "no"): ?>
                   <div class="w-1/2">
                     <div class="inline-flex items-center bg-green-200 rounded-xl px-4 py-1">
                       <div class="mr-2"><?php _e("Да", "tarakan"); ?></div>
@@ -141,7 +141,7 @@
                   </div>
                   <div class="text-lg"><?php _e("Банкет", "tarakan"); ?>:</div>
                 </div>
-                <?php if (carbon_get_the_post_meta('crb_cafe_banket') === "yes"): ?>
+                <?php if (carbon_get_the_post_meta('crb_cafe_banket') === "no"): ?>
                   <div class="w-1/2">
                     <div class="inline-flex items-center bg-green-200 rounded-xl px-4 py-1">
                       <div class="mr-2"><?php _e("Да", "tarakan"); ?></div>
@@ -174,7 +174,7 @@
                   </div>
                   <div class="text-lg"><?php _e("Онлайн меню", "tarakan"); ?>:</div>
                 </div>
-                <?php if (carbon_get_the_post_meta('crb_cafe_onlinemenu') === "yes"): ?>
+                <?php if (carbon_get_the_post_meta('crb_cafe_onlinemenu') === "no"): ?>
                   <div class="w-1/2">
                     <div class="inline-flex items-center bg-green-200 rounded-xl px-4 py-1">
                       <div class="mr-2"><?php _e("Да", "tarakan"); ?></div>
@@ -215,7 +215,7 @@
                   </div>
                   <div class="text-lg"><?php _e("Летняя площадка", "tarakan"); ?>:</div>
                 </div>
-                <?php if (carbon_get_the_post_meta('crb_cafe_letnyayaploshadka') === "yes"): ?>
+                <?php if (carbon_get_the_post_meta('crb_cafe_letnyayaploshadka') === "no"): ?>
                   <div class="w-1/2">
                     <div class="inline-flex items-center bg-green-200 rounded-xl px-4 py-1">
                       <div class="mr-2"><?php _e("Да", "tarakan"); ?></div>
@@ -249,7 +249,7 @@
                   </div>
                   <div class="text-lg"><?php _e("Живая музыка", "tarakan"); ?>:</div>
                 </div>
-                <?php if (carbon_get_the_post_meta('crb_cafe_zhivayamuzika') === "yes"): ?>
+                <?php if (carbon_get_the_post_meta('crb_cafe_zhivayamuzika') === "no"): ?>
                   <div class="w-1/2">
                     <div class="inline-flex items-center bg-green-200 rounded-xl px-4 py-1">
                       <div class="mr-2"><?php _e("Да", "tarakan"); ?></div>
@@ -284,7 +284,7 @@
                   </div>
                   <div class="text-lg"><?php _e("Кальян", "tarakan"); ?>:</div>
                 </div>
-                <?php if (carbon_get_the_post_meta('crb_cafe_kalyan') === "yes"): ?>
+                <?php if (carbon_get_the_post_meta('crb_cafe_kalyan') === "no"): ?>
                   <div class="w-1/2">
                     <div class="inline-flex items-center bg-green-200 rounded-xl px-4 py-1">
                       <div class="mr-2"><?php _e("Да", "tarakan"); ?></div>
@@ -317,7 +317,7 @@
                   </div>
                   <div class="text-lg"><?php _e("VIP-комната", "tarakan"); ?>:</div>
                 </div>
-                <?php if (carbon_get_the_post_meta('crb_cafe_vipkomnati') === "yes"): ?>
+                <?php if (carbon_get_the_post_meta('crb_cafe_vipkomnati') === "no"): ?>
                   <div class="w-1/2">
                     <div class="inline-flex items-center bg-green-200 rounded-xl px-4 py-1">
                       <div class="mr-2"><?php _e("Да", "tarakan"); ?></div>
@@ -350,7 +350,7 @@
                   </div>
                   <div class="text-lg"><?php _e("Бизнес ланч", "tarakan"); ?>:</div>
                 </div>
-                <?php if (carbon_get_the_post_meta('crb_cafe_bizneslanch') === "yes"): ?>
+                <?php if (carbon_get_the_post_meta('crb_cafe_bizneslanch') === "no"): ?>
                   <div class="w-1/2">
                     <div class="inline-flex items-center bg-green-200 rounded-xl px-4 py-1">
                       <div class="mr-2"><?php _e("Да", "tarakan"); ?></div>
@@ -386,7 +386,7 @@
                   </div>
                   <div class="text-lg"><?php _e("Доставка", "tarakan"); ?>:</div>
                 </div>
-                <?php if (carbon_get_the_post_meta('crb_cafe_dostavka') === "yes"): ?>
+                <?php if (carbon_get_the_post_meta('crb_cafe_dostavka') === "no"): ?>
                   <div class="w-1/2">
                     <div class="inline-flex items-center bg-green-200 rounded-xl px-4 py-1">
                       <div class="mr-2"><?php _e("Да", "tarakan"); ?></div>
@@ -428,7 +428,7 @@
                   </div>
                   <div class="text-lg"><?php _e("Антиковидные ограничения", "tarakan"); ?>:</div>
                 </div>
-                <?php if (carbon_get_the_post_meta('crb_cafe_covidsafe') === "yes"): ?>
+                <?php if (carbon_get_the_post_meta('crb_cafe_covidsafe') === "no"): ?>
                   <div class="w-1/2">
                     <div class="inline-flex items-center bg-green-200 rounded-xl px-4 py-1">
                       <div class="mr-2"><?php _e("Да", "tarakan"); ?></div>
@@ -465,7 +465,7 @@
                   </div>
                   <div class="text-lg"><?php _e("Детская комната", "tarakan"); ?>:</div>
                 </div>
-                <?php if (carbon_get_the_post_meta('crb_cafe_detskayakomnata') === "yes"): ?>
+                <?php if (carbon_get_the_post_meta('crb_cafe_detskayakomnata') === "no"): ?>
                   <div class="w-1/2">
                     <div class="inline-flex items-center bg-green-200 rounded-xl px-4 py-1">
                       <div class="mr-2"><?php _e("Да", "tarakan"); ?></div>
@@ -504,7 +504,7 @@
                   </div>
                   <div class="text-lg"><?php _e("Корпоративы", "tarakan"); ?>:</div>
                 </div>
-                <?php if (carbon_get_the_post_meta('crb_cafe_korporativ') === "yes"): ?>
+                <?php if (carbon_get_the_post_meta('crb_cafe_korporativ') === "no"): ?>
                   <div class="w-1/2">
                     <div class="inline-flex items-center bg-green-200 rounded-xl px-4 py-1">
                       <div class="mr-2"><?php _e("Да", "tarakan"); ?></div>
@@ -546,7 +546,7 @@
                   </div>
                   <div class="text-lg"><?php _e("Свадьбы", "tarakan"); ?>:</div>
                 </div>
-                <?php if (carbon_get_the_post_meta('crb_cafe_svadba') === "yes"): ?>
+                <?php if (carbon_get_the_post_meta('crb_cafe_svadba') === "no"): ?>
                   <div class="w-1/2">
                     <div class="inline-flex items-center bg-green-200 rounded-xl px-4 py-1">
                       <div class="mr-2"><?php _e("Да", "tarakan"); ?></div>
@@ -582,7 +582,7 @@
                   </div>
                   <div class="text-lg"><?php _e("Безналичный расчет", "tarakan"); ?>:</div>
                 </div>
-                <?php if (carbon_get_the_post_meta('crb_cafe_beznal') === "yes"): ?>
+                <?php if (carbon_get_the_post_meta('crb_cafe_beznal') === "no"): ?>
                   <div class="w-1/2">
                     <div class="inline-flex items-center bg-green-200 rounded-xl px-4 py-1">
                       <div class="mr-2"><?php _e("Да", "tarakan"); ?></div>
