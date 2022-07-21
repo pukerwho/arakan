@@ -11,7 +11,7 @@
     ?>
       <?php if ($current_city): ?>
         <div class="mr-2">
-          <img src="<?php echo carbon_get_term_meta($current_city->term_id, 'crb_city_img' ); ?>" alt="<?php echo $current_city->name ?>" loading="lazy" class="w-10 w-min-10 h-10 h-min-10 object-cover rounded-full">
+          <img src="<?php echo carbon_get_term_meta($current_city->term_id, 'crb_city_img' ); ?>" alt="<?php echo $current_city->name ?>" loading="lazy" class="w-[2.5rem] min-w-[2.5rem] h-10 h-min-10 object-cover rounded-full">
         </div>
         <div class="text-gray-500"><?php echo $current_city->name; ?></div>
       <?php endif; ?>
