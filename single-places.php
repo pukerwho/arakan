@@ -614,12 +614,12 @@
                 <tbody>
                   <thead>
                     <tr>
-                      <th class="border-r border-gray-700"><?php _e('Критерий', 'odessa'); ?></th>
-                      <th><?php _e('Оценка', 'odessa'); ?></th>
+                      <th class="border-r border-gray-700"><?php _e('Критерий', 'tarakan'); ?></th>
+                      <th><?php _e('Оценка', 'tarakan'); ?></th>
                     </tr>
                   </thead>
                   <tr class="border-b border-gray-300">
-                    <td class="key"><span class="mr-2">⭐️</span> <?php _e('Рейтинг заведения', 'odessa'); ?></td>
+                    <td class="key"><span class="mr-2">⭐️</span> <?php _e('Рейтинг заведения', 'tarakan'); ?></td>
                     <td class="value" xitemprop="aggregateRating" xitemscope="" xitemtype="http://schema.org/aggregateRating">
                       <?php 
                         $meta_rating_count = carbon_get_the_post_meta('crb_place_reviews_count'); 
@@ -629,7 +629,7 @@
                       <div class="rating-row relative font-semibold">
                         <div class="flex items-center justify-center text-center">
                           <div class="relative z-1" style="width:<?php echo $rating_value_width; ?>%">
-                            <span xitemprop="ratingValue"><?php echo $rating_value ?>/5 - </span> (<?php _e('Оценок', 'odessa'); ?>: <span xitemprop="reviewCount"><?php echo $meta_rating_count; ?></span>)
+                            <span xitemprop="ratingValue"><?php echo $rating_value ?>/5 - </span> (<?php _e('Оценок', 'tarakan'); ?>: <span xitemprop="reviewCount"><?php echo $meta_rating_count; ?></span>)
                           </div>
                           <div class="h-full absolute left-0 top-0 bg-green-300 rounded-xl text-center py-2" style="width:<?php echo $rating_value_width; ?>%"></div>
                         </div>
@@ -639,7 +639,7 @@
 
                   <!-- Оценка Еда -->
                   <tr class="border-b border-gray-300">
-                    <td class="key"><span class="mr-2">🍔</span> <?php _e('Еда', 'odessa'); ?></td>
+                    <td class="key"><span class="mr-2">🍔</span> <?php _e('Еда', 'tarakan'); ?></td>
                     <td class="value">
                       <?php 
                         $meta_rating_food = 'rating_food_'.$current_id;
@@ -656,7 +656,7 @@
 
                   <!-- Оценка Обслуживание -->
                   <tr class="border-b border-gray-300">
-                    <td class="key"><span class="mr-2">🛎️</span> <?php _e('Обслуживание', 'odessa'); ?></td>
+                    <td class="key"><span class="mr-2">🛎️</span> <?php _e('Обслуживание', 'tarakan'); ?></td>
                     <td class="value">
                       <?php 
                         $meta_rating_service = 'rating_service_'.$current_id;
@@ -673,7 +673,7 @@
 
                   <!-- Оценка Цена/качество -->
                   <tr class="border-b border-gray-300">
-                    <td class="key"><span class="mr-2">💸</span> <?php _e('Цена/качество', 'odessa'); ?></td>
+                    <td class="key"><span class="mr-2">💸</span> <?php _e('Цена/качество', 'tarakan'); ?></td>
                     <td class="value">
                       <?php 
                         $meta_rating_price = 'rating_price_'.$current_id;
@@ -690,7 +690,7 @@
 
                   <!-- Оценка Атмосфера -->
                   <tr>
-                    <td class="key"><span class="mr-2">❤️</span> <?php _e('Атмосфера', 'odessa'); ?></td>
+                    <td class="key"><span class="mr-2">❤️</span> <?php _e('Атмосфера', 'tarakan'); ?></td>
                     <td class="value">
                       <?php 
                         $meta_rating_atmosfera = 'rating_atmosfera_'.$current_id;
