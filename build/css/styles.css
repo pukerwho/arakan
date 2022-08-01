@@ -366,7 +366,7 @@ input[type="number"] {
     .breadcrumbs_item:last-of-type:after {
       content: none; }
   .breadcrumbs_item:after {
-    content: '';
+    content: "";
     width: 10px;
     height: 10px;
     position: absolute;
@@ -425,6 +425,10 @@ input[type="number"] {
     border-radius: 8px;
     opacity: 1; }
 
+.sketch-underline {
+  background: url("../../img/hr.svg") bottom left/100% 0.75rem no-repeat;
+  padding-bottom: 0.1rem; }
+
 .content h2 {
   font-size: 28px;
   padding: 20px 0 10px 0; }
@@ -439,7 +443,8 @@ input[type="number"] {
   .content a:hover {
     color: #f95146; }
 
-.content p, .content li {
+.content p,
+.content li {
   color: #1b1b1b;
   font-size: 18px;
   line-height: 1.5;
@@ -457,7 +462,7 @@ input[type="number"] {
   position: relative;
   padding-left: 20px; }
   .content li:before {
-    content: '';
+    content: "";
     width: 10px;
     height: 10px;
     position: absolute;
@@ -466,26 +471,31 @@ input[type="number"] {
     background-color: #60cc7d;
     border-radius: 50%; }
 
-.content .wp-caption, .content .wp-block-image {
+.content .wp-caption,
+.content .wp-block-image {
   width: 80% !important;
   -webkit-box-shadow: 0px 0px 5px 0px rgba(204, 204, 204, 0.48);
   box-shadow: 0px 0px 5px 0px rgba(204, 204, 204, 0.48);
   padding: 10px;
   margin: 30px auto; }
   @media (max-width: 767px) {
-    .content .wp-caption, .content .wp-block-image {
+    .content .wp-caption,
+    .content .wp-block-image {
       width: 100% !important; } }
-  .content .wp-caption-text, .content .wp-block-image-text {
+  .content .wp-caption-text,
+  .content .wp-block-image-text {
     font-size: 14px;
     text-align: center;
     margin-bottom: 0; }
-  .content .wp-caption img, .content .wp-block-image img {
+  .content .wp-caption img,
+  .content .wp-block-image img {
     width: 100%;
     height: 100%;
     -o-object-fit: cover;
     object-fit: cover;
     margin-bottom: 10px; }
-  .content .wp-caption figcaption, .content .wp-block-image figcaption {
+  .content .wp-caption figcaption,
+  .content .wp-block-image figcaption {
     text-align: center;
     font-style: italic;
     margin: 0.5rem 0 0 0; }
@@ -500,7 +510,7 @@ input[type="number"] {
 .place_tab {
   position: relative; }
   .place_tab:after {
-    content: '';
+    content: "";
     width: 100%;
     height: 100%;
     border-bottom: 1px solid transparent;
@@ -510,7 +520,7 @@ input[type="number"] {
   .place_tab.active {
     color: #f87171; }
     .place_tab.active:after {
-      content: '';
+      content: "";
       width: 100%;
       height: 1px;
       background-color: #f87171; }

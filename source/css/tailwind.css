@@ -1,3 +1,33 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.z-1 {
+  z-index: 1;
+}
+
+.place-rating tr {
+  width: 100%;
+  min-height: 3em;
+  position: relative;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  vertical-align: top;
+}
+.place-rating td,
+.place-rating th {
+  width: 50%;
+  padding: 14px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+.place-rating th {
+  @apply bg-indigo-300;
+}
+.place-rating .rating-row {
+  @apply bg-gray-200 rounded-xl py-2;
+}
