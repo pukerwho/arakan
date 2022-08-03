@@ -22,8 +22,8 @@ Template Name: ВСЕ ГОРОДА
         'hide_empty' => false,
       ));
       shuffle( $home_cities );
-      foreach ( array_slice($home_cities, 0, 4) as $home_city ): ?>
-        <div class="w-1/2 lg:w-1/4 relative px-2 mb-6">
+      foreach ( $home_cities as $home_city ): ?>
+        <div class="w-1/2 lg:w-1/4 relative px-2 mb-10">
           <a href="<?php echo get_term_link($home_city); ?>" class="w-full h-full absolute left-0 top-0 z-10"></a>
           <div class="h-52 mb-4">
             <img src="<?php echo carbon_get_term_meta($home_city->term_id, 'crb_city_img' ); ?>" alt="<?php echo $home_city->name ?>" loading="lazy" class="w-full h-full object-cover rounded-lg">
