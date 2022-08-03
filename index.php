@@ -233,7 +233,7 @@ get_header();
 
 			<!-- Города -->
 			<h2 class="text-2xl text-gray-700 font-semibold mb-6"><?php _e('Города', 'tarakan'); ?></h2>
-			<div class="flex flex-wrap -mx-2">
+			<div class="flex flex-wrap -mx-2 mb-10">
 				<?php $home_cities = get_terms( array( 
 					'taxonomy' => 'city', 
 					'parent' => 0, 
@@ -261,6 +261,19 @@ get_header();
 						</div>
 					</div>
 				<?php endforeach; ?>
+			</div>
+			<div class="relative flex justify-center mb-20">
+				<a href="<?php echo get_page_url('page-allcity'); ?>" class="w-full h-full absolute top-0 left-0 z-10"></a>
+				<div class="flex items-center text-indigo-500 border border-indigo-500 rounded px-6 py-3">
+					<div class="mr-2">
+						<?php _e('Все города', 'tarakan'); ?>
+					</div>
+					<div>
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+						  <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+						</svg>
+					</div>
+				</div>
 			</div>
 			<!-- END Города -->
 		</div>
