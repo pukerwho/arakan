@@ -105,8 +105,39 @@
   </div>
   <!-- END TOP -->
 
+  <!-- FOOTER TREBA LINKS -->
+  <div class="bg-gray-800 py-12">
+    <div class="container mx-auto px-2 lg:px-5">
+      <div class="footer_treba_links">
+        <div class="footer_treba_links-flex">
+          <div class="footer_treba_links-tab active" data-seo-tab="search"><?php _e('Сейчас ищут', 'tarakan'); ?></div>
+          <div class="footer_treba_links-tab" data-seo-tab="cities"><?php _e('Города' ,'tarakan'); ?></div>
+        </div>
+        <div class="footer_treba_links-content active" data-seo-content-tab="search">
+          <?php do_shortcode('[render-footer-links]'); ?>
+          <?php echo do_shortcode('[render-footer-top-links]'); ?>
+        </div>
+        <div class="footer_treba_links-content" data-seo-content-tab="cities">
+          <div class="flex flex-wrap lg:-mx-4">
+            <?php $home_cities = get_terms( array( 
+              'taxonomy' => 'city', 
+              'parent' => 0, 
+              'show_count' => true,
+              'hide_empty' => false,
+            ));
+            shuffle( $home_cities );
+            foreach ( $home_cities as $home_city ): ?>
+              <div class="w-full lg:w-1/3 lg:px-4 mb-1"><a href="<?php echo get_term_link($home_city); ?>" class=""><?php echo $home_city->name ?></a></div>
+            <?php endforeach; ?>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END FOOTER TREBA LINKS -->
+
   <!-- BOTTOM -->
-  <div class="bg-gray-800 pt-12">
+  <div class="bg-gray-800 ">
     <div class="text-4xl text-center font-black text-white mb-12">
       <span class="text-red-400"><?php _e('Спасибо', 'tarakan'); ?></span><?php _e(', что доверяете нам', 'tarakan'); ?>
     </div>
