@@ -419,14 +419,15 @@ get_header();
 						$home_blogs = new WP_Query( array(
 							'post_type' => 'post',
 							'orderby' => 'date',
-							'post_per_page' => 3,
+							'posts_per_page' => 3,
 						));
 						if ($home_blogs->have_posts()) : while ($home_blogs->have_posts()) : $home_blogs->the_post(); ?>
 						<div class="w-full lg:w-1/3 mb-6 lg:mb-0 lg:px-4">
-							<div class="border border-gray-300 rounded">
+							<div class="h-full border border-gray-300 rounded">
 								<div class="h-52 mb-4">
 									<img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>" class="w-full h-full object-cover rounded-t">
 								</div>
+								
 								<div class="text-lg font-semibold text-gray-700 px-4 mb-3">
 									<a href="<?php the_permalink(); ?>">
 										<?php the_title(); ?>
