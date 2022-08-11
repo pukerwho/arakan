@@ -231,6 +231,77 @@ get_header();
 			</div>
 			<!-- END Новые места -->
 
+			<!-- Популярні Кафе в Україні -->
+			<div class="flex flex-col lg:flex-row lg:justify-between lg:items-center border-b pb-8 mb-8">
+				<h2 class="text-2xl text-gray-700 font-semibold mb-6 lg:mb-0">
+					<?php _e('Популярные кафе в Украине', 'tarakan'); ?>
+				</h2>
+				<div>
+					<?php if (get_locale() == 'ru_RU') {
+						$term_kafe = 6;
+					} else {
+						$term_kafe = 27;
+					} ?>
+					<a href="<?php echo get_term_link($term_kafe, 'place-type') ?>" class="text-gray-700 border rounded px-6 py-3"><?php _e('Все кафе', 'tarakan'); ?></a>
+				</div>
+			</div>
+			<div class="overflow-x-auto shadow-xl mb-10">
+				<table class="w-full table-auto">
+					<thead class="bg-gray-100 text-gray-500 border border-gray-200 uppercase">
+						<tr>
+							<th class="text-left whitespace-nowrap px-2 py-3">
+								<div class="text-left font-bold"><?php _e("Название", "tarakan"); ?></div>
+							</th>
+							<th class="text-left whitespace-nowrap px-2 py-3">
+								<div class="text-left font-bold"><?php _e("Город", "tarakan"); ?></div>
+							</th>
+							<th class="text-left whitespace-nowrap px-2 py-3">
+								<div class="text-left font-bold"><?php _e("Адрес", "tarakan"); ?></div>
+							</th>
+							<th class="text-left whitespace-nowrap px-2 py-3">
+								<div class="text-left font-bold"><?php _e("Категория", "tarakan"); ?></div>
+							</th>
+							<th class="text-left whitespace-nowrap px-2 py-3">
+								<div class="text-left font-bold"><?php _e("Рейтинг", "tarakan"); ?></div>
+							</th>
+						</tr>
+					</thead>
+					<tbody class="text-sm">
+						<?php 
+							$popular_places_query = new WP_Query( array(
+								'post_type' => 'places',
+								'posts_per_page' => 10,
+								'tax_query' => array(
+									array(
+										'taxonomy' => 'place-type',
+										'terms' => array(27,6),
+										'field' => 'term_id',
+										'include_children' => true,
+										'operator' => 'IN'
+									)
+								),
+							));
+							if ($popular_places_query->have_posts()) : while ($popular_places_query->have_posts()) : $popular_places_query->the_post(); ?>
+								<?php get_template_part('template-parts/place-item-table'); ?>
+						<?php endwhile; endif; wp_reset_postdata(); ?>
+					</tbody>
+				</table>
+			</div>
+			<div class="relative flex justify-center mb-20">
+				<a href="<?php echo get_term_link($term_kafe, 'place-type') ?>" class="w-full h-full absolute top-0 left-0 z-10"></a>
+				<div class="flex items-center text-indigo-500 border border-indigo-500 rounded px-6 py-3">
+					<div class="mr-2">
+						<?php _e('Все кафе', 'tarakan'); ?>
+					</div>
+					<div>
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+						  <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+						</svg>
+					</div>
+				</div>
+			</div>
+			<!-- END Популярні Кафе в Україні -->
+
 			<!-- Города -->
 			<h2 class="text-2xl text-gray-700 font-semibold mb-6"><?php _e('Города', 'tarakan'); ?></h2>
 			<div class="flex flex-wrap -mx-2 mb-10">
