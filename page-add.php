@@ -1,3 +1,9 @@
+<?php
+/*
+Template Name: Додати
+*/
+?>
+
 <?php get_header(); ?>
 
 <div class="bg-gradient-to-r from-indigo-600 to-indigo-400 pt-20 pb-32 lg:py-32">
@@ -27,15 +33,33 @@
 <div class="container mx-auto px-2 lg:px-5 -mt-20">
 	<!-- Основной контент -->
 	<div class="bg-white shadow-lg rounded-lg mb-12 p-8">
-		<div class="font-light text-gray-700 mb-6">
-			<?php _e('Дата', 'tarakan'); ?>: <span class="font-semibold text-gray-700"><?php echo get_the_modified_time('j/n/Y') ?></span>
-		</div>
 		<div class="content">
 			<?php the_content(); ?>	
 		</div>
+    <div class="form bg-gray-200 rounded-lg p-10">
+      <form name="form_add">
+        <div class="flex flex-col ">
+          <div class="mb-4">
+            <input type="text" name="Название" placeholder="<?php _e("Название заведения", "tarakan"); ?>" class="w-full custom-input" required>
+          </div>
+          <div class="mb-4 ">
+            <input type="tel" name="Город" placeholder="<?php _e("Город", "tarakan"); ?>" class="w-full custom-input" required>
+          </div>
+          <div class="mb-4">
+            <input type="tel" name="Контакты" placeholder="<?php _e("Контакты", "tarakan"); ?>" class="w-full custom-input" required>
+          </div>
+          <div class="">
+            <button type="submit" class="w-full block bg-indigo-500 text-white rounded px-4 py-2 mb-2">
+              <span><?php _e('Отправить', 'tarakan'); ?></span>
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
 		
 	</div>
 	<!-- END Основной контент -->
 </div>
 	
-<?php get_footer();
+
+<?php get_footer(); ?>
