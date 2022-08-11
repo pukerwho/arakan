@@ -271,6 +271,7 @@ get_header();
 							$popular_places_query = new WP_Query( array(
 								'post_type' => 'places',
 								'posts_per_page' => 10,
+								'orderby' => 'rand',
 								'tax_query' => array(
 									array(
 										'taxonomy' => 'place-type',
