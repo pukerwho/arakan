@@ -109,7 +109,7 @@ get_header();
 		<div class="container px-2 lg:px-5 mx-auto mb-20">
 
 			<div class="bg-white rounded-lg shadow-lg -mt-32 px-4 lg:px-8 py-8 mb-20">
-				<div class="w-full mb-4">
+				<div class="w-full mb-8">
 					<h2 class="text-2xl lg:text-3xl text-gray-700 font-semibold mb-6 lg:px-4"><?php _e('Популярные статьи', 'tarakan'); ?></h2>
 					<div class="flex flex-wrap lg:px-4 lg:-mx-4">
 						<?php 
@@ -127,7 +127,7 @@ get_header();
 									<div class="h-52 mb-4">
 										<img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>" class="w-full h-full object-cover rounded-lg">
 									</div>
-									<div class="text-gray-600"><?php the_title(); ?></div>
+									<div class="text-xl text-gray-600"><?php the_title(); ?></div>
 								</div>
 							</div>
 						<?php endwhile; endif; wp_reset_postdata(); ?>
