@@ -16,8 +16,8 @@
           <meta itemprop="position" content="1">
         </li>
         <li itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem' class="breadcrumbs_item mr-8">
-          <a itemprop="item" href="<?php echo get_post_type_archive_link('post'); ?>" class="text-white opacity-90">
-            <span itemprop="name"><?php _e( 'Блог', 'tarakan' ); ?></span>
+          <a itemprop="item" href="<?php echo get_page_url('page-blog'); ?>" class="text-white opacity-90">
+            <span itemprop="name"><?php _e( 'Журнал', 'tarakan' ); ?></span>
           </a>                        
           <meta itemprop="position" content="2">
         </li>

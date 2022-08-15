@@ -133,7 +133,7 @@ get_header();
 						<?php endwhile; endif; wp_reset_postdata(); ?>
 					</div>
 				</div>
-				<div class="w-full">
+				<div class="w-full mb-6">
 					<h2 class="text-2xl lg:text-3xl text-gray-700 font-semibold lg:px-4 mb-6"><?php _e('Новые записи', 'tarakan'); ?></h2>
 					<div class="flex flex-wrap px-4">
 						<?php 
@@ -170,6 +170,19 @@ get_header();
 								</div>
 							</div>
 						<?php endwhile; endif; wp_reset_postdata(); ?>
+					</div>
+				</div>
+				<div class="relative flex justify-center">
+					<a href="<?php echo get_page_url('page-blog'); ?>" class="w-full h-full absolute top-0 left-0 z-10"></a>
+					<div class="flex items-center text-indigo-500 border border-indigo-500 rounded px-6 py-3">
+						<div class="mr-2">
+							<?php _e('Больше публикаций', 'tarakan'); ?>
+						</div>
+						<div>
+							<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+							  <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+							</svg>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -526,7 +539,7 @@ get_header();
 					<?php endwhile; endif; wp_reset_postdata(); ?>
 				</div>
 				<div class="relative flex justify-center mb-20">
-					<a href="<?php echo get_post_type_archive_link('post'); ?>" class="w-full h-full absolute top-0 left-0 z-10"></a>
+					<a href="<?php echo get_page_url('page-blog'); ?>" class="w-full h-full absolute top-0 left-0 z-10"></a>
 					<div class="flex items-center text-indigo-500 border border-indigo-500 rounded px-6 py-3">
 						<div class="mr-2">
 							<?php _e('Больше публикаций', 'tarakan'); ?>

@@ -16,12 +16,13 @@ Template Name: БЛОГ
   <div class="bg-white shadow-lg rounded-lg mb-12 pt-10 pb-5 px-8">
     <div class="flex flex-wrap -mx-2">
       <?php 
-      $current_page = !empty( $_GET['page'] ) ? $_GET['page'] : 1;
+      global $wp_query, $wp_rewrite;  
+      $wp_query->query_vars['paged'] > 1 ? $current = $wp_query->query_vars['paged'] : $current = 1;
       $blogs = new WP_Query( array(
         'post_type' => 'post',
         'orderby' => 'date',
-        'paged' => $current_page,
-        'posts_per_page' => 2,
+        'paged' => $current,
+        'posts_per_page' => 18,
       ));
       if ($blogs->have_posts()) : while ($blogs->have_posts()) : $blogs->the_post(); ?>
         <div class="w-full lg:w-1/3 mb-6 lg:px-4">
@@ -62,11 +63,11 @@ Template Name: БЛОГ
     </div>
     <div class="b_pagination text-center">
       <?php 
-        $big = 99999999291; // уникальное число
+        $big = 9999999991; // уникальное число
         echo paginate_links( array(
-          'format' => '?page=%#%',
+          'format'  => 'page/%#%',
           'total' => $blogs->max_num_pages,
-          'current' => $current_page,
+          'current' => $current,
           'prev_next' => true,
           'next_text' => (''),
           'prev_text' => (''),
