@@ -16,7 +16,7 @@ $current_cat_id = get_queried_object_id();
           <meta itemprop="position" content="1">
         </li>
         <li itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem' class="breadcrumbs_item mr-8">
-          <a itemprop="item" href="#" class="text-white opacity-90">
+          <a itemprop="item" href="<?php echo get_page_url('page-allcity'); ?>" class="text-white opacity-90">
             <span itemprop="name"><?php _e( 'Города', 'tarakan' ); ?></span>
           </a>                        
           <meta itemprop="position" content="2">

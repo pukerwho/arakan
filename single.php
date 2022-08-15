@@ -105,7 +105,7 @@
         <?php _e('Другие записи', 'tarakan'); ?>
       </h2>
       <div>
-        <a href="<?php echo get_post_type_archive_link('post'); ?>" class="text-indigo-500 border border-indigo-500 rounded px-5 py-2">
+        <a href="<?php echo get_page_url('page-blog'); ?>" class="text-indigo-500 border border-indigo-500 rounded px-5 py-2">
           <?php _e('Перейти в блог', 'tarakan'); ?>
         </a>
       </div>
@@ -116,7 +116,7 @@
         $current_id = get_the_ID();
         $custom_query = new WP_Query( array( 
         'post_type' => 'post', 
-        'posts_per_page' => 5,
+        'posts_per_page' => 3,
         'post__not_in' => array($current_id),
       ) );
       if ($custom_query->have_posts()) : while ($custom_query->have_posts()) : $custom_query->the_post(); ?>
