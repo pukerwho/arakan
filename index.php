@@ -109,58 +109,67 @@ get_header();
 		<div class="container px-2 lg:px-5 mx-auto mb-20">
 
 			<div class="bg-white rounded-lg shadow-lg -mt-32 px-4 lg:px-8 py-8 mb-20">
-				<div class="flex flex-wrap lg:-mx-4">
-					<div class="w-full lg:w-7/12 mb-4 lg:mb-0">
-						<h2 class="text-2xl lg:text-3xl text-gray-700 font-semibold mb-6 lg:px-4"><?php _e('Популярные статьи', 'tarakan'); ?></h2>
-						<div class="flex flex-wrap lg:px-4 lg:-mx-4">
-							<?php 
-							$home_blogs = new WP_Query( array(
-								'post_type' => 'post',
-								'meta_key' => 'place_count',
-								'orderby' => 'meta_value_num',
-								'order' => 'DESC',
-								'posts_per_page' => 2,
-							));
-							if ($home_blogs->have_posts()) : while ($home_blogs->have_posts()) : $home_blogs->the_post(); ?>
-								<div class="w-full lg:w-1/2 lg:px-4">
-									<div class="relative">
-										<a href="<?php the_permalink(); ?>" class="w-full h-full absolute top-0 left-0 z-1"></a>
-										<div class="h-52 mb-4">
-											<img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>" class="w-full h-full object-cover rounded-t">
-										</div>
-										<div class="text-gray-600"><?php the_title(); ?></div>
+				<div class="w-full mb-4">
+					<h2 class="text-2xl lg:text-3xl text-gray-700 font-semibold mb-6 lg:px-4"><?php _e('Популярные статьи', 'tarakan'); ?></h2>
+					<div class="flex flex-wrap lg:px-4 lg:-mx-4">
+						<?php 
+						$home_blogs = new WP_Query( array(
+							'post_type' => 'post',
+							'meta_key' => 'place_count',
+							'orderby' => 'meta_value_num',
+							'order' => 'DESC',
+							'posts_per_page' => 3,
+						));
+						if ($home_blogs->have_posts()) : while ($home_blogs->have_posts()) : $home_blogs->the_post(); ?>
+							<div class="w-full lg:w-1/3 lg:px-4 mb-6 lg:mb-0">
+								<div class="relative">
+									<a href="<?php the_permalink(); ?>" class="w-full h-full absolute top-0 left-0 z-1"></a>
+									<div class="h-52 mb-4">
+										<img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>" class="w-full h-full object-cover rounded-lg">
 									</div>
+									<div class="text-gray-600"><?php the_title(); ?></div>
 								</div>
-							<?php endwhile; endif; wp_reset_postdata(); ?>
-						</div>
+							</div>
+						<?php endwhile; endif; wp_reset_postdata(); ?>
 					</div>
-					<div class="w-full lg:w-5/12">
-						<h2 class="text-2xl lg:text-3xl text-gray-700 font-semibold lg:px-4 mb-6"><?php _e('Новые записи', 'tarakan'); ?></h2>
-						<div class="flex flex-wrap px-4">
-							<?php 
-							$home_blogs = new WP_Query( array(
-								'post_type' => 'post',
-								'orderby' => 'date',
-								'posts_per_page' => 3,
-							));
-							if ($home_blogs->have_posts()) : while ($home_blogs->have_posts()) : $home_blogs->the_post(); ?>
-								<div class="w-full mb-4">
-									<div class="relative">
-										<a href="<?php the_permalink(); ?>" class="w-full h-full absolute top-0 left-0 z-1"></a>
-										<div class="flex -mx-2">
-											<div class="px-2">
-												<div class="h-20 w-20">
-													<img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>" class="w-full h-full object-cover rounded-t">
-												</div>
+				</div>
+				<div class="w-full">
+					<h2 class="text-2xl lg:text-3xl text-gray-700 font-semibold lg:px-4 mb-6"><?php _e('Новые записи', 'tarakan'); ?></h2>
+					<div class="flex flex-wrap px-4">
+						<?php 
+						$home_blogs = new WP_Query( array(
+							'post_type' => 'post',
+							'orderby' => 'date',
+							'posts_per_page' => 5,
+						));
+						if ($home_blogs->have_posts()) : while ($home_blogs->have_posts()) : $home_blogs->the_post(); ?>
+							<div class="w-full mb-6">
+								<div class="w-full relative border rounded-lg">
+									<a href="<?php the_permalink(); ?>" class="w-full h-full absolute top-0 left-0 z-1"></a>
+									<div class="flex items-center -mx-2">
+										<div class="px-2">
+											<div class="h-32 w-32">
+												<img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>" class="w-full h-full object-cover rounded-l-lg">
 											</div>
-											<div class="text-gray-600 px-2">
+										</div>
+										<div class="px-2">
+											<div class="text-xl text-gray-600 mb-3">
 												<?php the_title(); ?>
 											</div>
+											<div class="hidden lg:block content text-sm pr-4 lg:pr-10 mb-3">
+												<?php 
+													$content_text = wp_strip_all_tags( get_the_content() );
+													echo mb_strimwidth($content_text, 0, 200, '...');
+												?>
+											</div>
+											<div class="text-sm opacity-50">
+												<?php echo get_the_date('d.m.Y'); ?>
+											</div>
 										</div>
 									</div>
 								</div>
-							<?php endwhile; endif; wp_reset_postdata(); ?>
-						</div>
+							</div>
+						<?php endwhile; endif; wp_reset_postdata(); ?>
 					</div>
 				</div>
 			</div>
