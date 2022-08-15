@@ -135,7 +135,7 @@ get_header();
 				</div>
 				<div class="w-full mb-6">
 					<h2 class="text-2xl lg:text-3xl text-gray-700 font-semibold lg:px-4 mb-6"><?php _e('Новые записи', 'tarakan'); ?></h2>
-					<div class="flex flex-wrap">
+					<div class="flex flex-wrap lg:px-4">
 						<?php 
 						$home_blogs = new WP_Query( array(
 							'post_type' => 'post',
