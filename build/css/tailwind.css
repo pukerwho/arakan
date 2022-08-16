@@ -1326,6 +1326,7 @@ video {
 
 .copy-click {
 	display: inline-block;
+	cursor: pointer;
 	border-radius: 0.5rem;
 	--tw-bg-opacity: 1;
 	background-color: rgba(167, 243, 208, var(--tw-bg-opacity));
