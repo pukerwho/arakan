@@ -1316,6 +1316,26 @@ video {
 	padding-bottom: 0.5rem;
 }
 
+.hi-box {
+	border-radius: 0.5rem;
+	border-width: 1px;
+	padding: 1rem;
+	--tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+	box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.copy-click {
+	display: inline-block;
+	border-radius: 0.5rem;
+	--tw-bg-opacity: 1;
+	background-color: rgba(167, 243, 208, var(--tw-bg-opacity));
+	padding-left: 1rem;
+	padding-right: 1rem;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+	text-align: center;
+}
+
 .last\:border-transparent:last-child {
 	border-color: transparent;
 }

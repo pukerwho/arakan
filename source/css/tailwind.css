@@ -35,3 +35,11 @@
 .custom-input {
   @apply border border-gray-300 rounded-lg px-4 py-2;
 }
+
+.hi-box {
+  @apply shadow-lg rounded-lg border p-4;
+}
+
+.copy-click {
+  @apply inline-block bg-green-200 rounded-lg text-center px-4 py-2;
+}
