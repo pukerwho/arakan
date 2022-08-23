@@ -30,6 +30,16 @@ if ( is_singular( 'places' ) ) {
 	$current_title = $place_title . ' (' . $current_city . ') - ' . $after_title;
 }
 
+if (is_tax( 'city' )) {
+	$city_title = single_term_title( "", false );
+	if (get_locale() === 'ru_RU') {
+  	$help_title_text = 'Все заведения, лучшие места в городе ';
+  } else {
+  	$help_title_text = 'Усі заклади, найкращі заклади в місті  ';
+  }
+	$current_title = $city_title . ': ' . $help_title_text . '' . $city_title;
+}
+
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -38,7 +48,7 @@ if ( is_singular( 'places' ) ) {
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
-
+	
 	<?php wp_head(); ?>
 	<?php echo carbon_get_theme_option('crb_google_analytics'); ?>
 </head>
