@@ -63,9 +63,9 @@ if (is_tax( 'city' )) {
 				<!-- Left Side -->
 				<div class="flex items-center">
 					<!-- Лого -->
-					<div class="text-2xl font-semibold mr-4 lg:mr-10">
+					<div class="text-2xl font-semibold mr-4 lg:mr-6">
 						<a href="<?php echo home_url(); ?>">
-							Tarakan
+							<span class="w-[35px] h-[35px] inline-flex justify-center items-center bg-gradient-to-r from-indigo-600 to-indigo-400 rounded-lg text-white">T</span>
 						</a>
 					</div>
 					<!-- END Лого -->
