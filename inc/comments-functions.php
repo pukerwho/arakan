@@ -13,7 +13,7 @@ function truemisha_change_labels( $fields ){
   // можно подсмотреть исходный HTML через:
   // print_r( $fields );
 
-  $fields[ 'author' ] = '<div class="mb-4"><input id="author" name="author" type="text" value="" size="30" maxlength="245" required="required" placeholder="Как вас зовут?" class="w-full border border-gray-300 px-4 py-2"></div>';
+  $fields[ 'author' ] = '<div class="mb-4"><input id="author" name="author" type="text" value="" size="30" maxlength="245" required="required" placeholder="'. __("Как вас зовут?", "tarakan") . '" class="w-full border border-gray-300 px-4 py-2"></div>';
 
   $fields[ 'email'] = '<div class="mb-6"><input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required="required" placeholder="Ваш email" class="w-full border border-gray-300 px-4 py-2"></div>';
  
@@ -42,7 +42,7 @@ function remove_textarea($defaults)
 
 function add_textarea()
 {
-    echo '<div class="comment-form-comment mb-2"><textarea id="comment" name="comment" rows="4" placeholder="Ваш комментарий" aria-required="true" class="w-full border border-gray-300 px-4 py-2"></textarea></div>';
+    echo '<div class="comment-form-comment mb-2"><textarea id="comment" name="comment" rows="4" placeholder="'. __("Ваш комментарий", "tarakan") . '" aria-required="true" class="w-full border border-gray-300 px-4 py-2"></textarea></div>';
 }
 
 //Удаляем нотис перед формой комментирования

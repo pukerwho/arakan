@@ -28,7 +28,7 @@ if ( post_password_required() ) {
 		?>
 		<div class="flex items-center text-xl font-semibold mb-5">
 			<div class="w-2 h-2 bg-yellow-500 rounded-full mr-2"></div>
-			<div><?php _e('Комментарии', 'g-info'); ?></div>
+			<div><?php _e('Комментарии', 'tarakan'); ?></div>
 		</div>
 
 		<?php the_comments_navigation(); ?>

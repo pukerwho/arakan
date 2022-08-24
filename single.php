@@ -45,6 +45,9 @@
     <div class="flex flex-col lg:flex-row lg:-mx-2">
 
       <div class="w-full lg:w-8/12 lg:px-8 lg:py-6 lg:border-r-2 mb-4 lg:mb-0">
+        <div class="mb-6">
+          <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>" class="w-full h-full object-cover rounded-lg">
+        </div>
       	<div class="content">
       		<?php the_content(); ?>	
       	</div>
@@ -52,7 +55,18 @@
 
       <div class="w-full lg:w-4/12 px-4 lg:px-10 py-10 ">
 
-        <div class="border-b-2 pb-4 mb-4">
+      <div class="border-b-2 pb-4 mb-4">
+        <div class="flex justify-between">
+          <div class="font-semibold mr-2">
+            <?php _e('Автор', 'tarakan'); ?>
+          </div>
+          <div class="font-light text-gray-600">
+            <?php echo get_the_author(); ?>
+          </div>
+        </div>
+      </div>  
+      
+      <div class="border-b-2 pb-4 mb-4">
           <div class="flex justify-between">
             <div class="font-semibold mr-2">
               <?php _e('Обновлено', 'tarakan'); ?>
@@ -74,13 +88,39 @@
           </div>
         </div>
 
-        <div>
+        
+
+        <div class="border-b-2 pb-4 mb-4">
           <div class="flex justify-between">
             <div class="font-semibold mr-2">
               <?php _e('Просмотров', 'tarakan'); ?>
             </div>
             <div class="font-light text-gray-600">
               <?php echo $countNumber; ?>
+            </div>
+          </div>
+        </div>
+
+        <div class="border-b-2 pb-4 mb-4">
+          <div class="flex justify-between">
+            <div class="font-semibold mr-2">
+              <?php _e('Время на чтение', 'tarakan'); ?>
+            </div>
+            <div class="font-light text-gray-600">
+              <div class="post-time-read">
+                <span></span> <?php _e("мин", "tarakan"); ?>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="flex justify-between items-center">
+            <div class="font-semibold mr-2">
+              <?php _e('Поделиться', 'tarakan'); ?>
+            </div>
+            <div class="font-light text-gray-600">
+              <?php do_action('show_social_share_buttons'); ?>
             </div>
           </div>
         </div>
