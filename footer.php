@@ -160,6 +160,8 @@
 	
 </footer>
 
+<div class="modal-bg hidden w-full h-full fixed top-[68px] bg-gray-800"></div>
+
 <?php wp_footer(); ?>
 
 </body>

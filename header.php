@@ -124,7 +124,7 @@ if (is_tax( 'city' )) {
 				<div class="flex items-center">
 
 					<!-- Кнопка Добавить -->
-					<div class="flex items-center relative bg-indigo-500 rounded text-white text-sm lg:text-md px-4 lg:px-6 py-2 mr-12 lg:mr-4">
+					<div class="flex items-center relative bg-indigo-500 rounded text-white text-sm lg:text-md px-4 lg:px-6 py-2 mr-6 lg:mr-4">
 						<a href="<?php echo get_page_url('page-add'); ?>" class="w-full h-full absolute top-0 left-0 z-1"></a>
 						<div class="mr-2">
 							<?php _e('Добавить', 'tarakan'); ?>
@@ -146,10 +146,18 @@ if (is_tax( 'city' )) {
           <!-- END Переключатель языка -->
 
 					<!-- Гамбургер -->
-					<div class="block lg:hidden relative -mt-4">
-						<span class="w-7 h-0.5 absolute bg-gray-600 top-0 right-0"></span>
-						<span class="w-7 h-0.5 absolute bg-gray-600 top-2 right-0"></span>
-						<span class="w-7 h-0.5 absolute bg-gray-600 top-4 right-0"></span>
+					<div class="hamburger-toggle block lg:hidden relative">
+						<div class="hamburger-toggle__open">
+							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5" />
+							</svg>
+						</div>
+						<div class="hamburger-toggle__close hidden">
+							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+							</svg>
+						</div>
+						
 					</div>
 					<!-- END Гамбургер -->
 
@@ -166,3 +174,34 @@ if (is_tax( 'city' )) {
 		</div>
 	</div>
 	<!-- END На мобильном поиск -->
+
+	<div class="mobile-menu hidden h-full w-full fixed top-0 left-0 overflow-y-scroll pt-[68px]">
+		<div class="bg-white dark:bg-dark-xl p-4">
+			<div class="text-xl mb-4"><?php _e("Меню", "tarakan"); ?>:</div>
+			<?php wp_nav_menu([
+	      'theme_location' => 'menu-1',
+	      'container' => 'div',
+	      'menu_class' => 'flex flex-col mobile-menu__list mb-6'
+	    ]); ?> 
+			<div class="mb-6">
+				<div class="text-xl mb-4"><?php _e("Категории", "tarakan"); ?></div>
+				<ul>
+					<?php foreach ( $footer_categories as $footer_category ): ?>
+					<li class="font-light text-sm py-2 border-b border-gray-200">
+						<a href="<?php echo get_term_link($footer_category); ?>"><?php echo $footer_category->name ?></a>
+					</li>
+					<?php endforeach; ?>
+				</ul>
+			</div>
+			<div>
+				<div class="text-xl mb-4"><?php _e("Язык", "tarakan"); ?>:</div>
+				<!-- Переключатель языка -->
+				<div class="lang hidden lg:flex items-center shadow">
+					<?php if (function_exists('pll_the_languages')) { 
+						pll_the_languages(); 
+					} ?>
+				</div>
+				<!-- END Переключатель языка -->
+			</div>
+		</div>
+	</div>

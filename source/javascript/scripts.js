@@ -1,3 +1,11 @@
+$(".hamburger-toggle").on("click", function () {
+  $(".hamburger-toggle__open").toggleClass("hidden");
+  $(".hamburger-toggle__close").toggleClass("hidden");
+  $(".mobile-menu").toggleClass("hidden").toggleClass("z-10");
+  // $(".modal-bg").toggleClass("hidden").toggleClass("z-2");
+  $("body").toggleClass("overflow-hidden");
+});
+
 let windowWidth = $(window).width();
 let containerWidth = $(".container").width();
 
