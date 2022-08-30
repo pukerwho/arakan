@@ -124,7 +124,7 @@ if (is_tax( 'city' )) {
 				<div class="flex items-center">
 
 					<!-- Кнопка Добавить -->
-					<div class="flex items-center relative bg-indigo-500 rounded text-white text-sm lg:text-md px-4 lg:px-6 py-2 mr-4">
+					<div class="flex items-center relative bg-indigo-500 rounded text-white text-sm lg:text-md px-4 lg:px-6 py-2 mr-12 lg:mr-4">
 						<a href="<?php echo get_page_url('page-add'); ?>" class="w-full h-full absolute top-0 left-0 z-1"></a>
 						<div class="mr-2">
 							<?php _e('Добавить', 'tarakan'); ?>
@@ -138,23 +138,23 @@ if (is_tax( 'city' )) {
 					<!-- END Кнопка Добавить -->
 					
 					<!-- Переключатель языка -->
-					<div class="lang flex items-center shadow">
+					<div class="lang hidden lg:flex items-center shadow">
             <?php if (function_exists('pll_the_languages')) { 
               pll_the_languages(); 
             } ?>
           </div>
           <!-- END Переключатель языка -->
 
+					<!-- Гамбургер -->
+					<div class="block lg:hidden relative -mt-4">
+						<span class="w-7 h-0.5 absolute bg-gray-600 top-0 right-0"></span>
+						<span class="w-7 h-0.5 absolute bg-gray-600 top-2 right-0"></span>
+						<span class="w-7 h-0.5 absolute bg-gray-600 top-4 right-0"></span>
+					</div>
+					<!-- END Гамбургер -->
+
 				</div>
 				<!-- END Right Side -->
-
-				<!-- Гамбургер -->
-				<div class="hidden relative -mt-4">
-					<span class="w-7 h-0.5 absolute bg-gray-600 top-0 right-0"></span>
-					<span class="w-7 h-0.5 absolute bg-gray-600 top-2 right-0"></span>
-					<span class="w-7 h-0.5 absolute bg-gray-600 top-4 right-0"></span>
-				</div>
-				<!-- END Гамбургер -->
 			</div>
 		</div>
 	</header><!-- #masthead -->
