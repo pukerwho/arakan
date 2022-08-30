@@ -196,7 +196,7 @@ if (is_tax( 'city' )) {
 			<div>
 				<div class="text-xl mb-4"><?php _e("Язык", "tarakan"); ?>:</div>
 				<!-- Переключатель языка -->
-				<div class="lang flex items-center shadow">
+				<div class="lang inline-flex items-center shadow">
 					<?php if (function_exists('pll_the_languages')) { 
 						pll_the_languages(); 
 					} ?>
