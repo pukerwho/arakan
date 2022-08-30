@@ -56,7 +56,7 @@ if (is_tax( 'city' )) {
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
-	<header class="w-full absolute left-0 top-0 bg-white py-4">
+	<header class="w-full absolute left-0 top-0 bg-white py-4 z-11">
 		<div class="container px-2 lg:px-5 mx-auto">
 			<div class="flex items-center justify-between">
 
@@ -175,7 +175,7 @@ if (is_tax( 'city' )) {
 	</div>
 	<!-- END На мобильном поиск -->
 
-	<div class="mobile-menu hidden h-full w-full fixed top-0 left-0 overflow-y-scroll pt-[68px]">
+	<div class="mobile-menu hidden h-full w-full fixed top-auto bottom-0 left-0 overflow-y-scroll pt-[68px]">
 		<div class="bg-white dark:bg-dark-xl p-4">
 			<div class="text-xl mb-4"><?php _e("Меню", "tarakan"); ?>:</div>
 			<?php wp_nav_menu([
@@ -196,7 +196,7 @@ if (is_tax( 'city' )) {
 			<div>
 				<div class="text-xl mb-4"><?php _e("Язык", "tarakan"); ?>:</div>
 				<!-- Переключатель языка -->
-				<div class="lang hidden lg:flex items-center shadow">
+				<div class="lang flex items-center shadow">
 					<?php if (function_exists('pll_the_languages')) { 
 						pll_the_languages(); 
 					} ?>
