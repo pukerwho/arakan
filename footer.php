@@ -79,6 +79,9 @@
                   <a href="<?php echo get_term_link($footer_category); ?>"><?php echo $footer_category->name ?></a>
                 </li>
               <?php endforeach; ?>
+              <li class="font-light mb-2">
+                <a href="https://tarakan.org.ua/kogda-est-povod-kupit-gazovyi-gril-dlya-dachi/">Газовый гриль для дачи</a>
+              </li>
             </ul>
           </div>
         </div>
