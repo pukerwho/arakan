@@ -25,9 +25,6 @@
         <a href="https://akvalekar.com/prorashchivatel-mikroferma-easygreen-light-55/">Купить электрический проращиватель</a>
       </div>
       <div>
-        <a href="https://midsun-aroma.com/aromatizatsuya_pomishenia">Ароматизация помещений</a>
-      </div>
-      <div>
         <a href="https://airq.com.ua/ru/flavors/">ТОП лучших ароматов</a>
       </div>
       <div>
