@@ -89,3 +89,24 @@ function readingTime() {
 if (document.body.classList.contains("single-post")) {
   readingTime();
 }
+
+$("#search_city_box").keyup(function () {
+  var filter = $(this).val();
+  filter = filter.toLowerCase();
+
+  $(".allcity_item").each(function () {
+    var metadata = $(this).data("metadata");
+    var regexp = new RegExp(filter);
+    var metadatastring = "";
+    metadatastring = metadatastring.toLowerCase();
+
+    if (typeof metadata.tag != "undefined") {
+      metadatastring = metadata.tag.join(" ");
+    }
+    if (metadatastring.toLowerCase().search(regexp) < 0) {
+      $(this).hide();
+    } else {
+      $(this).show();
+    }
+  });
+});

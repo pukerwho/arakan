@@ -14,6 +14,9 @@ Template Name: ВСЕ ГОРОДА
 
 <div class="container mx-auto px-2 lg:px-5 -mt-20">
   <div class="bg-white shadow-lg rounded-lg mb-12 pt-10 pb-5 px-8">
+    <div class="mb-6">
+      <input id="search_city_box" placeholder="<?php _e('Быстрый поиск', 'tarakan'); ?>" class="w-full text-lg border border-gray-400 rounded px-6 py-3" />
+    </div>
     <div class="flex flex-wrap -mx-2">
       <?php $home_cities = get_terms( array( 
         'taxonomy' => 'city', 
@@ -21,9 +24,8 @@ Template Name: ВСЕ ГОРОДА
         'show_count' => true,
         'hide_empty' => false,
       ));
-      shuffle( $home_cities );
       foreach ( $home_cities as $home_city ): ?>
-        <div class="w-1/2 lg:w-1/4 relative px-2 mb-10">
+        <div class="allcity_item w-1/2 lg:w-1/4 relative px-2 mb-10" data-metadata='{"name": "city","category": "gorod","tag": ["<?php echo $home_city->name; ?>"]}'>
           <a href="<?php echo get_term_link($home_city); ?>" class="w-full h-full absolute left-0 top-0 z-10"></a>
           <div class="h-52 mb-4">
             <img src="<?php echo carbon_get_term_meta($home_city->term_id, 'crb_city_img' ); ?>" alt="<?php echo $home_city->name ?>" loading="lazy" class="w-full h-full object-cover rounded-lg">

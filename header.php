@@ -1,15 +1,7 @@
 <?php
-/**
- * The header for our theme
- *
- * This is the template that displays all of the <head> section and everything up until <div id="content">
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package G-Info
- */
 
 $current_title = wp_get_document_title();
+
 if ( is_singular( 'places' ) ) {
 	//Название заведения
 	$place_title = get_the_title();
@@ -31,13 +23,45 @@ if ( is_singular( 'places' ) ) {
 }
 
 if (is_tax( 'city' )) {
-	$city_title = single_term_title( "", false );
-	if (get_locale() === 'ru_RU') {
-  	$help_title_text = 'Все заведения, лучшие места в городе ';
+  $tax_title = single_term_title( "", false );
+  $paged = (get_query_var('page')) ? get_query_var('page') : 1;
+  
+  $term_header = get_term_by('slug', get_query_var('term'), 'city');
+  if((int)$term_header->parent) {
+    // child
+    $parent_term = get_term_by( 'id', $term_header->parent, 'city' );  
+    $parent_name = $parent_term->name; 
+    if (get_locale() === 'ru_RU') {
+      $help_title_text = ': где лучшие в городе - реальные отзывы';
+      $help_description_text = '. Отзывы, комментарии, фото. Большой каталог городов. Найди лучшие города на сайте Tarakan.org.ua!';
+      $current_page = '. Страница №' . $paged;
+    } else {
+      $help_title_text = ': де найкращі в місті - реальні відгуки';
+      $help_description_text = '. Відгуки, комментарі, фото. Великий каталог міст. Знайди найкращі міста на сайті Tarakan.org.ua!';
+      $current_page = '. Cторінка №' . $paged;
+    }
+    $current_title = $parent_name . ' (' . $tax_title  . ')' . $help_title_text;
+    if ($paged > 1) {
+      $current_title = $parent_name . ' (' . $tax_title . ')' . $help_title_text . '' . $current_page;
+    }
+    $current_description = $parent_name . ' (' . $tax_title  . ')' . $help_description_text;
   } else {
-  	$help_title_text = 'Усі заклади, найкращі заклади в місті  ';
-  }
-	$current_title = $city_title . ': ' . $help_title_text . '' . $city_title;
+    // parent
+    if (get_locale() === 'ru_RU') {
+      $help_title_text = 'Все заведения, лучшие места в городе ';
+      $help_description_text = 'Каталог заведений на сайте Tarakan.org.ua - отзывы, оценки, комментарии. Лучшие места в г.';
+      $current_page = '. Страница №' . $paged;
+    } else {
+      $help_title_text = 'Усі заклади, найкращі заклади в місті ';
+      $help_description_text = 'Каталог закладів на сайті Tarakan.org.ua – відгуки, оцінки, коментарі. Найкращі місця у м.';
+      $current_page = '. Cторінка №' . $paged;
+    }
+    $current_title = $tax_title . ': ' . $help_title_text . '' . $tax_title;
+    if ($paged > 1) {
+      $current_title = $tax_title . ': ' . $help_title_text . '' . $tax_title . '' . $current_page;
+    }
+    $current_description = $tax_title . ': ' . $help_description_text . '' . $tax_title;
+  }    
 }
 
 ?>
@@ -45,6 +69,9 @@ if (is_tax( 'city' )) {
 <html <?php language_attributes(); ?>>
 <head>
 	<title><?php echo $current_title; ?></title>
+  <?php if ($current_description): ?>
+    <meta name="description" content="<?php echo $current_description; ?>"/>
+  <?php endif; ?>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">

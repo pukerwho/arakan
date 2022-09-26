@@ -13,7 +13,7 @@
         <div class="mr-2">
           <img src="<?php echo carbon_get_term_meta($current_city->term_id, 'crb_city_img' ); ?>" alt="<?php echo $current_city->name ?>" loading="lazy" class="w-[2.5rem] min-w-[2.5rem] h-10 h-min-10 object-cover rounded-full">
         </div>
-        <div class="text-gray-500"><?php echo $current_city->name; ?></div>
+        <div class="text-gray-500 hover:text-red-400"><a href="<?php echo get_term_link( $current_city ) ;?>"><?php echo $current_city->name; ?></a></div>
       <?php endif; ?>
     <?php endforeach; ?>
   </td>
@@ -26,7 +26,7 @@
     foreach (array_slice($other_current_terms, 0,1) as $other_place_term):
     ?>
       <?php if ($other_place_term): ?>
-        <div class="text-gray-500"><?php echo $other_place_term->name; ?></div> 
+        <div class="text-gray-500 hover:text-red-400"><a href="<?php echo get_term_link( $other_place_term ) ;?>"><?php echo $other_place_term->name; ?></a></div> 
       <?php endif; ?>
     <?php endforeach; ?>
   </td>

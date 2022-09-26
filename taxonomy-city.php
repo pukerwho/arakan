@@ -1,5 +1,7 @@
 <?php 
 $current_cat_id = get_queried_object_id();
+$taxonomyName = "city";
+$term = get_term_by('slug', get_query_var('term'), $taxonomyName);
 ?>
 
 <?php get_header(); ?>
@@ -28,12 +30,34 @@ $current_cat_id = get_queried_object_id();
       </ul>
     </div>
     <!-- END Хлебные крошки -->
-    <h1 class="text-2xl lg:text-4xl text-white font-semibold"><?php single_term_title(); ?></h1>
+    <h1 class="text-2xl lg:text-4xl text-white font-semibold">
+      <?php if((int)$term->parent): ?>
+        <?php $parent_term = get_term_by( 'id', $term->parent, 'city' ); ?>
+        <?php echo $parent_term->name; ?>: <?php single_term_title(); ?>
+      <?php else: ?>
+        <?php single_term_title(); ?>
+      <?php endif; ?>
+    </h1>
   </div>  
 </div>
 
 <div class="container mx-auto px-2 lg:px-5 -mt-20">
   <div class="bg-white shadow-lg rounded-lg mb-12 pt-10 pb-5 px-8">
+    <div class="mb-10">
+      <?php if((int)$term->parent) {
+        $parent_term = get_term( $term->parent, $taxonomyName );
+        $parent_id = $parent_term->term_id; 
+      } else {
+        $parent_id = get_queried_object_id();
+      }
+      $child_terms = get_terms($taxonomyName, array('parent' => $parent_id, 'hide_empty' => false ));
+      foreach ( $child_terms as $child ): ?>
+        <div class="relative bg-indigo-100 text-black hover:bg-indigo-200 rounded px-6 py-3 mb-2">
+          <a href="<?php echo get_term_link( $child ); ?>" class="absolute-link"></a>
+          <div><span class="text-lg"><?php echo $child->name ?></span></div>
+        </div>
+      <?php endforeach; ?>
+    </div>
     <div class="overflow-x-auto shadow-xl mb-10">
       <table class="w-full table-auto">
         <thead class="bg-gray-100 text-gray-500 border border-gray-200 uppercase">

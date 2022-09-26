@@ -8,6 +8,9 @@
 .z-11 {
   z-index: 11;
 }
+.absolute-link {
+  @apply w-full h-full absolute top-0 left-0 z-10;
+}
 
 .place-rating tr {
   width: 100%;
