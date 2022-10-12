@@ -36,7 +36,9 @@
           </div>
           <div class="flex text-lg mb-6">
             <div class="border-r border-gray-500 pr-5 mr-5">
-              <span class="font-semibold text-red-400"><?php $all_places_for_footer = get_posts('post_type=places&suppress_filters=0&posts_per_page=-1'); $places_footer_count = count($all_places_for_footer); echo $places_footer_count; ?></span>
+              <span class="font-semibold text-red-400">
+                <?php $published_places = wp_count_posts('places')->publish; echo $published_places; ?>
+              </span>
               <?php _e('заведений', 'tarakan'); ?>
             </div>
             <div>
@@ -67,7 +69,6 @@
                   <a href="<?php echo get_term_link($footer_category); ?>"><?php echo $footer_category->name ?></a>
                 </li>
               <?php endforeach; ?>
-              
             </ul>
           </div>
         </div>
