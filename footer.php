@@ -15,24 +15,10 @@
 
   <?php if (is_home()): ?>
   <!-- Treba links -->
-  <div class="container mx-auto px-2 lg:px-5  mb-5">
+  <div class="hidden container mx-auto px-2 lg:px-5  mb-5">
     <h3 class="text-2xl text-gray-700 font-bold mb-2"><?php _e('Популярные сайты', 'tarakan'); ?></h3>
     <div class="treba-links flex flex-wrap items-center bg-white border border-gray-300 py-2 px-4">
-      <div>
-        <a href="https://webgolovolomki.com/all-about-title/">Что такое Title в SEO?</a>
-      </div>
-      <div>
-        <a href="https://akvalekar.com/prorashchivatel-mikroferma-easygreen-light-55/">Купить электрический проращиватель</a>
-      </div>
-      <div>
-        <a href="https://airq.com.ua/ru/flavors/">ТОП лучших ароматов</a>
-      </div>
-      <div>
-        <a href="https://uaphilanthrop.com/products/for-space/aroma-diffusers/">Купить аромадиффузоры в Украине</a>
-      </div>
-      <div>
-        <a href="https://tarakan.org.ua/kogda-est-povod-kupit-gazovyi-gril-dlya-dachi/">Газовый гриль для дачи</a>
-      </div>
+      
       <!-- do_shortcode('[render-treba-links]'); 
       echo do_shortcode('[render-treba-top-links]'); -->
     </div>
@@ -48,15 +34,20 @@
           <div class="font-light mb-6">
             <?php _e('У нас можно опубликовать свой отзыв абсолютно о любом месте, где вам приходилось побывать. Можно оставить гневную жалобу, хвалебную благодарность, или даже узнать об акциях и распродажах. Да здравствуют честные отзывы от реальных людей!', 'tarakan'); ?>
           </div>
-          <div class="flex text-lg">
+          <div class="flex text-lg mb-6">
             <div class="border-r border-gray-500 pr-5 mr-5">
-              <span class="font-semibold text-red-400">1436</span>
+              <span class="font-semibold text-red-400"><?php $all_places_for_footer = get_posts('post_type=places&suppress_filters=0&posts_per_page=-1'); $places_footer_count = count($all_places_for_footer); echo $places_footer_count; ?></span>
               <?php _e('заведений', 'tarakan'); ?>
             </div>
             <div>
-              <span class="font-semibold text-red-400">345</span>
+              <span class="font-semibold text-red-400">1029</span>
               <?php _e('отзывов', 'tarakan'); ?>
             </div>
+          </div>
+          <div>
+            <a href="https://sdamkvartiry.com/">
+              <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/sdamkvartiry.jpg" alt="">
+            </a>
           </div>
         </div>
 
@@ -76,9 +67,7 @@
                   <a href="<?php echo get_term_link($footer_category); ?>"><?php echo $footer_category->name ?></a>
                 </li>
               <?php endforeach; ?>
-              <li class="font-light mb-2">
-                <a href="https://tarakan.org.ua/kogda-est-povod-kupit-gazovyi-gril-dlya-dachi/">Газовый гриль для дачи</a>
-              </li>
+              
             </ul>
           </div>
         </div>
