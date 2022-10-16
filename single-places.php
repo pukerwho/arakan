@@ -765,9 +765,11 @@
                 <span class="font-semibold"><?php _e('Email', 'tarakan'); ?></span>: <span class=""><?php echo carbon_get_the_post_meta('crb_place_email'); ?></span>
               </div>
 
+              <?php if (carbon_get_the_post_meta('crb_place_url')): ?>
               <div class="text-gray-700 mb-4">
-                <span class="font-semibold"><?php _e('Сайт', 'tarakan'); ?></span>: <span class=""><?php echo carbon_get_the_post_meta('crb_place_url'); ?></span>
+                <span class="font-semibold"><?php _e('Меню', 'tarakan'); ?></span>: <a href="<?php echo carbon_get_the_post_meta('crb_place_url'); ?>" target="_blank" rel="nofollow"><?php _e("Посмотреть", "tarakan"); ?></a>
               </div>
+              <?php endif; ?>
 
               <?php if (carbon_get_the_post_meta('crb_place_price')): ?>
                 <div class="text-gray-700 mb-4">
