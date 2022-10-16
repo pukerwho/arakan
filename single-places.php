@@ -767,7 +767,7 @@
 
               <?php if (carbon_get_the_post_meta('crb_place_url')): ?>
               <div class="text-gray-700 mb-4">
-                <span class="font-semibold"><?php _e('Меню', 'tarakan'); ?></span>: <a href="<?php echo carbon_get_the_post_meta('crb_place_url'); ?>" target="_blank" rel="nofollow"><?php _e("Посмотреть", "tarakan"); ?></a>
+                <span class="font-semibold"><?php _e('Меню', 'tarakan'); ?></span>: <a href="<?php echo carbon_get_the_post_meta('crb_place_url'); ?>" target="_blank" rel="nofollow" class="text-indigo-500"><?php _e("Посмотреть", "tarakan"); ?></a>
               </div>
               <?php endif; ?>
 
