@@ -52,8 +52,9 @@ $term = get_term_by('slug', get_query_var('term'), $taxonomyName);
       }
       $child_terms = get_terms($taxonomyName, array('parent' => $parent_id, 'hide_empty' => false ));
       foreach ( $child_terms as $child ): ?>
+        <?php $get_link = get_term($child->term_id, $taxonomyName); ?>
         <div class="relative bg-indigo-100 text-black hover:bg-indigo-200 rounded px-6 py-3 mb-2">
-          <a href="<?php echo get_term_link( $child ); ?>" class="absolute-link"></a>
+          <a href="<?php echo get_term_link( $get_link ); ?>" class="absolute-link"></a>
           <div><span class="text-lg"><?php echo $child->name ?></span></div>
         </div>
       <?php endforeach; ?>
