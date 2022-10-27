@@ -1395,35 +1395,31 @@ video {
 }
 
 .filter-checkbox {
-	margin-right: 0.5rem;
 	height: 1.25rem;
 	width: 1.25rem;
 }
-
+.filter-checkbox ~ label {
+	padding-left: 0.5rem;
+}
 .last\:border-transparent:last-child {
 	border-color: transparent;
 }
-
 .hover\:bg-white:hover {
 	--tw-bg-opacity: 1;
 	background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
 }
-
 .hover\:bg-indigo-200:hover {
 	--tw-bg-opacity: 1;
 	background-color: rgba(199, 210, 254, var(--tw-bg-opacity));
 }
-
 .hover\:text-gray-700:hover {
 	--tw-text-opacity: 1;
 	color: rgba(55, 65, 81, var(--tw-text-opacity));
 }
-
 .hover\:text-red-400:hover {
 	--tw-text-opacity: 1;
 	color: rgba(248, 113, 113, var(--tw-text-opacity));
 }
-
 @media (min-width: 1024px) {
 
 	.lg\:absolute {

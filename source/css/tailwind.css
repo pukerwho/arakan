@@ -55,5 +55,8 @@
 }
 
 .filter-checkbox {
-  @apply w-5 h-5 mr-2;
+  @apply w-5 h-5;
+}
+.filter-checkbox ~ label {
+  @apply pl-2;
 }

@@ -5,12 +5,12 @@ function filter_places() {
   $current_cat_id = stripslashes_deep($_POST['city_id']);
   $keyArray = stripslashes_deep($_POST['keyArray']);
   foreach ($keyArray as $key) {
-    $filterargs = array(
+    $filter_meta[] = array(
       'key' => $key,
       'value' => 'yes',
       'compare' => '='
-    ); 
-  }
+    );
+  };
 
   $ajax_query = new WP_Query( array( 
     'post_type' => 'places', 
@@ -25,9 +25,9 @@ function filter_places() {
         'operator' => 'IN'
       )
     ),
-    'meta_query' => array( 
+    'meta_query' => array(
       'relation' => 'AND',
-      $filterargs,
+      $filter_meta,
     )
   ) );
 
