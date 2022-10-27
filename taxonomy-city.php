@@ -42,22 +42,34 @@ $term = get_term_by('slug', get_query_var('term'), $taxonomyName);
 </div>
 
 <div class="container mx-auto px-2 lg:px-5 -mt-20">
-  <div class="bg-white shadow-lg rounded-lg mb-12 pt-10 pb-5 px-8">
-    <div class="mb-10">
-      <?php if((int)$term->parent) {
-        $parent_term = get_term( $term->parent, $taxonomyName );
-        $parent_id = $parent_term->term_id; 
-      } else {
-        $parent_id = get_queried_object_id();
-      }
-      $child_terms = get_terms($taxonomyName, array('parent' => $parent_id, 'hide_empty' => false ));
-      foreach ( $child_terms as $child ): ?>
-        <?php $get_link = get_term($child->term_id, $taxonomyName); ?>
-        <div class="relative bg-indigo-100 text-black hover:bg-indigo-200 rounded px-6 py-3 mb-2">
-          <a href="<?php echo get_term_link( $get_link ); ?>" class="absolute-link"></a>
-          <div><span class="text-lg"><?php echo $child->name ?></span></div>
+  <div class="bg-white shadow-lg rounded-lg mb-12 pt-5 lg:pt-10 pb-5 px-4 lg:px-8">
+    <div class="flex items-center flex-wrap mb-10">
+      <div class="flex items-center border border-gray-600 rounded cursor-pointer px-6 py-3 mb-2 mr-2 modal-js" data-modal="filter">
+        <div class="mr-2">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" />
+          </svg>
         </div>
-      <?php endforeach; ?>
+        <div><?php _e("Фильтры", "tarakan"); ?></div>
+      </div>
+      <div class="flex items-center flex-wrap -mx-1">
+        <?php if((int)$term->parent) {
+          $parent_term = get_term( $term->parent, $taxonomyName );
+          $parent_id = $parent_term->term_id; 
+        } else {
+          $parent_id = get_queried_object_id();
+        }
+        $child_terms = get_terms($taxonomyName, array('parent' => $parent_id, 'hide_empty' => false ));
+        foreach ( $child_terms as $child ): ?>
+          <?php $get_link = get_term($child->term_id, $taxonomyName); ?>
+          <div class="px-1">
+            <div class="relative bg-indigo-100 text-black hover:bg-indigo-200 rounded px-6 py-3 mb-2">
+              <a href="<?php echo get_term_link( $get_link ); ?>" class="absolute-link"></a>
+              <div><span class="text-lg"><?php echo $child->name ?></span></div>
+            </div>
+          </div>
+        <?php endforeach; ?>
+      </div>
     </div>
     <div class="overflow-x-auto shadow-xl mb-10">
       <table class="w-full table-auto">
@@ -80,7 +92,7 @@ $term = get_term_by('slug', get_query_var('term'), $taxonomyName);
             </th>
           </tr>
         </thead>
-        <tbody class="text-sm">
+        <tbody id="response" class="text-sm">
           <?php 
             $current_page = !empty( $_GET['page'] ) ? $_GET['page'] : 1;
             $query = new WP_Query( array( 

@@ -82,3 +82,31 @@ $("#search_city_box").keyup(function () {
     }
   });
 });
+
+// Modals
+function openModal(attrModal) {
+  $(".modal[data-modal=" + attrModal + "]").addClass("open");
+  $(".modal-bg").removeClass("hidden").addClass("open");
+  $("body").addClass("overflow-hidden");
+}
+
+function closeModal(attrModal) {
+  $(".modal").removeClass("open");
+  $(".modal-bg").addClass("hidden").removeClass("open");
+  $("body").removeClass("overflow-hidden");
+}
+
+$(".modal-js").on("click", function (e) {
+  var clickModalData = $(this).data("modal");
+  openModal(clickModalData);
+});
+
+$(".modal_content_close").on("click", function () {
+  closeModal();
+});
+
+document.addEventListener("click", function (e) {
+  if (e.target.classList.value === "modal open") {
+    closeModal();
+  }
+});

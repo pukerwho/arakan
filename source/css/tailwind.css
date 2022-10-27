@@ -53,3 +53,7 @@
 .mobile-menu__list li {
   @apply font-light py-2;
 }
+
+.filter-checkbox {
+  @apply w-5 h-5 mr-2;
+}

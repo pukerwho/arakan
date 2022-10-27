@@ -150,7 +150,34 @@
 	
 </footer>
 
-<div class="modal-bg hidden w-full h-full fixed top-[68px] bg-gray-800"></div>
+<?php if ( is_tax( 'city' ) ): ?>
+<div class="modal" data-modal="filter">
+  <div class="modal_content bg-white dark:bg-dark-lg w-full lg:w-3/5 mx-4 lg:mx-auto">
+    <div class="relative border-b mb-4 py-4">
+      <div class="modal_content_close absolute left-4 top-1/2 -translate-y-1/2">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </div>
+      <div class="text-2xl text-center"><?php _e("Фильтры", "tarakan"); ?></div>
+    </div>
+    <div class="px-4 mb-4">
+      <div class="text-lg font-bold uppercase opacity-75 mb-4"><?php _e("Разное", "tarakan"); ?></div>
+      <div class="flex flex-wrap items-center lg:-mx-4 city-filter-form">
+        <?php get_template_part("template-parts/filters/city-filters"); ?>
+      </div>
+    </div>
+    <input type="hidden" value="<?php echo get_queried_object_id(); ?>" class="city-filter-id">
+    <div class="border-t py-4">
+      <div class="px-4">
+        <div class="inline-flex items-center relative bg-indigo-500 rounded text-white text-sm lg:text-md cursor-pointer px-4 lg:px-6 py-2 city-filter-submit-js"><?php _e("Применить", "tarakan"); ?></div>
+      </div>
+    </div>
+  </div>
+</div>
+<?php endif; ?>
+
+<div class="modal-bg hidden"></div>
 
 <?php wp_footer(); ?>
 
