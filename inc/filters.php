@@ -2,7 +2,8 @@
 
 function filter_places() {
   //Получаем данные
-  $current_cat_id = stripslashes_deep($_POST['city_id']);
+  $currentCatId = stripslashes_deep($_POST['city_id']);
+  $averageCheckValue = stripslashes_deep($_POST['averageCheckValue']);
   $keyArray = stripslashes_deep($_POST['keyArray']);
   foreach ($keyArray as $key) {
     $filter_meta[] = array(
@@ -19,7 +20,7 @@ function filter_places() {
     'tax_query' => array(
       array(
         'taxonomy' => 'city',
-        'terms' => $current_cat_id,
+        'terms' => $currentCatId,
         'field' => 'term_id',
         'include_children' => true,
         'operator' => 'IN'
@@ -28,6 +29,12 @@ function filter_places() {
     'meta_query' => array(
       'relation' => 'AND',
       $filter_meta,
+      array(
+        'key' => '_crb_place_price',
+        'value' => $averageCheckValue,
+        'compare' => '<',
+        'type'    => 'NUMERIC'
+      )
     )
   ) );
 

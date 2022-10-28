@@ -558,6 +558,9 @@ input[type="number"] {
     left: 0;
     overflow-y: auto !important;
     z-index: 12; }
+    @media (max-width: 767px) {
+      .modal.open {
+        align-items: flex-start; } }
   .modal_content {
     position: relative;
     border-radius: 4px;

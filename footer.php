@@ -152,7 +152,7 @@
 
 <?php if ( is_tax( 'city' ) ): ?>
 <div class="modal" data-modal="filter">
-  <div class="modal_content bg-white dark:bg-dark-lg w-full lg:w-3/5 mx-4 lg:mx-auto">
+  <div class="modal_content bg-white dark:bg-dark-lg w-full lg:w-3/5 mx-4 my-4 lg:my-0 lg:mx-auto">
     <div class="relative border-b mb-4 py-4">
       <div class="modal_content_close absolute left-4 top-1/2 -translate-y-1/2">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -162,6 +162,16 @@
       <div class="text-2xl text-center"><?php _e("Фильтры", "tarakan"); ?></div>
     </div>
     <div class="px-4 mb-4">
+      <div>
+        <div class="text-lg font-bold uppercase opacity-75 mb-4"><?php _e("Средний чек", "tarakan"); ?> до: <span class="text-indigo-600 average-check-value-html-js">3000</span> грн.</div> 
+        <div class="mb-6">
+          <input type="range" value="3000" min="1" max="3000" class="w-full average-check-value-js"></input>
+          <div class="flex justify-between items-center">
+            <div class="border border-gray-300 rounded px-3 py-1">1</div>
+            <div class="border border-gray-300 rounded px-3 py-1">3000</div>
+          </div>
+        </div>
+      </div>
       <div class="text-lg font-bold uppercase opacity-75 mb-4"><?php _e("Разное", "tarakan"); ?></div>
       <div class="flex flex-wrap items-center lg:-mx-4 city-filter-form">
         <?php get_template_part("template-parts/filters/city-filters"); ?>

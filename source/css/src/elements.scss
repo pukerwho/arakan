@@ -283,6 +283,9 @@
     left: 0;
     overflow-y: auto !important;
     z-index: 12;
+    @include for-phone {
+      align-items: flex-start;
+    }
   }
   &_content {
     position: relative;
