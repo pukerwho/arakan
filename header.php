@@ -2,6 +2,10 @@
 
 $current_title = wp_get_document_title();
 
+if ( is_singular( 'post' ) ) {
+  $current_description = carbon_get_the_post_meta('crb_post_description');
+}
+
 if ( is_singular( 'places' ) ) {
 	//Название заведения
 	$place_title = get_the_title();
