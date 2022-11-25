@@ -61,7 +61,12 @@
             <?php _e('Автор', 'tarakan'); ?>
           </div>
           <div class="font-light text-gray-600">
-            <?php echo get_the_author(); ?>
+            <?php if (carbon_get_the_post_meta('crb_post_author')) {
+              echo carbon_get_the_post_meta('crb_post_author');
+            } else {
+              echo get_the_author();
+            }
+            ?>
           </div>
         </div>
       </div>  
