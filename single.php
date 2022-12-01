@@ -49,6 +49,12 @@
           <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>" class="w-full h-full object-cover rounded-lg">
         </div>
       	<div class="content">
+          <div class="single-subjects mb-5">
+            <div class="text-2xl font-bold uppercase mb-3">
+              <?php _e('Содержание','tarakan'); ?>:
+            </div>
+            <div class="single-subjects-inner"></div>
+          </div>
       		<?php the_content(); ?>	
       	</div>
       </div>

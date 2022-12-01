@@ -307,3 +307,13 @@
     z-index: 11;
   }
 }
+
+.single-subjects-inner {
+  li {
+    padding-left: 0;
+    margin-bottom: 0.25rem;
+    &:before {
+      content: none;
+    }
+  }
+}

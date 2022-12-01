@@ -576,3 +576,9 @@ input[type="number"] {
   -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
   z-index: 11; }
+
+.single-subjects-inner li {
+  padding-left: 0;
+  margin-bottom: 0.25rem; }
+  .single-subjects-inner li:before {
+    content: none; }
