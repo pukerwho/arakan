@@ -230,7 +230,7 @@ if (is_tax( 'city' )) {
 
           <!-- right side -->
           <div class="text-sm text-gray-700">
-            <?php _e("Посетителей online", "tarakan"); ?>: 4
+            <?php _e("Посетителей", "tarakan"); ?> online: <span id="visits"></span>
           </div>
         </div>
       </div>
