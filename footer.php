@@ -151,7 +151,7 @@
 </footer>
 
 <!-- Telegram -->
-<div class="w-full fixed block md:hidden bottom-2 px-4 z-9">
+<div class="w-full fixed block md:hidden bottom-2 px-4 z-1">
   <div class="bg-blue-500 relative rounded-md px-4 py-3">
     <a href="https://t.me/joinchat/ULWsxKhqmr85YzQ6" class="w-full h-full absolute t-0 l-0 js-analytics" data-analytics-category="Footer" data-analytics-action="Ссылка на телеграм"></a>
     <div class="flex items-center justify-center">
