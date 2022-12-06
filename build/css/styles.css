@@ -354,6 +354,12 @@ input[type="number"] {
   .top-menu .sub-menu a:hover {
     color: #ef6f70; }
 
+.menu-categories ul {
+  margin: 0 -1rem; }
+
+.menu-categories li {
+  padding: 0 1rem; }
+
 .breadcrumbs_item {
   position: relative;
   color: var(--color_purple); }

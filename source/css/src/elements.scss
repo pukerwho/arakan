@@ -40,6 +40,15 @@
   }
 }
 
+.menu-categories {
+  ul {
+    margin: 0 -1rem;
+  }
+  li {
+    padding: 0 1rem;
+  }
+}
+
 .breadcrumbs {
   &_item {
     position: relative;

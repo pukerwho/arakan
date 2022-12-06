@@ -87,115 +87,154 @@ if (is_tax( 'city' )) {
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
-	<header class="w-full absolute left-0 top-0 bg-white py-4 z-11">
-		<div class="container px-2 lg:px-5 mx-auto">
-			<div class="flex items-center justify-between">
+	<header class="w-full absolute left-0 top-0 z-11">
+    <div class="bg-gray-100 py-2">
+      <div class="container px-2 lg:px-5 mx-auto">
+        <div class="flex items-center justify-between">
 
-				<!-- Left Side -->
-				<div class="flex items-center">
-					<!-- Лого -->
-					<div class="text-2xl font-semibold mr-4 lg:mr-6">
-						<a href="<?php echo home_url(); ?>">
-							<span class="w-[35px] h-[35px] inline-flex justify-center items-center bg-gradient-to-r from-indigo-600 to-indigo-400 rounded-lg text-white">T</span>
-						</a>
-					</div>
-					<!-- END Лого -->
+          <!-- Left Side -->
+          <div class="flex items-center">
+            <!-- Лого -->
+            <div class="text-2xl font-semibold mr-4 lg:mr-6">
+              <a href="<?php echo home_url(); ?>">
+                <span class="w-[35px] h-[35px] inline-flex justify-center items-center bg-gradient-to-r from-indigo-600 to-indigo-400 rounded-lg text-white">T</span>
+              </a>
+            </div>
+            <!-- END Лого -->
 
-					<!-- Категории -->
-					<div class="hidden lg:block top-menu relative border-r-2 pr-6 mr-6">
+            <!-- Menu -->
+            <div class="header-menu hidden lg:block mr-2">
+              <?php wp_nav_menu([
+                'theme_location' => 'menu-1',
+                'container' => 'div',
+                'menu_class' => 'flex',
+              ]); ?> 
+            </div>
+            <!-- END Menu -->
 
-						<div class="flex items-center hover:text-red-400 cursor-pointer">
-							<div class="mr-2">
-								<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-								  <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
-								</svg>
-							</div>
-							<div>
-								<?php _e('Категории', 'tarakan'); ?>	
-							</div>
-						</div>
-						
-						<div class="sub-menu absolute left-0 top-8 bg-white rounded shadow-2xl border border-gray-100 -mt-2">
-							<ul>
-								<?php $footer_categories = get_terms( array( 
-	                'taxonomy' => 'place-type', 
-	                'parent' => 0, 
-	                'hide_empty' => false,
-	              ));
-	              foreach ( $footer_categories as $footer_category ): ?>
-	                <li class="font-light text-sm px-4 py-2 border-b border-gray-200">
-	                  <a href="<?php echo get_term_link($footer_category); ?>"><?php echo $footer_category->name ?></a>
-	                </li>
-	              <?php endforeach; ?>
-              </ul>
-						</div>
-					</div>
-					<!-- END Категории -->
+            <div class="hidden md:block border-l-2 pl-4 ml-4 mr-6">
+              <div class="flex items-center -mx-2">
+                <div class="px-2">
+                  <div class="relative">
+                    <a href="https://www.facebook.com/tarakanua/" class="absolute-link" target="_blank"></a>
+                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/facebook-logo.svg" width="20">
+                  </div>
+                </div>
+                <div class="px-2">
+                  <div class="relative">
+                    <a href="https://t.me/joinchat/ULWsxKhqmr85YzQ6" class="absolute-link" target="_blank"></a>
+                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/telegram-logo.svg" width="20">
+                  </div>
+                </div>
+              </div>
+            </div>
 
-					<!-- Блог -->
-					<div class="header-menu hidden lg:block mr-6">
-						<?php wp_nav_menu([
-              'theme_location' => 'menu-1',
-              'container' => 'div',
-              'menu_class' => 'flex',
-            ]); ?> 
-					</div>
-					<!-- END Блог -->
+            <!-- Поиск -->
+            <div class="hidden w-full">
+              <?php echo get_search_form(); ?>	
+            </div>
+            <!-- END Поиск -->
 
-					<!-- Поиск -->
-					<div class="hidden w-full">
-						<?php echo get_search_form(); ?>	
-					</div>
-					<!-- END Поиск -->
-
-				</div>
-				<!-- END Left Side -->
-
-				<!-- Right Side -->
-				<div class="flex items-center">
-
-					<!-- Кнопка Добавить -->
-					<div class="flex items-center relative bg-indigo-500 rounded text-white text-sm lg:text-md px-4 lg:px-6 py-2 mr-6 lg:mr-4">
-						<a href="<?php echo get_page_url('page-add'); ?>" class="w-full h-full absolute top-0 left-0 z-1"></a>
-						<div class="mr-2">
-							<?php _e('Добавить', 'tarakan'); ?>
-						</div>
-						<div>
-							<svg xmlns="http://www.w3.org/2000/svg" class="h-5 lg:h-6 w-5 lg:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-							  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-							</svg>
-						</div>
-					</div>
-					<!-- END Кнопка Добавить -->
-					
-					<!-- Переключатель языка -->
-					<div class="lang hidden lg:flex items-center shadow">
-            <?php if (function_exists('pll_the_languages')) { 
-              pll_the_languages(); 
-            } ?>
           </div>
-          <!-- END Переключатель языка -->
+          <!-- END Left Side -->
 
-					<!-- Гамбургер -->
-					<div class="hamburger-toggle block lg:hidden relative">
-						<div class="hamburger-toggle__open">
-							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
-								<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5" />
-							</svg>
-						</div>
-						<div class="hamburger-toggle__close hidden">
-							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
-								<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-							</svg>
-						</div>
-						
-					</div>
-					<!-- END Гамбургер -->
+          <!-- Right Side -->
+          <div class="flex items-center">
 
-				</div>
-				<!-- END Right Side -->
-			</div>
-		</div>
+            <!-- Кнопка Добавить -->
+            <div class="flex items-center relative bg-indigo-500 rounded text-white text-sm lg:text-md px-4 lg:px-6 py-2 mr-6 lg:mr-4">
+              <a href="<?php echo get_page_url('page-add'); ?>" class="w-full h-full absolute top-0 left-0 z-1"></a>
+              <div class="mr-2">
+                <?php _e('Добавить', 'tarakan'); ?>
+              </div>
+              <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 lg:h-6 w-5 lg:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                </svg>
+              </div>
+            </div>
+            <!-- END Кнопка Добавить -->
+            
+            <!-- Переключатель языка -->
+            <div class="lang hidden lg:flex items-center shadow">
+              <?php if (function_exists('pll_the_languages')) { 
+                pll_the_languages(); 
+              } ?>
+            </div>
+            <!-- END Переключатель языка -->
+
+            <!-- Гамбургер -->
+            <div class="hamburger-toggle block lg:hidden relative">
+              <div class="hamburger-toggle__open">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5" />
+                </svg>
+              </div>
+              <div class="hamburger-toggle__close hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </div>
+              
+            </div>
+            <!-- END Гамбургер -->
+
+          </div>
+          <!-- END Right Side -->
+        </div>
+      </div>
+    </div>
+    <div class="hidden lg:block bg-white py-2">
+      <div class="container px-2 lg:px-5 mx-auto">
+        <div class="flex items-center justify-between relative">
+          <!-- left side -->
+          <div class="flex items-center">
+            <div class="menu-categories mr-4">
+              <?php wp_nav_menu([
+                'theme_location' => 'main_cat',
+                'container' => 'div',
+                'menu_class' => 'flex',
+              ]); ?> 
+            </div>
+            <!-- Категории -->
+            <div class="top-menu border-l-2 ml-4 pl-4">
+
+              <div class="flex items-center hover:text-red-400 cursor-pointer">
+                <div class="mr-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
+                  </svg>
+                </div>
+                <div>
+                  <?php _e('Все категории', 'tarakan'); ?>	
+                </div>
+              </div>
+              
+              <div class="sub-menu w-full absolute left-0 top-8 -mt-2">
+                <ul class="flex items-center flex-wrap bg-white rounded shadow-2xl border border-gray-100 lg:-mx-4">
+                  <?php $footer_categories = get_terms( array( 
+                    'taxonomy' => 'place-type', 
+                    'parent' => 0, 
+                    'hide_empty' => false,
+                  ));
+                  foreach ( $footer_categories as $footer_category ): ?>
+                    <li class="w-full lg:w-1/4 font-light px-4 py-2 border-b border-gray-200 lg:px-4">
+                      <a href="<?php echo get_term_link($footer_category); ?>"><?php echo $footer_category->name ?></a>
+                    </li>
+                  <?php endforeach; ?>
+                </ul>
+              </div>
+            </div>
+            <!-- END Категории -->
+          </div>
+
+          <!-- right side -->
+          <div class="text-sm text-gray-700">
+            <?php _e("Посетителей online", "tarakan"); ?>: 4
+          </div>
+        </div>
+      </div>
+    </div>
 	</header><!-- #masthead -->
 
 	<!-- На мобильном поиск -->
