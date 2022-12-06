@@ -230,7 +230,7 @@ if (is_tax( 'city' )) {
 
           <!-- right side -->
           <div class="text-sm text-gray-700">
-            <?php _e("Посетителей", "tarakan"); ?> online: <span id="visits"></span>
+            <?php _e("Обновлено", "tarakan"); ?>: <?php echo get_the_date("d.m.Y"); ?>
           </div>
         </div>
       </div>

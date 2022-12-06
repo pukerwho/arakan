@@ -204,13 +204,6 @@
 <?php endif; ?>
 
 <div class="modal-bg hidden"></div>
-<script async src="https://api.countapi.xyz/hit/tarakan.org.ua/926b1dde-44bf-439d-af52-2b3098d4843d?callback=websiteVisits"></script>
-
-<script>
-  function websiteVisits(response) {
-    document.querySelector("#visits").textContent = response.value;
-  }
-</script>
 
 <?php wp_footer(); ?>
 
