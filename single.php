@@ -66,13 +66,23 @@
           <div class="font-semibold mr-2">
             <?php _e('Автор', 'tarakan'); ?>
           </div>
-          <div class="font-light text-gray-600">
-            <?php if (carbon_get_the_post_meta('crb_post_author')) {
-              echo carbon_get_the_post_meta('crb_post_author');
-            } else {
-              echo get_the_author();
-            }
-            ?>
+          <div class="text-right font-light text-gray-600">
+            <?php if (carbon_get_the_post_meta('crb_post_author')): ?>
+              <span class="text-right italic"><?php echo carbon_get_the_post_meta('crb_post_author'); ?></span>
+              <div class="flex items-center text-sm">
+                <!-- instagram -->
+                <?php if (carbon_get_the_post_meta('crb_post_author_instagram')): ?>
+                  <div class="italic pl-3"><a href="<?php echo carbon_get_the_post_meta('crb_post_author_instagram'); ?>" class="text-indigo-500">Instagram</a></div>
+                <?php endif; ?>
+                <!-- facebook --> 
+                <?php if (carbon_get_the_post_meta('crb_post_author_facebook')): ?>
+                  <div class="italic pl-3"><a href="<?php echo carbon_get_the_post_meta('crb_post_author_facebook'); ?>" class="text-indigo-500">Facebook</a></div>
+                <?php endif; ?>
+              </div>
+
+            <?php else: ?>
+              <?php echo get_the_author(); ?>
+            <?php endif; ?>
           </div>
         </div>
       </div>  

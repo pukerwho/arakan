@@ -172,21 +172,28 @@
     line-height: 1.65;
     font-weight: 300;
     margin: 20px 0;
-  }
-  li {
-    position: relative;
-    padding-left: 20px;
-    &:before {
-      content: "";
-      width: 10px;
-      height: 10px;
-      position: absolute;
-      top: 11px;
-      left: 0;
-      background-color: #60cc7d;
-      border-radius: 50%;
+    li {
+      position: relative;
+      padding-left: 20px;
+      &:before {
+        content: "";
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        top: 11px;
+        left: 0;
+        background-color: #60cc7d;
+        border-radius: 50%;
+      }
     }
   }
+  ol {
+    margin-left: 20px;
+    li {
+      list-style-type: decimal;
+    }
+  }
+
   .wp-caption,
   .wp-block-image {
     width: 80% !important;

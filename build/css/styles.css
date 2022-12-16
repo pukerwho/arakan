@@ -463,19 +463,23 @@ input[type="number"] {
   line-height: 1.65;
   font-weight: 300;
   margin: 20px 0; }
+  .content ul li {
+    position: relative;
+    padding-left: 20px; }
+    .content ul li:before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      position: absolute;
+      top: 11px;
+      left: 0;
+      background-color: #60cc7d;
+      border-radius: 50%; }
 
-.content li {
-  position: relative;
-  padding-left: 20px; }
-  .content li:before {
-    content: "";
-    width: 10px;
-    height: 10px;
-    position: absolute;
-    top: 11px;
-    left: 0;
-    background-color: #60cc7d;
-    border-radius: 50%; }
+.content ol {
+  margin-left: 20px; }
+  .content ol li {
+    list-style-type: decimal; }
 
 .content .wp-caption,
 .content .wp-block-image {
