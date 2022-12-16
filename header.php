@@ -90,7 +90,11 @@ if (is_tax( 'city' )) {
       ?>
       <meta property="og:description" content="<?php echo mb_strimwidth($content_text_for_description, 0, 150, '...'); ?>" />
     <?php endif; ?>
-    <meta property="og:image" content="<?php echo get_the_post_thumbnail_url(); ?>">
+    <?php if (get_the_post_thumbnail_url()): ?>
+      <meta property="og:image" content="<?php echo get_the_post_thumbnail_url(); ?>">
+    <?php else: ?>
+      <meta property="og:image" content="<?php echo get_stylesheet_directory_uri(); ?>/img/check-tarakan.png">  
+    <?php endif; ?>
     <?php $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>
     <meta property="og:url" content="<?php echo $actual_link; ?>" />
     <meta property="og:article:published_time" content="<?php echo get_post_time('Y/n/j'); ?>" />
@@ -102,8 +106,6 @@ if (is_tax( 'city' )) {
       <meta property="og:article:author" content="<?php echo get_the_author(); ?>" />
     <?php endif; ?>
   
-  <?php else: ?>
-    <meta property="og:image" content="<?php echo get_stylesheet_directory_uri(); ?>/img/check-tarakan.png">
   <?php endif; ?>
 	
 	<?php wp_head(); ?>
