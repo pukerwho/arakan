@@ -52,7 +52,7 @@
             </a>
             <?php if (is_home()): ?>
               <a href="https://webgolovolomki.com/" class="pl-2">
-                <img src="https://sdamkvartiry.com/wp-content/uploads/2022/11/web-g.jpg" width="20">
+                <img src="https://tarakan.org.ua/wp-content/uploads/2022/11/web-g.jpg" width="20">
               </a>
             <?php endif; ?>
           </div>
