@@ -46,10 +46,15 @@
               <?php _e('отзывов', 'tarakan'); ?>
             </div>
           </div>
-          <div>
+          <div class="flex items-center">
             <a href="https://sdamkvartiry.com/">
               <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/sdamkvartiry.jpg" alt="">
             </a>
+            <?php if (is_home()): ?>
+              <a href="https://webgolovolomki.com/" class="pl-2">
+                <img src="https://sdamkvartiry.com/wp-content/uploads/2022/11/web-g.jpg" width="20">
+              </a>
+            <?php endif; ?>
           </div>
         </div>
 
