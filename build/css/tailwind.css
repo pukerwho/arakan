@@ -1169,6 +1169,9 @@ video {
 .pr-5 {
 	padding-right: 1.25rem;
 }
+.pl-2 {
+	padding-left: 0.5rem;
+}
 .pl-4 {
 	padding-left: 1rem;
 }
