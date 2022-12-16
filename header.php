@@ -18,9 +18,9 @@ if ( is_singular( 'places' ) ) {
   } 
   //SEO
   if (get_locale() === 'ru_RU') {
-  	$after_title = 'Отзывы, контакты, телефоны';
+  	$after_title = 'Отзывы, контакты, телефоны, доставка';
   } else {
-  	$after_title = 'Відгуки, контакти, телефони';
+  	$after_title = 'Відгуки, контакти, телефони, доставка';
   }
 	
 	$current_title = $place_title . ' (' . $current_city . ') - ' . $after_title;
