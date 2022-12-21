@@ -6,13 +6,13 @@ Template Post Type: page, places
 
 get_header(); 
 ?>
+
+<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 <?php 
   $current_id = get_the_ID();
   $countNumber = tutCount(get_the_ID());
   getMeta($current_id);
 ?>
-
-
   <div>
     <div class="bg-gradient-to-r from-indigo-600 to-indigo-400 pt-20 pb-32 lg:py-32">
       <div class="container mx-auto px-2 lg:px-5">
@@ -579,6 +579,6 @@ get_header();
       </div>
     </div>
   </div>
-
+<?php endwhile; endif; wp_reset_postdata();  ?>
 
 <?php get_footer();
