@@ -1,4 +1,8 @@
 <?php
+/*
+Template Name: Place School
+Template Post Type: page, post
+*/
 
 get_header(); 
 ?>
