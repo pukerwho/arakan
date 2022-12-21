@@ -1,7 +1,7 @@
 <?php
 /*
 Template Name: PlaceSchool
-Template Post Type: page, places
+Template Post Type: places
 */
 
 get_header(); 
