@@ -579,6 +579,6 @@ get_header();
       </div>
     </div>
   </div>
-<?php endwhile; endif; ?>
+<?php endwhile; endif; wp_reset_postdata();  ?>
 
 <?php get_footer();
