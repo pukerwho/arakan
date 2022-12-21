@@ -333,3 +333,10 @@
     }
   }
 }
+
+.place-school-items {
+  position: relative;
+  &:not(:last-of-type):after {
+    content: ",";
+  }
+}

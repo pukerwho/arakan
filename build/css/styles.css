@@ -592,3 +592,8 @@ input[type="number"] {
   margin-bottom: 0.25rem; }
   .single-subjects-inner li:before {
     content: none; }
+
+.place-school-items {
+  position: relative; }
+  .place-school-items:not(:last-of-type):after {
+    content: ","; }
