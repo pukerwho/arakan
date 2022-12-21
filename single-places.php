@@ -58,7 +58,7 @@
       <div class="bg-white shadow-lg rounded-lg mb-12">
         <div class="flex flex-col lg:flex-row lg:-mx-2">
           <div class="w-full lg:w-8/12 lg:px-16 lg:py-10 lg:border-r-2 mb-4 lg:mb-0">
-            <div class="border-b-2 pb-8 mb-8">
+            <div class="border-b-2 px-4 lg:px-0 pt-4 lg:pt-0 pb-8 mb-8">
               <div class="text-2xl mb-12"><span class="border-b-4 border-indigo-500">🤔 <?php _e("Что известно про место?", "tarakan"); ?></span></div>
               
               <!-- Parking -->
