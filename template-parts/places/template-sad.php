@@ -1,6 +1,6 @@
 <?php
-$current_id = get_the_ID();
-getMeta($current_id);
+  $current_id = get_the_ID();
+  getMeta($current_id);
 ?>
 <div>
   <!-- свободные места -->

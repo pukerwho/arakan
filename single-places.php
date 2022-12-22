@@ -274,12 +274,19 @@
                 'posts_per_page' => 5,
                 'post__not_in' => array($current_id),
                 'tax_query' => array(
+                  'relation' => 'AND',
                   array(
                     'taxonomy' => 'city',
                     'terms' => $c_term[0]->term_id,
                     'field' => 'term_id',
                     'include_children' => true,
                     'operator' => 'IN'
+                  ),
+                  array(
+                    'taxonomy' => 'place-type',
+                    'field'    => 'term_id',
+                    'terms'    => array( 30255, 30257 ),
+                    'operator' => 'NOT IN',
                   )
                 ),
               ) );

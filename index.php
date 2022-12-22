@@ -228,7 +228,15 @@ get_header();
 											'value'     => 4,
 											'compare'   => '>'
 										)
-									)
+                  ),
+                  'tax_query' => array(
+                    array(
+                      'taxonomy' => 'place-type',
+                      'field'    => 'term_id',
+                      'terms'    => array( 30255, 30257 ),
+                      'operator' => 'NOT IN',
+                    )
+                  ),
 								));
 								if ($popular_places_query->have_posts()) : while ($popular_places_query->have_posts()) : $popular_places_query->the_post(); ?>
 									<?php get_template_part('template-parts/place-item-table'); ?>
@@ -288,6 +296,14 @@ get_header();
 								'post_type' => 'places',
 								'orderby' => 'date',
 								'posts_per_page' => 10,
+                'tax_query' => array(
+                  array(
+                    'taxonomy' => 'place-type',
+                    'field'    => 'term_id',
+                    'terms'    => array( 30255, 30257 ),
+                    'operator' => 'NOT IN',
+                  )
+                ),
 							));
 							if ($popular_places_query->have_posts()) : while ($popular_places_query->have_posts()) : $popular_places_query->the_post(); ?>
 								<?php get_template_part('template-parts/place-item-table'); ?>
