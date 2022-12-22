@@ -268,7 +268,6 @@
             <tbody class="text-sm">
               <?php 
                 $c_term = wp_get_post_terms(  get_the_ID() , 'city', array( 'parent' => 0 ) );
-                $type_term = wp_get_post_terms(  get_the_ID() , 'place-type', array( 'parent' => 0 ) );
                 $current_id = get_the_ID();
                 $custom_query = new WP_Query( array( 
                 'post_type' => 'places', 
@@ -285,7 +284,7 @@
                   ),
                   array(
                     'taxonomy' => 'place-type',
-                    'terms' => $type_term[0]->term_id,
+                    'terms' => $myterm->term_id,
                     'field' => 'term_id',
                     'include_children' => true,
                     'operator' => 'IN'
