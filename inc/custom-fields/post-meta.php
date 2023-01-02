@@ -13,6 +13,7 @@ function crb_post_theme_options() {
       Field::make( 'text', 'crb_post_author_facebook', 'Фейсбук автора' ),
       Field::make( 'text', 'crb_post_title', 'Title' ),
       Field::make( 'textarea', 'crb_post_description', 'Description' ),
+      Field::make( 'text', 'crb_post_keywords', 'Keywords' ),
   ) );
 	Container::make( 'post_meta', 'More' )
     ->where( 'post_type', '=', 'places' )
