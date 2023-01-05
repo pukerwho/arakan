@@ -48,7 +48,7 @@
           </div>
           <div class="flex items-center">
             <a href="https://sdamkvartiry.com/">
-              <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/sdamkvartiry.jpg" alt="">
+              <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/sdamkvartiry.jpg" alt="">
             </a>
             <?php if (is_home()): ?>
               <a href="https://webgolovolomki.com/" class="pl-2">
@@ -110,6 +110,7 @@
         <div class="footer_treba_links-flex">
           <div class="footer_treba_links-tab active" data-seo-tab="search"><?php _e('Сейчас ищут', 'tarakan'); ?></div>
           <div class="footer_treba_links-tab" data-seo-tab="cities"><?php _e('Города' ,'tarakan'); ?></div>
+          <div class="footer_treba_links-tab" data-seo-tab="places"><?php _e('Заведения' ,'tarakan'); ?></div>
         </div>
         <div class="footer_treba_links-content active" data-seo-content-tab="search">
           <?php do_shortcode('[render-footer-links]'); ?>
@@ -124,10 +125,21 @@
               'hide_empty' => false,
             ));
             shuffle( $home_cities );
-            foreach ( $home_cities as $home_city ): ?>
+            foreach ( array_slice($home_cities, 0, 9) as $home_city ): ?>
               <div class="w-full lg:w-1/3 lg:px-4 mb-1"><a href="<?php echo get_term_link($home_city); ?>" class=""><?php echo $home_city->name ?></a></div>
             <?php endforeach; ?>
           </div>
+        </div>
+        <div class="footer_treba_links-content" data-seo-content-tab="places">
+          <?php 
+            $footer_places = new WP_Query( array(
+              'post_type' => 'places',
+              'orderby' => 'rand',
+              'posts_per_page' => 15,
+            ));
+            if ($footer_places->have_posts()) : while ($footer_places->have_posts()) : $footer_places->the_post(); ?>
+              <div class="w-full lg:w-1/3 lg:px-4 mb-1"><a href="<?php the_permalink(); ?>" class=""><?php the_title(); ?></a></div>
+          <?php endwhile; endif; wp_reset_postdata(); ?>
         </div>
       </div>
     </div>

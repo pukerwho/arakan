@@ -54,7 +54,7 @@
     position: relative;
     color: var(--color_purple);
     &:first-of-type {
-      background: url("../../img/home.svg");
+      background: url("../../images/home.svg");
       background-repeat: no-repeat;
       background-size: contain;
     }
@@ -71,7 +71,7 @@
       position: absolute;
       top: 51%;
       right: -2rem;
-      background: url("../../img/breadcrumbs-arrow.svg");
+      background: url("../../images/breadcrumbs-arrow.svg");
       background-size: contain;
       background-repeat: no-repeat;
       -webkit-transform: translateY(-50%) translateX(-100%);
@@ -101,7 +101,7 @@
     padding: 8px 15px;
   }
   .next {
-    background-image: url("../../img/pagination-next.svg");
+    background-image: url("../../images/pagination-next.svg");
     width: 9px;
     height: 14px;
     background-position: 50%;
@@ -109,7 +109,7 @@
     background-size: 60%;
   }
   .prev {
-    background-image: url("../../img/pagination-prev.svg");
+    background-image: url("../../images/pagination-prev.svg");
     width: 9px;
     height: 14px;
     background-position: 50%;
@@ -138,7 +138,7 @@
 }
 
 .sketch-underline {
-  background: url("../../img/hr.svg") bottom left/100% 0.75rem no-repeat;
+  background: url("../../images/hr.svg") bottom left/100% 0.75rem no-repeat;
   padding-bottom: 0.1rem;
 }
 

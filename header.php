@@ -3,7 +3,12 @@
 $current_title = wp_get_document_title();
 
 if ( is_singular( 'post' ) ) {
-  $current_description = carbon_get_the_post_meta('crb_post_description');
+  if (carbon_get_the_post_meta('crb_post_title')) {
+    $current_title = carbon_get_the_post_meta('crb_post_title');
+  }
+  if (carbon_get_the_post_meta('crb_post_title')) {
+    $current_description = carbon_get_the_post_meta('crb_post_description');
+  }
 }
 
 if ( is_singular( 'places' ) ) {
@@ -93,7 +98,7 @@ if (is_tax( 'city' )) {
     <?php if (get_the_post_thumbnail_url()): ?>
       <meta property="og:image" content="<?php echo get_the_post_thumbnail_url(); ?>">
     <?php else: ?>
-      <meta property="og:image" content="<?php echo get_stylesheet_directory_uri(); ?>/img/check-tarakan.png">  
+      <meta property="og:image" content="<?php echo get_stylesheet_directory_uri(); ?>/images/check-tarakan.png">  
     <?php endif; ?>
     <?php $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>
     <meta property="og:url" content="<?php echo $actual_link; ?>" />
@@ -145,13 +150,13 @@ if (is_tax( 'city' )) {
                 <div class="px-2">
                   <div class="relative">
                     <a href="https://www.facebook.com/tarakanua/" class="absolute-link" target="_blank"></a>
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/facebook-logo.svg" width="20">
+                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/facebook-logo.svg" width="20">
                   </div>
                 </div>
                 <div class="px-2">
                   <div class="relative">
                     <a href="https://t.me/joinchat/ULWsxKhqmr85YzQ6" class="absolute-link" target="_blank"></a>
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/telegram-logo.svg" width="20">
+                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/telegram-logo.svg" width="20">
                   </div>
                 </div>
               </div>
@@ -212,7 +217,7 @@ if (is_tax( 'city' )) {
         </div>
       </div>
     </div>
-    <div class="hidden lg:block bg-white py-2">
+    <div class="hidden lg:block bg-white border-b border-gray-300 py-2">
       <div class="container px-2 lg:px-5 mx-auto">
         <div class="flex items-center justify-between relative">
           <!-- left side -->
