@@ -33,25 +33,24 @@ $(".place_tab").on("click", function (e) {
   );
 });
 
-var swiperPopularProduct = new Swiper(".swiper-popular-product-container", {
-  slidesPerView: 3,
-  spaceBetween: 16,
-  loop: true,
-  autoplay: {
-    delay: 5000,
-  },
-  breakpoints: {
-    // when window width is >= 320px
-    769: {
-      slidesPerView: 2,
-      spaceBetween: 20,
-    },
-  },
-  navigation: {
-    nextEl: ".popular_arrows_next",
-    prevEl: ".popular_arrows_prev",
-  },
-});
+// var swiperPopularProduct = new Swiper(".swiper-popular-product-container", {
+//   slidesPerView: 3,
+//   spaceBetween: 16,
+//   loop: true,
+//   autoplay: {
+//     delay: 5000,
+//   },
+//   breakpoints: {
+//     769: {
+//       slidesPerView: 2,
+//       spaceBetween: 20,
+//     },
+//   },
+//   navigation: {
+//     nextEl: ".popular_arrows_next",
+//     prevEl: ".popular_arrows_prev",
+//   },
+// });
 
 function readingTime() {
   const text = document.querySelector(".single-post .content").innerText;
