@@ -1,3 +1,5 @@
+var $ = require("jquery");
+
 $(".average-check-value-js").on("change", function () {
   var averageValue = $(".average-check-value-js").val();
   $(".average-check-value-html-js").html(averageValue);
@@ -5,7 +7,7 @@ $(".average-check-value-js").on("change", function () {
 $(".city-filter-submit-js").on("click", function () {
   let city_id = $(".city-filter-id").val();
   let averageCheckValue = $(".average-check-value-js").val();
-  console.log(averageCheckValue);;
+  console.log(averageCheckValue);
   let keyArray = [];
   let checkedInputs = document.querySelectorAll(".filter-checkbox:checked");
   for (checkedInput of checkedInputs) {

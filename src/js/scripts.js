@@ -1,3 +1,5 @@
+var $ = require("jquery");
+
 $(".hamburger-toggle").on("click", function () {
   $(".hamburger-toggle__open").toggleClass("hidden");
   $(".hamburger-toggle__close").toggleClass("hidden");
