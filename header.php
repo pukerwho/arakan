@@ -17,7 +17,7 @@ if ( is_home() ) {
 // FOR POSTs
 if ( is_singular( 'post' ) ) {
   $post_title = carbon_get_the_post_meta('crb_post_title');
-  $post_description = carbon_get_the_post_meta('crb_post_description')
+  $post_description = carbon_get_the_post_meta('crb_post_description');
   if ($post_title) {
     $current_title = $post_title;
   }
