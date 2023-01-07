@@ -3,6 +3,7 @@
 <?php 
   $current_id = get_the_ID();
   $countNumber = tutCount(get_the_ID());
+  $c_term = wp_get_post_terms(  get_the_ID() , 'city', array( 'parent' => 0 ) );
 ?>
 
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
@@ -40,13 +41,9 @@
         </div>
         <!-- END Хлебные крошки -->
         <h1 class="text-2xl lg:text-4xl text-white font-semibold"><?php the_title(); ?> 
-          <?php 
-          $current_city = wp_get_post_terms(  get_the_ID() , 'city', array( 'parent' => 0 ) );
-          foreach (array_slice($current_city, 0,1) as $city); {
-          } ?>
-          <?php if ($city): ?>
+          <?php if ($c_term[0]): ?>
           <span class="text-xl lg:text-2xl text-gray-200">
-          , <?php echo $city->name; ?>
+          , <?php echo $c_term[0]->name; ?>
           </span>
           <?php endif; ?>
         </h1>
@@ -61,8 +58,10 @@
               <div class="text-2xl mb-12"><span class="border-b-4 border-indigo-500">🤔 <?php _e("Что известно про место?", "tarakan"); ?></span></div>
 
               <!-- template sad -->
-              <?php if (carbon_get_the_post_meta('crb_template_sad')): ?>
+              <?php if (carbon_get_the_post_meta('crb_template_sad') === 'yes'): ?>
                 <?php echo get_template_part('template-parts/places/template-sad'); ?>
+              <?php elseif (carbon_get_the_post_meta('crb_template_school') === 'yes'): ?>
+                <?php echo get_template_part('template-parts/places/template-school'); ?>
               <?php else: ?>
                 <?php echo get_template_part('template-parts/places/template-other'); ?>
               <?php endif; ?>
@@ -121,12 +120,14 @@
                 <span class="font-semibold"><?php _e('Телефоны', 'tarakan'); ?></span>: <span class=""><?php echo carbon_get_the_post_meta('crb_place_phones'); ?></span>
               </div>
 
+              <?php if (carbon_get_the_post_meta('crb_place_email')): ?>
               <div class="text-gray-700 mb-4">
                 <span class="font-semibold"><?php _e('Email', 'tarakan'); ?></span>: <span class=""><?php echo carbon_get_the_post_meta('crb_place_email'); ?></span>
               </div>
+              <?php endif; ?>
 
               <?php if (carbon_get_the_post_meta('crb_place_url')): ?>
-                <?php if (carbon_get_the_post_meta('crb_template_sad')): ?>
+                <?php if (carbon_get_the_post_meta('crb_template_sad') === 'yes' || carbon_get_the_post_meta('crb_template_school') === 'yes'): ?>
                   <div class="text-gray-700 mb-4">
                     <span class="font-semibold"><?php _e('Сайт', 'tarakan'); ?></span>: <a href="<?php echo carbon_get_the_post_meta('crb_place_url'); ?>" target="_blank" rel="nofollow" class="text-indigo-500"><?php echo carbon_get_the_post_meta('crb_place_url'); ?></a>
                   </div>
@@ -149,8 +150,12 @@
                 </div>
               <?php endif; ?>
 
-              <div class="text-gray-700 font-semibold">
+              <div class="text-gray-700 font-semibold mb-4">
                 <?php _e('Категория', 'tarakan'); ?>: <a href="<?php echo get_term_link($myterm->term_id, 'place-type') ?>" class="text-red-400"><?php echo $myterm->name; ?></a>
+              </div>
+
+              <div class="text-gray-700 font-semibold">
+                <?php _e('Город', 'tarakan'); ?>: <a href="<?php echo get_term_link($c_term[0]->term_id, 'city') ?>" class="text-red-400"><?php echo $c_term[0]->name; ?></a>
               </div>
             </div>
 
@@ -267,7 +272,6 @@
             </thead>
             <tbody class="text-sm">
               <?php 
-                $c_term = wp_get_post_terms(  get_the_ID() , 'city', array( 'parent' => 0 ) );
                 $current_id = get_the_ID();
                 $custom_query = new WP_Query( array( 
                 'post_type' => 'places', 

@@ -31,16 +31,19 @@ if ( is_singular( 'places' ) ) {
 	$place_title = get_the_title();
 	//Город
 	$current_cities = wp_get_post_terms(  get_the_ID() , 'city', array( 'parent' => 0 ) );
-  foreach (array_slice($current_cities, 0,1) as $city) {
-	  if ($city) {
-	  	$current_city = $city->name;
-	  }	
-  } 
+  $current_city = $current_cities[0]->name;
+  
   //SEO
-  if (get_locale() === 'ru_RU') {
-  	$after_title = 'Отзывы, контакты, телефоны, доставка';
+  $place_after_title = crb_get_i18n_theme_option('crb_seo_place_aftertitle'); 
+  $sad_after_title = crb_get_i18n_theme_option('crb_seo_sad_aftertitle'); 
+  // $school_after_title = crb_get_i18n_theme_option('crb_seo_mainpage_title'); 
+  if (carbon_get_the_post_meta('crb_template_sad') === 'yes') {
+    $after_title = $sad_after_title;
+  } elseif (carbon_get_the_post_meta('crb_template_school') === 'yes') {
+    $after_title = 'школа';
   } else {
-  	$after_title = 'Відгуки, контакти, телефони, доставка';
+    $after_title = $place_after_title;
+    // 'Отзывы, контакты, телефоны, доставка';
   }
 	
 	$current_title = $place_title . ' (' . $current_city . ') - ' . $after_title;

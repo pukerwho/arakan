@@ -69,10 +69,10 @@
           <div class="text-right font-light text-gray-600">
             <?php if (carbon_get_the_post_meta('crb_post_author')): ?>
               <span class="text-right italic"><?php echo carbon_get_the_post_meta('crb_post_author'); ?></span>
-              <div class="flex items-center text-sm">
+              <div class="flex items-center justify-end text-sm">
                 <!-- instagram -->
                 <?php if (carbon_get_the_post_meta('crb_post_author_instagram')): ?>
-                  <div class="italic pl-3"><a href="<?php echo carbon_get_the_post_meta('crb_post_author_instagram'); ?>" class="text-indigo-500">Instagram</a></div>
+                  <div class="italic"><a href="<?php echo carbon_get_the_post_meta('crb_post_author_instagram'); ?>" class="text-indigo-500">Instagram</a></div>
                 <?php endif; ?>
                 <!-- facebook --> 
                 <?php if (carbon_get_the_post_meta('crb_post_author_facebook')): ?>

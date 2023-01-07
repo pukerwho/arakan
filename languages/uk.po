@@ -440,3 +440,96 @@ msgstr "Харчування"
 
 msgid "Форма собственности"
 msgstr "Форма власності"
+
+msgid "Заведения"
+msgstr "Заклади"
+
+msgid "Сертифицированные педагоги"
+msgstr "Сертифіковані педагоги"
+
+msgid "Добавлено на сайт"
+msgstr "Додано на сайт"
+
+msgid "Форма обучения"
+msgstr "Форма навчання"
+
+msgid "Язык обучения"
+msgstr "Мова навчання"
+
+msgid "Украинский"
+msgstr "Українська"
+
+msgid "Медицинская помощь"
+msgstr "Медична допомога"
+
+msgid "Видеонаблюдение"
+msgstr "Відеоспостереження"
+
+msgid "Дополнительные кружки"
+msgstr "Додаткові гуртки"
+
+msgid "Столовая"
+msgstr "Столова"
+
+msgid "Участие в олимпиадах"
+msgstr "Участь в олімпіадах"
+
+msgid "Спортивные достижения"
+msgstr "Спортивні досягнення"
+
+msgid "Углубленное изучение математики"
+msgstr "Поглиблене вивчення математики"
+
+msgid "Углубленное изучение английского языка"
+msgstr "Поглиблене вивчення англійської мови"
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
