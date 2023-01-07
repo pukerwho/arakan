@@ -37,7 +37,7 @@
           <div class="flex text-lg mb-6">
             <div class="border-r border-gray-500 pr-5 mr-5">
               <span class="font-semibold text-red-400">
-                <?php $published_places = wp_count_posts('places')->publish; echo $published_places; ?>
+                55492
               </span>
               <?php _e('заведений', 'tarakan'); ?>
             </div>
@@ -48,11 +48,11 @@
           </div>
           <div class="flex items-center">
             <a href="https://sdamkvartiry.com/">
-              <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/sdamkvartiry.jpg" alt="">
+              <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/sdamkvartiry.jpg" alt="sdamkvartiry.com" loading="lazy">
             </a>
             <?php if (is_home()): ?>
               <a href="https://webgolovolomki.com/" class="pl-2">
-                <img src="https://tarakan.org.ua/wp-content/uploads/2022/11/web-g.jpg" width="20">
+                <img src="https://tarakan.org.ua/wp-content/uploads/2022/11/web-g.jpg" width="20" alt="webgolovolomki.com" loading="lazy">
               </a>
             <?php endif; ?>
           </div>
