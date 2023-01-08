@@ -13,6 +13,7 @@ function truemisha_change_labels( $fields ){
   // print_r( $fields );
   $fields[ 'author' ] = '<div class="mb-4"><input id="author" name="author" type="text" value="" size="30" maxlength="245" placeholder="'. __("Как вас зовут?", "tarakan") . '" class="w-full border border-gray-300 px-4 py-2" required></div>';
   $fields[ 'email'] = '<div class="mb-4"><input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" placeholder="'. __("Ваш email (будет скрыт)", "tarakan") . '" class="w-full border border-gray-300 px-4 py-2" required></div>';
+  
   return $fields;
 }
 
@@ -56,18 +57,23 @@ function truemisha_remove_url_field( $fields ) {
 }
 
 // Меняем textarea в форме комментариования
-add_filter( 'comment_form_defaults', 'remove_textarea' );
+add_filter( 'comment_form_defaults', 'my_comment_form_defaults' );
 add_action( 'comment_form_top', 'add_textarea' );
 
-function remove_textarea($defaults) {
+// дефолтна textarea
+function my_comment_form_defaults($defaults) {
   $defaults['comment_field'] = '';
   return $defaults;
 }
 
-function add_textarea()
-{
-    echo '<div class="comment-form-comment mb-2"><textarea id="comment" name="comment" rows="4" placeholder="'. __("Ваш комментарий", "tarakan") . '" aria-required="true" class="w-full border border-gray-300 px-4 py-2"></textarea></div>';
+//Нова форма
+function add_textarea() {
+  echo '<div class="comment-form-comment mb-2"><textarea id="comment" name="comment" rows="4" placeholder="'. __("Ваш комментарий", "tarakan") . '" class="w-full border border-gray-300 px-4 py-2" ></textarea></div>';
 }
+
+//Дозволити порожне поле коментар
+add_filter('allow_empty_comment', '__return_true');
+
 
 //Удаляем нотис перед формой комментирования
 add_filter( 'comment_form_defaults', 'sp_add_comment_form_before' );

@@ -363,7 +363,8 @@ h3#reply-title.comment-reply-title {
 .single-post .comment-place-rating-block,
 .single-post .comment-rating,
 .comment.parent #respond.comment-respond .comment-place-rating-block,
-.comment ~ #respond.comment-respond .comment-place-rating-block {
+.comment ~ #respond.comment-respond .comment-place-rating-block,
+p.comment-form-comment {
   display: none;
 }
 

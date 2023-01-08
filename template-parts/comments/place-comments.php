@@ -65,7 +65,6 @@ if ( $comments ): ?>
       <?php if ($comment->comment_parent === '0'): ?>
       <?php 
         $comment_rating = carbon_get_comment_meta( $comment->comment_ID, 'crb_comment_rating' ); 
-        echo $comment_rating;
         $comment_id_css = '#comment-'.$comment->comment_ID;
       ?>
 
