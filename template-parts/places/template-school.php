@@ -15,7 +15,7 @@
     </tr>
     <tr class="border-b border-b-gray-300">
       <td class="p-2"><?php _e("Форма обучения", "tarakan"); ?></td>
-      <td class="p-2"><?php echo carbon_get_the_post_meta('crb_school_forma_navchannya'); ?></td>
+      <td class="p-2"><?php $forma_learn = carbon_get_the_post_meta('crb_school_forma_navchannya'); echo __($forma_learn, "tarakan"); ?></td>
     </tr>
     <tr class="border-b border-b-gray-300">
       <td class="p-2"><?php _e("Язык обучения", "tarakan"); ?></td>

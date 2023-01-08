@@ -54,6 +54,16 @@
       <div class="bg-white shadow-lg rounded-lg mb-12">
         <div class="flex flex-col lg:flex-row lg:-mx-2">
           <div class="w-full lg:w-8/12 lg:px-16 lg:py-10 lg:border-r-2 mb-4 lg:mb-0">
+
+            <div id="reviews" class="mb-20">
+              <div class="place_tab_content active" data-place_tab="Reviews">
+                <h2 class="text-2xl mb-6">💬 <?php _e("Отзывы", "tarakan"); ?></h2>
+                <div class="w-full">
+                  <?php get_template_part('template-parts/comments/place-comments', get_post_type() ); ?>
+                </div>
+              </div>
+            </div>
+
             <div class="border-b-2 px-4 lg:px-0 pt-4 lg:pt-0 pb-8 mb-8">
               <div class="text-2xl mb-12"><span class="border-b-4 border-indigo-500">🤔 <?php _e("Что известно про место?", "tarakan"); ?></span></div>
 
@@ -68,6 +78,7 @@
               <!-- end template sad -->
 
             </div>
+            
             <div class="flex flex-row justify-between items-center px-4 lg:px-0">
 
               <!-- Добавить в избранное -->
@@ -127,7 +138,7 @@
               <?php endif; ?>
 
               <?php if (carbon_get_the_post_meta('crb_place_url')): ?>
-                <?php if (carbon_get_the_post_meta('crb_template_sad') === 'yes' || carbon_get_the_post_meta('crb_template_school') === 'yes'): ?>
+                <?php if (carbon_get_the_post_meta('crb_template_sad') === 'yes' ||  carbon_get_the_post_meta('crb_template_sad') === 'yes'): ?>
                   <div class="text-gray-700 mb-4">
                     <span class="font-semibold"><?php _e('Сайт', 'tarakan'); ?></span>: <a href="<?php echo carbon_get_the_post_meta('crb_place_url'); ?>" target="_blank" rel="nofollow" class="text-indigo-500"><?php echo carbon_get_the_post_meta('crb_place_url'); ?></a>
                   </div>
@@ -146,7 +157,7 @@
 
               <?php if (carbon_get_the_post_meta('crb_finansyvannya')): ?>
                 <div class="text-gray-700 mb-4">
-                  <span class="font-semibold"><?php _e('Форма собственности', 'tarakan'); ?></span>: <span class=""><?php echo carbon_get_the_post_meta('crb_finansyvannya'); ?></span>
+                  <span class="font-semibold"><?php _e('Форма собственности', 'tarakan'); ?></span>: <span class=""><?php $forma_sobstv = carbon_get_the_post_meta('crb_finansyvannya');  echo __($forma_sobstv, "tarakan"); ?></span>
                 </div>
               <?php endif; ?>
 
@@ -217,28 +228,9 @@
       </div>
 
       <div>
-        <!-- Табы -->
-        <div class="place_tabs mb-10">
-          <ul class="flex flex-col lg:flex-row lg:items-center font-light px-5 lg:px-10">
-            <li class="place_tab active text-lg cursor-pointer p-5" data-place_tab="Reviews">
-              <?php _e('Отзывы', 'tarakan'); ?>
-            </li>
-          </ul>
-        </div>
-        <!-- END Табы -->
-
-        <!-- ТАБЫ Контент -->
-        <div id="reviews" class="mb-20">
-          <div class="place_tab_content active" data-place_tab="Reviews">
-            <div class="w-full lg:w-8/12">
-              <?php comments_template(); ?>
-            </div>
-          </div>
-        </div>
-        <!-- ТАБЫ Контент -->
 
         <!-- Похожие места -->
-        <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between border-b mb-6 pb-6">
+        <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between border-b border-gray-300 mb-6 pb-6">
           <h2 class="text-2xl lg:text-4xl text-gray-700 font-semibold mb-4 lg:mb-0">
             <?php _e('Похожие места', 'tarakan'); ?>
           </h2>
@@ -250,7 +242,7 @@
         </div>
 
         <div class="overflow-x-auto shadow-xl mb-20">
-          <table class="w-full table-auto">
+          <table class="w-full bg-white table-auto">
             <thead class="bg-gray-100 text-gray-500 border border-gray-200 uppercase">
               <tr>
                 <th class="text-left whitespace-nowrap px-2 py-3">
@@ -357,6 +349,6 @@
       </div>
     </div>
   </div>
-<?php endwhile; endif; ?>
+<?php endwhile; endif; wp_reset_postdata(); ?>
 
 <?php get_footer();

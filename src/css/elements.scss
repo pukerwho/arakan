@@ -225,10 +225,10 @@
 }
 
 .comment {
-  &.odd {
-    padding-left: 1rem;
-    margin-top: 1rem;
-  }
+  // &.odd {
+  //   padding-left: 1rem;
+  //   margin-top: 1rem;
+  // }
 }
 
 .place {
@@ -334,9 +334,67 @@
   }
 }
 
-.place-school-items {
+.comment .comment {
+  margin-left: 1rem;
+}
+
+#reply-title.comment-reply-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+h3#reply-title.comment-reply-title {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  padding-top: 1rem;
+}
+
+.comment.parent h3#reply-title.comment-reply-title {
+  font-size: 1rem;
+  line-height: auto;
+  padding-top: 0;
+}
+
+.comment.parent #respond.comment-respond .comment-place-rating {
+  display: none;
+}
+
+.comment-place-school-items {
   position: relative;
   &:not(:last-of-type):after {
     content: ",";
   }
+}
+
+.comment-place-rating {
+  border: none;
+}
+
+.comment-place-rating > label {
+  color: #90a0a3;
+}
+
+.comment-place-rating > label:before {
+  font-size: 1.5rem;
+  content: "\2605";
+  display: inline-block;
+}
+
+.comment-place-rating > input {
+  display: none;
+}
+
+.comment-place-rating > input:checked ~ label,
+.comment-place-rating:not(:checked) > label:hover,
+.comment-place-rating:not(:checked) > label:hover ~ label {
+  color: #ffaa46;
+}
+
+.comment-place-rating > input:checked + label:hover,
+.comment-place-rating > input:checked ~ label:hover,
+.comment-place-rating > label:hover ~ input:checked ~ label,
+.comment-place-rating > input:checked ~ label:hover ~ label {
+  color: #fece31;
 }

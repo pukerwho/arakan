@@ -26,7 +26,8 @@ get_header();
 						<div class="text-xl font-extralight text-white mb-12">
 							<?php _e('Контроль качества общественных заведений Украины', 'tarakan'); ?>
 						</div>
-						<div class="inline-flex items-center bg-red-400 rounded text-white px-6 py-3">
+						<div class="relative inline-flex items-center bg-red-400 rounded text-white px-6 py-3">
+              <a href="<?php echo get_post_type_archive_link('places'); ?>" class="absolute-link"></a>
 							<div class="text-xl mr-2">
 								<?php _e('Перейти к каталогу', 'tarakan'); ?>
 							</div>
@@ -261,16 +262,16 @@ get_header();
 			<!-- END Лучшие места -->
 
 			<!-- Новые места -->
-			<div class="flex flex-col lg:flex-row lg:justify-between lg:items-center border-b pb-8 mb-8">
+			<div class="flex flex-col lg:flex-row lg:justify-between lg:items-center border-b border-gray-300 pb-8 mb-8">
 				<h2 class="text-2xl text-gray-700 font-semibold mb-6 lg:mb-0">
 					<?php _e('Новые места', 'tarakan'); ?>
 				</h2>
 				<div>
-					<a href="<?php echo get_post_type_archive_link('places'); ?>" class="text-gray-700 border rounded px-6 py-3"><?php _e('Все места', 'tarakan'); ?></a>
+					<a href="<?php echo get_post_type_archive_link('places'); ?>" class="bg-white text-gray-700 border rounded px-6 py-3"><?php _e('Все места', 'tarakan'); ?></a>
 				</div>
 			</div>
 			<div class="overflow-x-auto shadow-xl mb-10">
-				<table class="w-full table-auto">
+				<table class="w-full bg-white table-auto">
 					<thead class="bg-gray-100 text-gray-500 border border-gray-200 uppercase">
 						<tr>
 							<th class="text-left whitespace-nowrap px-2 py-3">
@@ -327,7 +328,7 @@ get_header();
 			<!-- END Новые места -->
 
 			<!-- Популярні Кафе в Україні -->
-			<div class="flex flex-col lg:flex-row lg:justify-between lg:items-center border-b pb-8 mb-8">
+			<div class="flex flex-col lg:flex-row lg:justify-between lg:items-center border-b border-gray-300 pb-8 mb-8">
 				<h2 class="text-2xl text-gray-700 font-semibold mb-6 lg:mb-0">
 					<?php _e('Популярные кафе в Украине', 'tarakan'); ?>
 				</h2>
@@ -337,11 +338,11 @@ get_header();
 					} else {
 						$term_kafe = 27;
 					} ?>
-					<a href="<?php echo get_term_link($term_kafe, 'place-type') ?>" class="text-gray-700 border rounded px-6 py-3"><?php _e('Все кафе', 'tarakan'); ?></a>
+					<a href="<?php echo get_term_link($term_kafe, 'place-type') ?>" class="bg-white text-gray-700 border rounded px-6 py-3"><?php _e('Все кафе', 'tarakan'); ?></a>
 				</div>
 			</div>
 			<div class="overflow-x-auto shadow-xl mb-10">
-				<table class="w-full table-auto">
+				<table class="w-full bg-white table-auto">
 					<thead class="bg-gray-100 text-gray-500 border border-gray-200 uppercase">
 						<tr>
 							<th class="text-left whitespace-nowrap px-2 py-3">

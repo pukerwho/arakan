@@ -26,6 +26,7 @@ function crb_post_theme_options() {
       Field::make( 'text', 'crb_place_reviews_count', 'Кол-во отзывов' ),
       Field::make( 'text', 'crb_place_views_count', 'Кол-во просмотров' ),
       Field::make( 'text', 'crb_place_price', 'Средний чек' ),
+      Field::make( 'text', 'crb_finansyvannya', 'Форма собственности' ),
 
       Field::make( 'text', 'crb_cafe_parking', 'Паркинг' ),
       Field::make( 'text', 'crb_cafe_wifi', 'Wi-fi' ),
@@ -71,7 +72,6 @@ function crb_post_theme_options() {
       // Для садочка
       Field::make( 'html', 'crb_heading_author', __( 'Template SAD' ) )->set_html( sprintf( '<b>Для садочка</b>' ) ),
       Field::make( 'text', 'crb_template_sad', 'Шаблон садочки' ),
-      Field::make( 'text', 'crb_finansyvannya', 'Форма собственности' ),
       Field::make( 'text', 'crb_sad_free', 'Чи є вільні місця?' ),
       Field::make( 'text', 'crb_sad_kylinariya', 'Кулінарія' ),
       Field::make( 'text', 'crb_sad_maluvannya', 'Малювання' ),
