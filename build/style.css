@@ -508,12 +508,18 @@ h3#reply-title.comment-reply-title {
   padding-top: 1rem;
 }
 
-.comment.parent h3#reply-title.comment-reply-title {
+.comment ~ #respond.comment-respond h3#reply-title.comment-reply-title {
   font-size: 1rem;
   line-height: auto;
   padding-top: 0;
 }
 
+.comment ~ #respond.comment-respond {
+  margin-bottom: 1rem;
+}
+
+.single-post .comment-place-rating,
+.single-post .comment-rating,
 .comment.parent #respond.comment-respond .comment-place-rating {
   display: none;
 }
