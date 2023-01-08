@@ -55,7 +55,7 @@
         <div class="flex flex-col lg:flex-row lg:-mx-2">
           <div class="w-full lg:w-8/12 lg:px-16 lg:py-10 lg:border-r-2 mb-4 lg:mb-0">
 
-            <div id="reviews" class="border-b border-gray-300 mb-6 pb-6">
+            <div id="reviews" class="border-b border-gray-300 mb-6 pb-6 pt-6 lg:pt-0 px-4 lg:px-0">
               <div class="place_tab_content active" data-place_tab="Reviews">
                 <h2 class="text-2xl mb-6">💬 <?php _e("Отзывы", "tarakan"); ?></h2>
                 <div class="w-full">

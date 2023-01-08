@@ -11,8 +11,8 @@ add_filter( 'comment_form_default_fields', 'truemisha_change_labels', 25 );
 function truemisha_change_labels( $fields ){
   // можно подсмотреть исходный HTML через:
   // print_r( $fields );
-  $fields[ 'author' ] = '<div class="mb-4"><input id="author" name="author" type="text" value="" size="30" maxlength="245" required="required" placeholder="'. __("Как вас зовут?", "tarakan") . '" class="w-full border border-gray-300 px-4 py-2"></div>';
-  $fields[ 'email'] = '<div class="mb-4"><input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required="required" placeholder="'. __("Ваш email (будет скрыт)", "tarakan") . '" class="w-full border border-gray-300 px-4 py-2"></div>';
+  $fields[ 'author' ] = '<div class="mb-4"><input id="author" name="author" type="text" value="" size="30" maxlength="245" placeholder="'. __("Как вас зовут?", "tarakan") . '" class="w-full border border-gray-300 px-4 py-2" required></div>';
+  $fields[ 'email'] = '<div class="mb-4"><input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" placeholder="'. __("Ваш email (будет скрыт)", "tarakan") . '" class="w-full border border-gray-300 px-4 py-2" required></div>';
   return $fields;
 }
 
@@ -20,17 +20,20 @@ add_action( 'comment_form_logged_in_after', 'add_rating_comment' );
 add_action( 'comment_form_after_fields', 'add_rating_comment' );
 
 function add_rating_comment() { ?>
-  <div class="comment-place-rating flex justify-end flex-row-reverse mb-4">
-    <input type="radio" id="star5" name="rating" value="5" />
-    <label class="star" for="star5" title="<?php _e("Отлично", "tarakan"); ?>" aria-hidden="true"></label>
-    <input type="radio" id="star4" name="rating" value="4" />
-    <label class="star" for="star4" title="<?php _e("Хорошо", "tarakan"); ?>" aria-hidden="true"></label>
-    <input type="radio" id="star3" name="rating" value="3" />
-    <label class="star" for="star3" title="<?php _e("Нормально", "tarakan"); ?>" aria-hidden="true"></label>
-    <input type="radio" id="star2" name="rating" value="2" />
-    <label class="star" for="star2" title="<?php _e("Плохо", "tarakan"); ?>" aria-hidden="true"></label>
-    <input type="radio" id="star1" name="rating" value="1" />
-    <label class="star" for="star1" title="<?php _e("Ужасно", "tarakan"); ?>" aria-hidden="true"></label>
+  <div class="flex items-end  mb-4">
+    <div class="text-lg opacity-75 mr-2"><?php _e("Ваша оценка", "tarakan"); ?>: </div>
+    <div class="comment-place-rating flex justify-end flex-row-reverse">
+      <input type="radio" id="star5" name="rating" value="5" />
+      <label class="star" for="star5" title="<?php _e("Отлично", "tarakan"); ?>" aria-hidden="true"></label>
+      <input type="radio" id="star4" name="rating" value="4" />
+      <label class="star" for="star4" title="<?php _e("Хорошо", "tarakan"); ?>" aria-hidden="true"></label>
+      <input type="radio" id="star3" name="rating" value="3" />
+      <label class="star" for="star3" title="<?php _e("Нормально", "tarakan"); ?>" aria-hidden="true"></label>
+      <input type="radio" id="star2" name="rating" value="2" />
+      <label class="star" for="star2" title="<?php _e("Плохо", "tarakan"); ?>" aria-hidden="true"></label>
+      <input type="radio" id="star1" name="rating" value="1" />
+      <label class="star" for="star1" title="<?php _e("Ужасно", "tarakan"); ?>" aria-hidden="true"></label>
+    </div>
   </div>
 <?php } ?>
 

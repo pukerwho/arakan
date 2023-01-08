@@ -369,7 +369,7 @@ input[type=number] {
 }
 @media (max-width: 767px) {
   .content .wp-caption,
-.content .wp-block-image {
+  .content .wp-block-image {
     width: 100% !important;
   }
 }
@@ -524,6 +524,12 @@ h3#reply-title.comment-reply-title {
   display: none;
 }
 
+.comment-form input.error,
+.comment-form input.error:focus {
+  border: 1px solid red !important;
+  outline: none;
+}
+
 .comment-place-school-items {
   position: relative;
 }
@@ -559,5 +565,5 @@ h3#reply-title.comment-reply-title {
 .comment-place-rating > input:checked ~ label:hover,
 .comment-place-rating > label:hover ~ input:checked ~ label,
 .comment-place-rating > input:checked ~ label:hover ~ label {
-  color: #fece31;
+  color: #ffaa46;
 }

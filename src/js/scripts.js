@@ -1,4 +1,5 @@
 var $ = require("jquery");
+var validate = require("jquery-validation");
 
 $(".hamburger-toggle").on("click", function () {
   $(".hamburger-toggle__open").toggleClass("hidden");
@@ -156,3 +157,28 @@ for (anchor of anchors) {
     });
   }
 }
+
+$("#commentform").validate({
+  rules: {
+    author: {
+      required: true,
+      minlength: 2,
+    },
+    email: {
+      required: true,
+      email: true,
+    },
+  },
+
+  messages: {
+    author: "",
+    email: "",
+  },
+
+  errorElement: "div",
+  errorPlacement: function (error, element) {
+    element.after(error);
+  },
+});
+
+console.log("er");
