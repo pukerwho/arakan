@@ -20,7 +20,7 @@ add_action( 'comment_form_logged_in_after', 'add_rating_comment' );
 add_action( 'comment_form_after_fields', 'add_rating_comment' );
 
 function add_rating_comment() { ?>
-  <div class="flex items-end  mb-4">
+  <div class="comment-place-rating-block flex items-end mb-4">
     <div class="text-lg opacity-75 mr-2"><?php _e("Ваша оценка", "tarakan"); ?>: </div>
     <div class="comment-place-rating flex justify-end flex-row-reverse">
       <input type="radio" id="star5" name="rating" value="5" />
@@ -59,10 +59,9 @@ function truemisha_remove_url_field( $fields ) {
 add_filter( 'comment_form_defaults', 'remove_textarea' );
 add_action( 'comment_form_top', 'add_textarea' );
 
-function remove_textarea($defaults)
-{
-    $defaults['comment_field'] = '';
-    return $defaults;
+function remove_textarea($defaults) {
+  $defaults['comment_field'] = '';
+  return $defaults;
 }
 
 function add_textarea()

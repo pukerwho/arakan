@@ -360,9 +360,10 @@ h3#reply-title.comment-reply-title {
   margin-bottom: 1rem;
 }
 
-.single-post .comment-place-rating,
+.single-post .comment-place-rating-block,
 .single-post .comment-rating,
-.comment.parent #respond.comment-respond .comment-place-rating {
+.comment.parent #respond.comment-respond .comment-place-rating-block,
+.comment ~ #respond.comment-respond .comment-place-rating-block {
   display: none;
 }
 
