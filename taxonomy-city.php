@@ -116,7 +116,7 @@ $term = get_term_by('slug', get_query_var('term'), $taxonomyName);
         </tbody>
 		  </table>
     </div>
-    <div class="b_pagination text-center">
+    <div class="b_pagination text-center mb-12">
       <?php 
         $big = 9999999991; // уникальное число
         echo paginate_links( array(
@@ -129,6 +129,19 @@ $term = get_term_by('slug', get_query_var('term'), $taxonomyName);
         )); 
       ?>
     </div>
+    <?php 
+    $seoText = carbon_get_term_meta($current_cat_id, 'crb_city_seo_text');
+    if ($seoText && $current_page < 2): ?>
+      <div class="content">
+        <div class="single-subjects mb-5">
+          <div class="text-2xl font-bold uppercase mb-3">
+            <?php _e('Содержание','tarakan'); ?>:
+          </div>
+          <div class="single-subjects-inner"></div>
+        </div>
+        <?php echo apply_filters( 'the_content', $seoText  ); ?>
+      </div>
+    <?php endif; ?>
   </div>
 </div>
 

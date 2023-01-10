@@ -115,7 +115,7 @@ document.addEventListener("click", function (e) {
 
 //BLOG SUBJECTS
 let blogSubjects = document.querySelector(".single-subjects");
-let blogH2 = document.querySelectorAll(".single .content h2");
+let blogH2 = document.querySelectorAll(".content h2");
 let blogSubjectsBlock = document.querySelector(".single-subjects-inner");
 let blogH2Array = [];
 
