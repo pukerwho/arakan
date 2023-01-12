@@ -1305,10 +1305,6 @@ video {
   padding: 0.5rem;
 }
 
-.p-6 {
-  padding: 1.5rem;
-}
-
 .px-2 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -1457,6 +1453,10 @@ video {
   padding-bottom: 1.5rem;
 }
 
+.pt-6 {
+  padding-top: 1.5rem;
+}
+
 .pt-4 {
   padding-top: 1rem;
 }
@@ -1467,10 +1467,6 @@ video {
 
 .pt-5 {
   padding-top: 1.25rem;
-}
-
-.pt-6 {
-  padding-top: 1.5rem;
 }
 
 .text-left {
@@ -1810,6 +1806,11 @@ body {
 
 .filter-checkbox ~ label {
   padding-left: 0.5rem;
+}
+
+.footer-menu li {
+  margin-bottom: 0.5rem;
+  font-weight: 300;
 }
 
 .last\:border-transparent:last-child {

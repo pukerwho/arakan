@@ -30,6 +30,7 @@ if ( ! function_exists( 'tarakan_setup' ) ) :
 		register_nav_menus(
 			array(
 				'menu-1' => esc_html__( 'Primary', 'tarakan' ),
+        'footer' => esc_html__( 'Footer', 'tarakan' ),
         'main_cat' => esc_html__( 'Main Categories', 'tarakan' ),
 			)
 		);

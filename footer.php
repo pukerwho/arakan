@@ -60,20 +60,15 @@
 
         <div class="w-full lg:w-3/12 lg:px-8 mb-6">
           <div class="text-lg font-semibold mb-4">
-            <?php _e('Категории', 'tarakan'); ?>
+            <?php _e('Навигация', 'tarakan'); ?>
           </div>
           <div>
             <ul>
-              <?php $footer_categories = get_terms( array( 
-                'taxonomy' => 'place-type', 
-                'parent' => 0, 
-                'hide_empty' => false,
-              ));
-              foreach ( array_slice($footer_categories, 0, 5) as $footer_category ): ?>
-                <li class="font-light mb-2">
-                  <a href="<?php echo get_term_link($footer_category); ?>"><?php echo $footer_category->name ?></a>
-                </li>
-              <?php endforeach; ?>
+              <?php wp_nav_menu([
+                'theme_location' => 'footer',
+                'container' => 'div',
+                'menu_class' => 'footer-menu flex flex-col'
+              ]); ?> 
             </ul>
           </div>
         </div>

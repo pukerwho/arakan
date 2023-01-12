@@ -64,3 +64,7 @@ body {
 .filter-checkbox ~ label {
   @apply pl-2;
 }
+
+.footer-menu li {
+  @apply font-light mb-2;
+}
