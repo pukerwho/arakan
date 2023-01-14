@@ -55,7 +55,7 @@
         <div class="flex flex-col lg:flex-row lg:-mx-2">
           <div class="w-full lg:w-8/12 lg:px-16 lg:py-10 lg:border-r-2 mb-4 lg:mb-0">
 
-            <div id="reviews" class="border-b border-gray-300 mb-6 pb-6 pt-6 lg:pt-0 px-4 lg:px-0">
+            <div id="reviews" class="border-b border-gray-300 mb-8 pb-8 pt-6 lg:pt-0 px-4 lg:px-0">
               <div class="place_tab_content active" data-place_tab="Reviews">
                 <h2 class="text-2xl mb-6">💬 <?php _e("Отзывы", "tarakan"); ?></h2>
                 <div class="w-full">
@@ -63,6 +63,34 @@
                 </div>
               </div>
             </div>
+
+            <?php $get_content = get_the_content(); if ($get_content): ?>
+            <div class="mb-12">
+              <h2 class="text-2xl mb-6">📋 <?php _e("Описание", "tarakan"); ?></h2>
+              <div class="content">
+                <?php the_content(); ?>
+              </div>
+            </div>
+            <?php endif; ?>
+
+            <?php 
+              $photos = carbon_get_the_post_meta('crb_place_photos');
+              if ($photos):
+            ?>
+            <div class="mb-12">
+              <h2 class="text-2xl mb-6">📋 <?php _e("Фото", "tarakan"); ?></h2>
+              <div class="flex flex-wrap items-center -mx-2">
+              <?php foreach ( $photos as $photo ): ?>
+                <?php $photo_src = wp_get_attachment_image_src($photo, 'large'); ?>
+                <div class="w-1/2 lg:w-1/4 px-2 mb-4">
+                  <a href="<?php echo $photo_src[0]; ?>" data-lightbox="product-gallery" data-title="<?php the_title(); ?>">
+                    <img src="<?php echo $photo_src[0]; ?>" loading="lazy" class="w-full h-24 lg:h-32 object-cover bg-custom-gray dark:bg-dark-xl rounded-lg"> 
+                  </a>
+                </div>
+              <?php endforeach; ?>
+              </div>
+            </div>
+            <?php endif; ?>
 
             <div class="border-b-2 px-4 lg:px-0 pt-4 lg:pt-0 pb-8 mb-8">
               <div class="text-2xl mb-12"><span class="border-b-4 border-indigo-500">🤔 <?php _e("Что известно про место?", "tarakan"); ?></span></div>
