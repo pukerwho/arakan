@@ -120,6 +120,7 @@ get_header();
 							'orderby' => 'meta_value_num',
 							'order' => 'DESC',
 							'posts_per_page' => 3,
+              
 						));
 						if ($home_blogs->have_posts()) : while ($home_blogs->have_posts()) : $home_blogs->the_post(); ?>
 							<div class="w-full lg:w-1/3 lg:px-4 mb-6 lg:mb-0">

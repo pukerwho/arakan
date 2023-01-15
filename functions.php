@@ -147,12 +147,7 @@ function tarakan_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
-  $get_photo_lightbox = carbon_get_the_post_meta('crb_place_photos');
-  if ($get_photo_lightbox) {
-    wp_enqueue_script( 'jquery' );
-    wp_enqueue_style( 'lightbox-css', get_stylesheet_directory_uri() . '/build/lightbox.css', false, time() );
-    wp_enqueue_script( 'lightbox-js', get_template_directory_uri() . '/build/lightbox.min.js', '','',true);
-  }
+  
 }
 add_action( 'wp_enqueue_scripts', 'tarakan_scripts' );
 
