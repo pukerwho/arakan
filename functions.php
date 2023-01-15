@@ -133,26 +133,6 @@ add_action('do_feed_atom_comments', 'itsme_disable_feed', 1);
 remove_action( 'wp_head', 'feed_links_extra', 3 );
 remove_action( 'wp_head', 'feed_links', 2 );
 
-/**
- * Register widget area.
- *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
- */
-function tarakan_widgets_init() {
-	register_sidebar(
-		array(
-			'name'          => esc_html__( 'Sidebar', 'tarakan' ),
-			'id'            => 'sidebar-1',
-			'description'   => esc_html__( 'Add widgets here.', 'tarakan' ),
-			'before_widget' => '<section id="%1$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h2>',
-			'after_title'   => '</h2>',
-		)
-	);
-}
-add_action( 'widgets_init', 'tarakan_widgets_init' );
-
 include('inc/enqueues.php');
 
 /**
@@ -167,6 +147,12 @@ function tarakan_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+  $get_photo_lightbox = carbon_get_the_post_meta('crb_place_photos');
+  if ($get_photo_lightbox) {
+    wp_enqueue_script( 'jquery' );
+    wp_enqueue_style( 'lightbox-css', get_stylesheet_directory_uri() . '/build/lightbox.css', false, time() );
+    wp_enqueue_script( 'lightbox-js', get_template_directory_uri() . '/build/lightbox.min.js', '','',true);
+  }
 }
 add_action( 'wp_enqueue_scripts', 'tarakan_scripts' );
 
@@ -206,7 +192,7 @@ function create_post_type() {
       'hierarchical' => true,
       'show_in_rest' => false,
       'menu_icon' => 'dashicons-megaphone',
-      'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments', 'custom-fields', 'revisions' ),
+      'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments', 'custom-fields', 'revisions', 'page-attributes' ),
     )
   );
 }

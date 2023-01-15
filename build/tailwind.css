@@ -732,11 +732,6 @@ video {
   margin-bottom: 3rem;
 }
 
-.-mx-3 {
-  margin-left: -0.75rem;
-  margin-right: -0.75rem;
-}
-
 .mb-4 {
   margin-bottom: 1rem;
 }
@@ -899,8 +894,8 @@ video {
   height: 3rem;
 }
 
-.h-24 {
-  height: 6rem;
+.h-\[150px\] {
+  height: 150px;
 }
 
 .h-4 {
@@ -1949,8 +1944,8 @@ body {
     height: 1.5rem;
   }
 
-  .lg\:h-32 {
-    height: 8rem;
+  .lg\:h-\[175px\] {
+    height: 175px;
   }
 
   .lg\:w-1\/3 {

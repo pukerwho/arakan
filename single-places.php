@@ -65,7 +65,7 @@
             </div>
 
             <?php $get_content = get_the_content(); if ($get_content): ?>
-            <div class="mb-12">
+            <div class="px-4 lg:px-0 mb-12">
               <h2 class="text-2xl mb-6">📋 <?php _e("Описание", "tarakan"); ?></h2>
               <div class="content">
                 <?php the_content(); ?>
@@ -77,14 +77,17 @@
               $photos = carbon_get_the_post_meta('crb_place_photos');
               if ($photos):
             ?>
-            <div class="mb-12">
+            <div class="px-4 lg:px-0 mb-8">
               <h2 class="text-2xl mb-6">📋 <?php _e("Фото", "tarakan"); ?></h2>
               <div class="flex flex-wrap items-center -mx-2">
               <?php foreach ( $photos as $photo ): ?>
-                <?php $photo_src = wp_get_attachment_image_src($photo, 'large'); ?>
+                <?php 
+                  $photo_src_large = wp_get_attachment_image_src($photo, 'large'); 
+                  $photo_src_medium = wp_get_attachment_image_src($photo, 'medium'); 
+                ?>
                 <div class="w-1/2 lg:w-1/4 px-2 mb-4">
-                  <a href="<?php echo $photo_src[0]; ?>" data-lightbox="product-gallery" data-title="<?php the_title(); ?>">
-                    <img src="<?php echo $photo_src[0]; ?>" loading="lazy" class="w-full h-24 lg:h-32 object-cover bg-custom-gray dark:bg-dark-xl rounded-lg"> 
+                  <a href="<?php echo $photo_src_large[0]; ?>" data-lightbox="product-gallery" data-title="<?php the_title(); ?>">
+                    <img src="<?php echo $photo_src_medium[0]; ?>" loading="lazy" class="w-full h-[150px] lg:h-[175px] object-cover bg-custom-gray dark:bg-dark-xl rounded-lg"> 
                   </a>
                 </div>
               <?php endforeach; ?>
