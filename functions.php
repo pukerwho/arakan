@@ -288,6 +288,17 @@ function city_register_taxonomy() {
 }
 add_action( 'init', 'city_register_taxonomy');
 
+// Задаємо дефолтное значення всім записам
+add_action( 'init', 'add_meta_query_mainhide');
+function add_meta_query_mainhide() {
+  $posts_args = array('numberposts' => -1);
+  $all_posts = get_posts($posts_args);
+  foreach ($all_posts as $post) {
+    $post_id = $post->ID;
+    update_post_meta($post_id, '_crb_post_mainhide', 'no');
+  }
+}
+
 // Создаем счетчик для записей
 function tutCount($id) {
   

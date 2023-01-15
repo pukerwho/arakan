@@ -120,7 +120,13 @@ get_header();
 							'orderby' => 'meta_value_num',
 							'order' => 'DESC',
 							'posts_per_page' => 3,
-              
+              'meta_query' => array(
+                array(
+                  'key' => '_crb_post_mainhide',
+                  'value' => 'no',
+                  'compare' => '='
+                ),
+              ),
 						));
 						if ($home_blogs->have_posts()) : while ($home_blogs->have_posts()) : $home_blogs->the_post(); ?>
 							<div class="w-full lg:w-1/3 lg:px-4 mb-6 lg:mb-0">
@@ -139,11 +145,20 @@ get_header();
 					<h2 class="text-2xl lg:text-3xl text-gray-700 font-semibold lg:px-4 mb-6"><?php _e('Новые записи', 'tarakan'); ?></h2>
 					<div class="flex flex-wrap lg:px-4">
 						<?php 
-						$home_blogs = new WP_Query( array(
-							'post_type' => 'post',
+            $home_blogs_args = array(
+              'post_type' => 'post',
 							'orderby' => 'date',
 							'posts_per_page' => 5,
-						));
+              'meta_query' => array(
+                array(
+                  'key' => '_crb_post_mainhide',
+                  'value' => 'no',
+                  'compare' => '='
+                ),
+              ),
+            );
+            // $home_blogs_args['meta_query'][] = array('key' => '_crb_post_mainhide',  'compare' => 'NOT EXISTS');
+						$home_blogs = new WP_Query($home_blogs_args);
 						if ($home_blogs->have_posts()) : while ($home_blogs->have_posts()) : $home_blogs->the_post(); ?>
 							<div class="w-full mb-6">
 								<div class="w-full relative border rounded-lg">
@@ -517,6 +532,13 @@ get_header();
 							'post_type' => 'post',
 							'orderby' => 'date',
 							'posts_per_page' => 3,
+              'meta_query' => array(
+                array(
+                  'key' => '_crb_post_mainhide',
+                  'value' => 'no',
+                  'compare' => '='
+                ),
+              ),
 						));
 						if ($home_blogs->have_posts()) : while ($home_blogs->have_posts()) : $home_blogs->the_post(); ?>
 						<div class="w-full lg:w-1/3 mb-6 lg:mb-0 lg:px-4">

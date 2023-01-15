@@ -14,6 +14,7 @@ function crb_post_theme_options() {
       Field::make( 'text', 'crb_post_title', 'Title' ),
       Field::make( 'textarea', 'crb_post_description', 'Description' ),
       Field::make( 'text', 'crb_post_keywords', 'Keywords' ),
+      Field::make( 'checkbox', 'crb_post_mainhide', 'Не виводити на головній сторінці' ),
   ) );
 	Container::make( 'post_meta', 'More' )
     ->where( 'post_type', '=', 'places' )

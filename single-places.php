@@ -72,7 +72,7 @@
               </div>
             </div>
             <?php endif; ?>
-
+            
             <?php 
               $photos = carbon_get_the_post_meta('crb_place_photos');
               if ($photos):
