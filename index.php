@@ -123,8 +123,8 @@ get_header();
               'meta_query' => array(
                 array(
                   'key' => '_crb_post_mainhide',
-                  'value' => 'no',
-                  'compare' => '='
+                  'value' => 'yes',
+                  'compare' => '!='
                 ),
               ),
 						));
@@ -152,8 +152,8 @@ get_header();
               'meta_query' => array(
                 array(
                   'key' => '_crb_post_mainhide',
-                  'value' => 'no',
-                  'compare' => '='
+                  'value' => 'yes',
+                  'compare' => '!='
                 ),
               ),
             );
