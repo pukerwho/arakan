@@ -171,7 +171,7 @@
               <?php endif; ?>
 
               <?php if (carbon_get_the_post_meta('crb_place_url')): ?>
-                <?php if (carbon_get_the_post_meta('crb_template_sad') === 'yes' ||  carbon_get_the_post_meta('crb_template_school') === 'yes'): ?>
+                <?php if (carbon_get_the_post_meta('crb_template_sad') === 'yes' ||  carbon_get_the_post_meta('crb_template_school') === 'yes' || carbon_get_the_post_meta('crb_template_univer') === 'yes'): ?>
                   <div class="text-gray-700 mb-4">
                     <span class="font-semibold"><?php _e('Сайт', 'tarakan'); ?></span>: <a href="<?php echo carbon_get_the_post_meta('crb_place_url'); ?>" target="_blank" rel="nofollow" class="text-indigo-500"><?php echo carbon_get_the_post_meta('crb_place_url'); ?></a>
                   </div>
