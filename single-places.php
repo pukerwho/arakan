@@ -98,15 +98,17 @@
             <div class="border-b-2 px-4 lg:px-0 pt-4 lg:pt-0 pb-8 mb-8">
               <div class="text-2xl mb-12"><span class="border-b-4 border-indigo-500">🤔 <?php _e("Что известно про место?", "tarakan"); ?></span></div>
 
-              <!-- template sad -->
+              <!-- templates -->
               <?php if (carbon_get_the_post_meta('crb_template_sad') === 'yes'): ?>
                 <?php echo get_template_part('template-parts/places/template-sad'); ?>
+              <?php elseif (carbon_get_the_post_meta('crb_template_univer') === 'yes'): ?>
+                <?php echo get_template_part('template-parts/places/template-univer'); ?>
               <?php elseif (carbon_get_the_post_meta('crb_template_school') === 'yes'): ?>
                 <?php echo get_template_part('template-parts/places/template-school'); ?>
               <?php else: ?>
                 <?php echo get_template_part('template-parts/places/template-other'); ?>
               <?php endif; ?>
-              <!-- end template sad -->
+              <!-- end templates -->
 
             </div>
             

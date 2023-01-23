@@ -98,6 +98,24 @@ function crb_post_theme_options() {
       Field::make( 'text', 'crb_sad_psycholog', 'Психолог' ),
       Field::make( 'text', 'crb_sad_videonaglyad', 'Відеонагляд для батьків' ),
       Field::make( 'text', 'crb_sad_okrema_territoriya', 'Окрема територія' ),
+
+      // Для універа
+      Field::make( 'html', 'crb_heading_univer', __( 'Template Univer' ) )->set_html( sprintf( '<b>Для універа</b>' ) ),
+      Field::make( 'text', 'crb_template_univer', 'Шаблон універа' ),
+      Field::make( 'text', 'crb_univer_type', 'Тип універа' ),
+      Field::make( 'text', 'crb_univer_yroven_akkreditacii', 'Рівень акредитації' ),
+      Field::make( 'text', 'crb_univer_forma_obucheniya', 'Форма навчання' ),
+      Field::make( 'text', 'crb_univer_kvalifikatciya', 'Кваліфікація' ),
+      Field::make( 'text', 'crb_univer_stoimost', 'Вартість' ),
+      Field::make( 'text', 'crb_univer_kol_vo_studentov', 'Кіл-сть студентів' ),
+      Field::make( 'text', 'crb_univer_besplatnoe_obushenie', 'Безкоштовне навчання' ),
+      Field::make( 'text', 'crb_univer_platnoe_obushenie', 'Платне навчання' ),
+      Field::make( 'text', 'crb_univer_aspirantura', 'Аспірантура' ),
+      Field::make( 'text', 'crb_univer_voenka', 'Військова кафедра' ),
+      Field::make( 'text', 'crb_univer_obsheghitie', 'Гуртожиток' ),
+      // Field::make( 'text', 'crb_univer_', '' ),
+      // Field::make( 'text', 'crb_univer_', '' ),
+      // Field::make( 'text', 'crb_univer_', '' ),
       
   ) );
 }
