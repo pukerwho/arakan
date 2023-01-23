@@ -151,7 +151,8 @@
       <td class="key"><span class="mr-2">👩‍🏫</span> <?php _e('Преподаватели', 'tarakan'); ?></td>
       <td class="value">
         <?php 
-          $meta_rating_food = 'rating_food_'.$current_id;
+          // $meta_rating_food = 'rating_food_'.$current_id;
+          $meta_rating_food = 'meta_rating_food';
           $rating_food_front = get_post_meta( $current_id, $meta_rating_food, true );
           $rating_food_width = ($rating_food_front / 5) * 100;
         ?>
@@ -168,7 +169,8 @@
       <td class="key"><span class="mr-2">🏫</span> <?php _e('Состояние кабинетов', 'tarakan'); ?></td>
       <td class="value">
         <?php 
-          $meta_rating_service = 'rating_service_'.$current_id;
+          // $meta_rating_service = 'rating_service_'.$current_id;
+          $meta_rating_service = 'meta_rating_service';
           $rating_service_front = get_post_meta( $current_id, $meta_rating_service, true );
           $rating_service_width = ($rating_service_front / 5) * 100;
         ?>
@@ -185,7 +187,8 @@
       <td class="key"><span class="mr-2">📓</span> <?php _e('Руководство', 'tarakan'); ?></td>
       <td class="value">
         <?php 
-          $meta_rating_price = 'rating_price_'.$current_id;
+          // $meta_rating_price = 'rating_price_'.$current_id;
+          $meta_rating_price = 'meta_rating_price';
           $rating_price_front = get_post_meta( $current_id, $meta_rating_price, true );
           $rating_price_width = ($rating_price_front / 5) * 100;
         ?>
@@ -202,7 +205,8 @@
       <td class="key"><span class="mr-2">📚</span> <?php _e('Учебная программа', 'tarakan'); ?></td>
       <td class="value">
         <?php 
-          $meta_rating_atmosfera = 'rating_atmosfera_'.$current_id;
+          // $meta_rating_atmosfera = 'rating_atmosfera_'.$current_id;
+          $meta_rating_atmosfera = 'meta_rating_atmosfera';
           $rating_atmosfera_front = get_post_meta( $current_id, $meta_rating_atmosfera, true );
           $rating_atmosfera_width = ($rating_atmosfera_front / 5) * 100;
         ?>

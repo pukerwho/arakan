@@ -375,7 +375,8 @@ function getMeta($post_id) {
   }
   foreach ($tr_array_id as $id) {
     // Еда
-    $meta_rating_food = 'rating_food_'.$id;
+    // $meta_rating_food = 'rating_food_'.$id;
+    $meta_rating_food = 'meta_rating_food';
     $random_rating_food = mt_rand(0, 99);
     $value_rating_food = '4.'.$random_rating_food;
     if ( ! metadata_exists( 'post', $id, $meta_rating_food ) ) {
@@ -383,7 +384,8 @@ function getMeta($post_id) {
     }
 
     // Обслуживание
-    $meta_rating_service = 'rating_service_'.$id;
+    // $meta_rating_service = 'rating_service_'.$id;
+    $meta_rating_service = 'meta_rating_service';
     $random_rating_service = mt_rand(0, 99);
     $value_rating_service = '4.'.$random_rating_service;
     if ( ! metadata_exists( 'post', $id, $meta_rating_service ) ) {
@@ -391,7 +393,8 @@ function getMeta($post_id) {
     }
 
     // Цена/качество
-    $meta_rating_price = 'rating_price_'.$id;
+    // $meta_rating_price = 'rating_price_'.$id;
+    $meta_rating_price = 'meta_rating_price';
     $random_rating_price = mt_rand(0, 99);
     $value_rating_price = '4.'.$random_rating_price;
     if ( ! metadata_exists( 'post', $id, $meta_rating_price ) ) {
@@ -399,7 +402,8 @@ function getMeta($post_id) {
     }
 
     // Атмосфера
-    $meta_rating_atmosfera = 'rating_atmosfera_'.$id;
+    // $meta_rating_atmosfera = 'rating_atmosfera_'.$id;
+    $meta_rating_atmosfera = 'meta_rating_atmosfera';
     $random_rating_atmosfera = mt_rand(0, 99);
     $value_rating_atmosfera = '4.'.$random_rating_atmosfera;
     if ( ! metadata_exists( 'post', $id, $meta_rating_atmosfera ) ) {
