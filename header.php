@@ -44,10 +44,12 @@ if ( is_singular( 'places' ) ) {
   $univer_after_description = crb_get_i18n_theme_option('crb_seo_univer_afterdescription');
 
   $sad_after_title = crb_get_i18n_theme_option('crb_seo_sad_aftertitle'); 
+  $sad_after_description = crb_get_i18n_theme_option('crb_seo_sad_afterdescription');
 
   // $school_after_title = crb_get_i18n_theme_option('crb_seo_mainpage_title'); 
   if (carbon_get_the_post_meta('crb_template_sad') === 'yes') {
     $after_title = $sad_after_title;
+    $after_description = $sad_after_description;
   } elseif (carbon_get_the_post_meta('crb_template_school') === 'yes') {
     $after_title = $school_after_title;
     $after_description = $school_after_description;
