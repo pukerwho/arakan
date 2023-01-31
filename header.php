@@ -36,12 +36,24 @@ if ( is_singular( 'places' ) ) {
   //SEO
   $place_after_title = crb_get_i18n_theme_option('crb_seo_place_aftertitle'); 
   $place_after_description = crb_get_i18n_theme_option('crb_seo_place_afterdescription');
+  
+  $school_after_title = crb_get_i18n_theme_option('crb_seo_school_aftertitle'); 
+  $school_after_description = crb_get_i18n_theme_option('crb_seo_school_afterdescription');
+
+  $univer_after_title = crb_get_i18n_theme_option('crb_seo_univer_aftertitle'); 
+  $univer_after_description = crb_get_i18n_theme_option('crb_seo_univer_afterdescription');
+
   $sad_after_title = crb_get_i18n_theme_option('crb_seo_sad_aftertitle'); 
+
   // $school_after_title = crb_get_i18n_theme_option('crb_seo_mainpage_title'); 
   if (carbon_get_the_post_meta('crb_template_sad') === 'yes') {
     $after_title = $sad_after_title;
   } elseif (carbon_get_the_post_meta('crb_template_school') === 'yes') {
-    $after_title = 'школа';
+    $after_title = $school_after_title;
+    $after_description = $school_after_description;
+  } elseif (carbon_get_the_post_meta('crb_template_univer') === 'yes') {
+    $after_title = $univer_after_title;
+    $after_description = $univer_after_description;
   } else {
     $after_title = $place_after_title;
     $after_description = $place_after_description;

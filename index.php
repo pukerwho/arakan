@@ -133,7 +133,25 @@ get_header();
 								<div class="relative">
 									<a href="<?php the_permalink(); ?>" class="w-full h-full absolute top-0 left-0 z-1"></a>
 									<div class="h-52 mb-4">
-										<img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>" class="w-full h-full object-cover rounded-lg">
+                    <?php 
+                      $thumb = get_the_post_thumbnail_url(get_the_ID(), 'thumbnail');
+                      $medium_thumb = get_the_post_thumbnail_url(get_the_ID(), 'medium');
+                      $large_thumb = get_the_post_thumbnail_url(get_the_ID(), 'large');
+                    ?>
+                    <img 
+                    src="<?php echo $large_thumb; ?>"
+                    srcset="<?php echo $thumb; ?> 150w,
+                    <?php echo $medium_thumb; ?> 300w,
+                    <?php echo $medium_thumb; ?> 600w,
+                    <?php echo $large_thumb; ?> 1000w"
+                    sizes="(min-width: 75rem) 60rem,
+                    (min-width: 50rem) 40rem,
+                    (min-width: 40rem) calc(100vw - 10rem),
+                    100vw"
+                    class="w-full h-full object-cover rounded-lg" 
+                    alt="<?php the_title(); ?>" 
+                    loading="lazy" 
+                    >
 									</div>
 									<div class="text-xl text-gray-600"><?php the_title(); ?></div>
 								</div>
@@ -166,7 +184,25 @@ get_header();
 									<div class="flex items-center -mx-2">
 										<div class="px-2">
 											<div class="h-32 w-32">
-												<img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>" class="w-full h-full object-cover rounded-l-lg">
+                        <?php 
+                          $thumb = get_the_post_thumbnail_url(get_the_ID(), 'thumbnail');
+                          $medium_thumb = get_the_post_thumbnail_url(get_the_ID(), 'medium');
+                          $large_thumb = get_the_post_thumbnail_url(get_the_ID(), 'large');
+                        ?>
+                        <img 
+                        src="<?php echo $large_thumb; ?>"
+                        srcset="<?php echo $thumb; ?> 150w,
+                        <?php echo $medium_thumb; ?> 300w,
+                        <?php echo $medium_thumb; ?> 600w,
+                        <?php echo $large_thumb; ?> 1000w"
+                        sizes="(min-width: 75rem) 60rem,
+                        (min-width: 50rem) 40rem,
+                        (min-width: 40rem) calc(100vw - 10rem),
+                        100vw"
+                        class="w-full h-full object-cover rounded-l-lg"
+                        alt="<?php the_title(); ?>" 
+                        loading="lazy" 
+                        >
 											</div>
 										</div>
 										<div class="px-2">

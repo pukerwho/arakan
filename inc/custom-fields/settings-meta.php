@@ -18,6 +18,14 @@ function crb_attach_theme_options() {
     Field::make( 'html', 'crb_seo_sad', __( 'SEO Sad' ) )->set_html( sprintf( '<b>ℹ️ Садочок</b>' ) ),
     Field::make( 'text', 'crb_seo_sad_aftertitle' . crb_get_i18n_suffix(), 'Садочок - AfterTitle' ),
     Field::make( 'text', 'crb_seo_sad_afterdescription' . crb_get_i18n_suffix(), 'Садочок - AfterDescription' ),
+
+    Field::make( 'html', 'crb_seo_school', __( 'SEO School' ) )->set_html( sprintf( '<b>ℹ️ Школа</b>' ) ),
+    Field::make( 'text', 'crb_seo_school_aftertitle' . crb_get_i18n_suffix(), 'Школа - AfterTitle' ),
+    Field::make( 'text', 'crb_seo_school_afterdescription' . crb_get_i18n_suffix(), 'Школа - AfterDescription' ),
+
+    Field::make( 'html', 'crb_seo_univer', __( 'SEO Univer' ) )->set_html( sprintf( '<b>ℹ️ Універ</b>' ) ),
+    Field::make( 'text', 'crb_seo_univer_aftertitle' . crb_get_i18n_suffix(), 'Універ - AfterTitle' ),
+    Field::make( 'text', 'crb_seo_univer_afterdescription' . crb_get_i18n_suffix(), 'Універ - AfterDescription' ),
   ))
   ->add_tab( __('Скрипты'), array(
     Field::make( 'textarea', 'crb_google_analytics', 'Google Analytics' ),
