@@ -286,7 +286,7 @@ get_header();
                     array(
                       'taxonomy' => 'place-type',
                       'field'    => 'term_id',
-                      'terms'    => array( 30255, 30257 ),
+                      'terms'    => array( 30255, 30257, 32005, 32007, 34244, 34249 ),
                       'operator' => 'NOT IN',
                     )
                   ),

@@ -37,7 +37,13 @@
           <div class="flex text-lg mb-6">
             <div class="border-r border-gray-500 pr-5 mr-5">
               <span class="font-semibold text-red-400">
-                55492
+                <?php
+                $count_places = wp_count_posts('places');
+                if ( $count_places ) {
+                  $published_places = $count_places->publish;
+                  echo round($published_places/2);
+                }
+                ?>
               </span>
               <?php _e('заведений', 'tarakan'); ?>
             </div>
