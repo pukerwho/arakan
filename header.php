@@ -35,6 +35,7 @@ if ( is_singular( 'places' ) ) {
   
   //SEO
   $place_after_title = crb_get_i18n_theme_option('crb_seo_place_aftertitle'); 
+  $place_after_description = crb_get_i18n_theme_option('crb_seo_place_afterdescription');
   $sad_after_title = crb_get_i18n_theme_option('crb_seo_sad_aftertitle'); 
   // $school_after_title = crb_get_i18n_theme_option('crb_seo_mainpage_title'); 
   if (carbon_get_the_post_meta('crb_template_sad') === 'yes') {
@@ -43,10 +44,12 @@ if ( is_singular( 'places' ) ) {
     $after_title = 'школа';
   } else {
     $after_title = $place_after_title;
+    $after_description = $place_after_description;
     // 'Отзывы, контакты, телефоны, доставка';
   }
 	
 	$current_title = $place_title . ' (' . $current_city . ') - ' . $after_title;
+  $current_description = $place_title . ' (' . $current_city . ') - ' . $after_description;
 }
 
 if (is_tax( 'city' )) {
