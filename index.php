@@ -275,13 +275,13 @@ get_header();
 									'post_type' => 'places',
 									'orderby' => 'rand',
 									'posts_per_page' => 5,
-									'meta_query' => array(
-										array(
-											'key'       => '_crb_place_rating',
-											'value'     => 4,
-											'compare'   => '>'
-										)
-                  ),
+									// 'meta_query' => array(
+									// 	array(
+									// 		'key'       => '_crb_place_rating',
+									// 		'value'     => 4,
+									// 		'compare'   => '>'
+									// 	)
+                  // ),
                   'tax_query' => array(
                     array(
                       'taxonomy' => 'place-type',
