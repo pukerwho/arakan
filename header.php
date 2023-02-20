@@ -68,44 +68,50 @@ if ( is_singular( 'places' ) ) {
 
 if (is_tax( 'city' )) {
   $tax_title = single_term_title( "", false );
+  $tax_id = get_queried_object_id();
   $paged = (get_query_var('page')) ? get_query_var('page') : 1;
   
   $term_header = get_term_by('slug', get_query_var('term'), 'city');
-  if((int)$term_header->parent) {
-    // child
-    $parent_term = get_term_by( 'id', $term_header->parent, 'city' );  
-    $parent_name = $parent_term->name; 
-    if (get_locale() === 'ru_RU') {
-      $help_title_text = ': где лучшие в городе - реальные отзывы';
-      $help_description_text = '. Отзывы, комментарии, фото. Большой каталог городов. Найди лучшие города на сайте Tarakan.org.ua!';
-      $current_page = '. Страница №' . $paged;
-    } else {
-      $help_title_text = ': де найкращі в місті - реальні відгуки';
-      $help_description_text = '. Відгуки, комментарі, фото. Великий каталог міст. Знайди найкращі міста на сайті Tarakan.org.ua!';
-      $current_page = '. Cторінка №' . $paged;
-    }
-    $current_title = $parent_name . ' (' . $tax_title  . ')' . $help_title_text;
-    if ($paged > 1) {
-      $current_title = $parent_name . ' (' . $tax_title . ')' . $help_title_text . '' . $current_page;
-    }
-    $current_description = $parent_name . ' (' . $tax_title  . ')' . $help_description_text;
+  if (carbon_get_term_meta($tax_id, 'crb_category_title')) {
+    $current_title = carbon_get_term_meta($tax_id, 'crb_category_title');
+    $current_description = carbon_get_term_meta($tax_id, 'crb_category_description');
   } else {
-    // parent
-    if (get_locale() === 'ru_RU') {
-      $help_title_text = 'Все заведения, лучшие места в городе ';
-      $help_description_text = 'Каталог заведений на сайте Tarakan.org.ua - отзывы, оценки, комментарии. Лучшие места в г.';
-      $current_page = '. Страница №' . $paged;
+    if((int)$term_header->parent) {
+      // child
+      $parent_term = get_term_by( 'id', $term_header->parent, 'city' );  
+      $parent_name = $parent_term->name; 
+      if (get_locale() === 'ru_RU') {
+        $help_title_text = ': где лучшие в городе - реальные отзывы';
+        $help_description_text = '. Отзывы, комментарии, фото. Большой каталог городов. Найди лучшие города на сайте Tarakan.org.ua!';
+        $current_page = '. Страница №' . $paged;
+      } else {
+        $help_title_text = ': де найкращі в місті - реальні відгуки';
+        $help_description_text = '. Відгуки, комментарі, фото. Великий каталог міст. Знайди найкращі міста на сайті Tarakan.org.ua!';
+        $current_page = '. Cторінка №' . $paged;
+      }
+      $current_title = $parent_name . ' (' . $tax_title  . ')' . $help_title_text;
+      if ($paged > 1) {
+        $current_title = $parent_name . ' (' . $tax_title . ')' . $help_title_text . '' . $current_page;
+      }
+      $current_description = $parent_name . ' (' . $tax_title  . ')' . $help_description_text;
     } else {
-      $help_title_text = 'Усі заклади, найкращі заклади в місті ';
-      $help_description_text = 'Каталог закладів на сайті Tarakan.org.ua – відгуки, оцінки, коментарі. Найкращі місця у м.';
-      $current_page = '. Cторінка №' . $paged;
-    }
-    $current_title = $tax_title . ': ' . $help_title_text . '' . $tax_title;
-    if ($paged > 1) {
-      $current_title = $tax_title . ': ' . $help_title_text . '' . $tax_title . '' . $current_page;
-    }
-    $current_description = $tax_title . ': ' . $help_description_text . '' . $tax_title;
-  }    
+      // parent
+      if (get_locale() === 'ru_RU') {
+        $help_title_text = 'Все заведения, лучшие места в городе ';
+        $help_description_text = 'Каталог заведений на сайте Tarakan.org.ua - отзывы, оценки, комментарии. Лучшие места в г.';
+        $current_page = '. Страница №' . $paged;
+      } else {
+        $help_title_text = 'Усі заклади, найкращі заклади в місті ';
+        $help_description_text = 'Каталог закладів на сайті Tarakan.org.ua – відгуки, оцінки, коментарі. Найкращі місця у м.';
+        $current_page = '. Cторінка №' . $paged;
+      }
+      $current_title = $tax_title . ': ' . $help_title_text . '' . $tax_title;
+      if ($paged > 1) {
+        $current_title = $tax_title . ': ' . $help_title_text . '' . $tax_title . '' . $current_page;
+      }
+      $current_description = $tax_title . ': ' . $help_description_text . '' . $tax_title;
+    }   
+  } 
 }
 
 ?>

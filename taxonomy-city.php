@@ -31,12 +31,17 @@ $term = get_term_by('slug', get_query_var('term'), $taxonomyName);
     </div>
     <!-- END Хлебные крошки -->
     <h1 class="text-2xl lg:text-4xl text-white font-semibold">
-      <?php if((int)$term->parent): ?>
-        <?php $parent_term = get_term_by( 'id', $term->parent, 'city' ); ?>
-        <?php echo $parent_term->name; ?>: <?php single_term_title(); ?>
+      <?php if (carbon_get_term_meta($current_cat_id, 'crb_category_heading')): ?>
+        <?php echo carbon_get_term_meta($current_cat_id, 'crb_category_heading'); ?>
       <?php else: ?>
-        <?php single_term_title(); ?>
+        <?php if((int)$term->parent): ?>
+          <?php $parent_term = get_term_by( 'id', $term->parent, 'city' ); ?>
+          <?php echo $parent_term->name; ?>: <?php single_term_title(); ?>
+        <?php else: ?>
+          <?php single_term_title(); ?>
+        <?php endif; ?>
       <?php endif; ?>
+      
     </h1>
   </div>  
 </div>
