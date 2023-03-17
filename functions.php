@@ -115,6 +115,7 @@ function crb_load() {
 
 require_once get_template_directory() . '/inc/share-buttons.php';
 require_once get_template_directory() . '/inc/filters.php';
+require_once get_template_directory() . '/inc/footer-links.php';
 
 remove_action('wp_head', 'print_emoji_detection_script', 7);
 remove_action('wp_print_styles', 'print_emoji_styles');

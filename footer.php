@@ -18,7 +18,6 @@
   <div class="hidden container mx-auto px-2 lg:px-5  mb-5">
     <h3 class="text-2xl text-gray-700 font-bold mb-2"><?php _e('Популярные сайты', 'tarakan'); ?></h3>
     <div class="treba-links flex flex-wrap items-center bg-white border border-gray-300 py-2 px-4">
-      
       <!-- do_shortcode('[render-treba-links]'); 
       echo do_shortcode('[render-treba-top-links]'); -->
     </div>
@@ -114,6 +113,14 @@
           <div class="footer_treba_links-tab" data-seo-tab="places"><?php _e('Заведения' ,'tarakan'); ?></div>
         </div>
         <div class="footer_treba_links-content active" data-seo-content-tab="search">
+          <?php 
+            $current_url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+            $footer_links = footer_links($current_url);
+            foreach ($footer_links as $footer_link):
+          ?>
+            <?php echo $footer_link->top_links; ?>
+          <?php endforeach; ?>
+
           <?php do_shortcode('[render-footer-links]'); ?>
           <?php echo do_shortcode('[render-footer-top-links]'); ?>
         </div>
