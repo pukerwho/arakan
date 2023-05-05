@@ -165,7 +165,7 @@
           © Tarakan — <?php _e('Все права защищены', 'tarakan'); ?>
         </div>
         <div class="mb-4 lg:mb-0">
-          <?php _e('Пишите нам на почту', 'tarakan'); ?> — <a href="mailto:hello@tarakan.org.ua">hello@tarakan.org.ua</a>
+          <?php _e('Пишите нам на почту', 'tarakan'); ?> — <a href="mailto:info@tarakan.org.ua">info@tarakan.org.ua</a>
         </div>
       </div>
     </div>
