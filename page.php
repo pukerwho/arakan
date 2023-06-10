@@ -28,7 +28,7 @@
 	<!-- Основной контент -->
 	<div class="bg-white shadow-lg rounded-lg mb-12 p-8">
 		<div class="font-light text-gray-700 mb-6">
-			<?php _e('Дата', 'tarakan'); ?>: <span class="font-semibold text-gray-700"><?php echo get_the_modified_time('j/n/Y') ?></span>
+			<?php _e('Дата', 'tarakan'); ?>: <span class="font-semibold text-gray-700"><?php echo get_the_date('j/n/Y') ?></span>
 		</div>
 		<div class="content">
 			<?php the_content(); ?>	
