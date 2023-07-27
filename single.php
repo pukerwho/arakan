@@ -179,6 +179,15 @@
         'post_type' => 'post', 
         'posts_per_page' => 3,
         'post__not_in' => array($current_id),
+        'tax_query' => array(
+          array(
+            'taxonomy' => 'category',
+            'terms' => $post_category->term_id,
+            'field' => 'term_id',
+            'include_children' => true,
+            'operator' => 'IN'
+          )
+        ),
       ) );
       if ($custom_query->have_posts()) : while ($custom_query->have_posts()) : $custom_query->the_post(); ?>
         <div class="w-full lg:w-1/3 mb-6 lg:mb-0 lg:px-4">
