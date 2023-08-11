@@ -67,10 +67,10 @@ get_header();
 <?php 
   
     echo "test";
-    $chatID = "tarakanadd";
+    $chatID = carbon_get_theme_option("crb_telegram_chat_id");
     $apiToken = carbon_get_theme_option("crb_telegram_api");
     $data = [
-      'chat_id' => "@tarakanadd", 
+      'chat_id' => $chatID, 
       'text' => "Hi!",
     ];
     $response = file_get_contents("https://api.telegram.org/bot".$apiToken."/sendMessage?" . http_build_query($data) );    
