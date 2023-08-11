@@ -65,7 +65,7 @@ get_header();
 </div>
 	
 <?php 
-  
+  if (isset($_POST['submit'])) {
     echo "test";
     $chatID = carbon_get_theme_option("crb_telegram_chat_id");
     $apiToken = carbon_get_theme_option("crb_telegram_api");
@@ -74,5 +74,6 @@ get_header();
       'text' => "Hi!",
     ];
     $response = file_get_contents("https://api.telegram.org/bot".$apiToken."/sendMessage?" . http_build_query($data) );    
+  }
 ?>
 <?php get_footer(); ?>
