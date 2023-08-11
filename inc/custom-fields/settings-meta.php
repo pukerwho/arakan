@@ -29,7 +29,9 @@ function crb_attach_theme_options() {
   ))
   ->add_tab( __('Скрипты'), array(
     Field::make( 'textarea', 'crb_google_analytics', 'Google Analytics' ),
-    Field::make( 'footer_scripts', 'crb_footer_scripts', 'Скрипты в футере' )
+    Field::make( 'footer_scripts', 'crb_footer_scripts', 'Скрипты в футере' ),
+    Field::make( 'text', 'crb_telegram_api', 'Telegram Апі' )
+
   ));
 }
 

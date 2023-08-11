@@ -4,7 +4,10 @@ Template Name: Додати
 */
 ?>
 
-<?php get_header(); ?>
+<?php 
+get_header(); 
+
+?>
 
 <div class="bg-gradient-to-r from-indigo-600 to-indigo-400 pt-20 pb-32 lg:py-32">
   <div class="container mx-auto px-2 lg:px-5">
@@ -40,16 +43,16 @@ Template Name: Додати
       <form name="form_add">
         <div class="flex flex-col ">
           <div class="mb-4">
-            <input type="text" name="Название" placeholder="<?php _e("Название заведения", "tarakan"); ?>" class="w-full custom-input" required>
+            <input type="text" name="Name" placeholder="<?php _e("Название заведения", "tarakan"); ?>" class="w-full custom-input" required>
           </div>
           <div class="mb-4 ">
-            <input type="tel" name="Город" placeholder="<?php _e("Город", "tarakan"); ?>" class="w-full custom-input" required>
+            <input type="tel" name="City" placeholder="<?php _e("Город", "tarakan"); ?>" class="w-full custom-input" required>
           </div>
           <div class="mb-4">
-            <input type="tel" name="Контакты" placeholder="<?php _e("Контакты", "tarakan"); ?>" class="w-full custom-input" required>
+            <input type="tel" name="Contacts" placeholder="<?php _e("Контакты", "tarakan"); ?>" class="w-full custom-input" required>
           </div>
           <div class="">
-            <button type="submit" class="w-full block bg-indigo-500 text-white rounded px-4 py-2 mb-2">
+            <button type="submit" name="submitTelegram" class="w-full block bg-indigo-500 text-white rounded px-4 py-2 mb-2">
               <span><?php _e('Отправить', 'tarakan'); ?></span>
             </button>
           </div>
@@ -61,5 +64,15 @@ Template Name: Додати
 	<!-- END Основной контент -->
 </div>
 	
-
+<?php 
+  
+    echo "test";
+    $chatID = "@tarakanadd";
+    $apiToken = carbon_get_theme_option("crb_telegram_api");
+    $data = [
+        'chat_id' => $chatID, 
+        'text' => "Hi!",
+    ];
+    $response = file_get_contents("https://api.telegram.org/bot$apiToken/sendMessage?" . http_build_query($data) );    
+?>
 <?php get_footer(); ?>
