@@ -40,13 +40,7 @@
           </ul>
         </div>
         <!-- END Хлебные крошки -->
-        <h1 class="text-2xl lg:text-4xl text-white font-semibold"><?php the_title(); ?> 
-          <?php if ($c_term[0]): ?>
-          <span class="text-xl lg:text-2xl text-gray-200">
-          , <?php echo $c_term[0]->name; ?>
-          </span>
-          <?php endif; ?>
-        </h1>
+        <h1 class="text-2xl lg:text-4xl text-white font-semibold"><?php the_title(); ?> </h1>
       </div>  
     </div>
     
@@ -172,9 +166,11 @@
 
               <?php if (carbon_get_the_post_meta('crb_place_url')): ?>
                 <?php if (carbon_get_the_post_meta('crb_template_sad') === 'yes' ||  carbon_get_the_post_meta('crb_template_school') === 'yes' || carbon_get_the_post_meta('crb_template_univer') === 'yes'): ?>
+                  <?php if (carbon_get_the_post_meta('crb_place_url') !== '--не указано--'): ?>
                   <div class="text-gray-700 mb-4">
                     <span class="font-semibold"><?php _e('Сайт', 'tarakan'); ?></span>: <a href="//<?php echo carbon_get_the_post_meta('crb_place_url'); ?>" target="_blank" rel="nofollow" class="text-indigo-500"><?php echo carbon_get_the_post_meta('crb_place_url'); ?></a>
                   </div>
+                  <?php endif; ?>
                 <?php else: ?>
                   <div class="text-gray-700 mb-4">
                     <span class="font-semibold"><?php _e('Меню', 'tarakan'); ?></span>: <a href="<?php echo carbon_get_the_post_meta('crb_place_url'); ?>" target="_blank" rel="nofollow" class="text-indigo-500"><?php _e("Посмотреть", "tarakan"); ?></a>
