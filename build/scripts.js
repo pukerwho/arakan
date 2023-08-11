@@ -50,6 +50,16 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 
 /***/ }),
 
+/***/ "./src/js/add_form.js":
+/*!****************************!*\
+  !*** ./src/js/add_form.js ***!
+  \****************************/
+/***/ (function() {
+
+eval("const addForm = document.querySelector(\"#form_add\");\naddForm.addEventListener(\"submit\", (e) => {\n  e.preventDefault();\n  sendMessage(addForm);\n})\n\nasync function sendMessage(addForm) {\n  const formData = new FormData(addForm);\n  if (formData) {\n    const response = await fetch(ajaxurl, {\n      method: \"POST\",\n      body: formData\n    });\n    if (response.ok) {\n      addForm.reset();\n    }\n  }\n}\n\n//# sourceURL=webpack://world/./src/js/add_form.js?");
+
+/***/ }),
+
 /***/ "./src/js/filters.js":
 /*!***************************!*\
   !*** ./src/js/filters.js ***!
@@ -67,7 +77,7 @@ eval("var $ = __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jqu
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css_main_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../css/main.scss */ \"./src/css/main.scss\");\n/* harmony import */ var _node_modules_jquery_ui_dist_jquery_ui_min_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../node_modules/jquery-ui/dist/jquery-ui.min.js */ \"./node_modules/jquery-ui/dist/jquery-ui.min.js\");\n/* harmony import */ var _node_modules_jquery_ui_dist_jquery_ui_min_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_jquery_ui_dist_jquery_ui_min_js__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _scripts_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./scripts.js */ \"./src/js/scripts.js\");\n/* harmony import */ var _scripts_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_scripts_js__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _filters_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./filters.js */ \"./src/js/filters.js\");\n/* harmony import */ var _filters_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_filters_js__WEBPACK_IMPORTED_MODULE_3__);\n\n\n\n\n\n\n//# sourceURL=webpack://world/./src/js/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css_main_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../css/main.scss */ \"./src/css/main.scss\");\n/* harmony import */ var _node_modules_jquery_ui_dist_jquery_ui_min_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../node_modules/jquery-ui/dist/jquery-ui.min.js */ \"./node_modules/jquery-ui/dist/jquery-ui.min.js\");\n/* harmony import */ var _node_modules_jquery_ui_dist_jquery_ui_min_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_jquery_ui_dist_jquery_ui_min_js__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _scripts_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./scripts.js */ \"./src/js/scripts.js\");\n/* harmony import */ var _scripts_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_scripts_js__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _filters_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./filters.js */ \"./src/js/filters.js\");\n/* harmony import */ var _filters_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_filters_js__WEBPACK_IMPORTED_MODULE_3__);\n/* harmony import */ var _add_form_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./add_form.js */ \"./src/js/add_form.js\");\n/* harmony import */ var _add_form_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_add_form_js__WEBPACK_IMPORTED_MODULE_4__);\n\n\n\n\n\n\n\n//# sourceURL=webpack://world/./src/js/index.js?");
 
 /***/ }),
 

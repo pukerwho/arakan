@@ -40,7 +40,7 @@ get_header();
 			<?php the_content(); ?>	
 		</div>
     <div class="form bg-gray-200 rounded-lg p-10">
-      <form name="form_add">
+      <form name="form_add" id="form_add">
         <div class="flex flex-col ">
           <div class="mb-4">
             <input type="text" name="Name" placeholder="<?php _e("Название заведения", "tarakan"); ?>" class="w-full custom-input" required>
@@ -64,16 +64,4 @@ get_header();
 	<!-- END Основной контент -->
 </div>
 	
-<?php 
-  if (isset($_POST['submitTelegram'])) {
-    echo "test";
-    $chatID = carbon_get_theme_option("crb_telegram_chat_id");
-    $apiToken = carbon_get_theme_option("crb_telegram_api");
-    $data = [
-      'chat_id' => $chatID, 
-      'text' => "Hi!",
-    ];
-    $response = file_get_contents("https://api.telegram.org/bot".$apiToken."/sendMessage?" . http_build_query($data) );    
-  }
-?>
 <?php get_footer(); ?>
