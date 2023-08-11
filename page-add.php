@@ -65,7 +65,7 @@ get_header();
 </div>
 	
 <?php 
-  if (isset($_POST['submit'])) {
+  if (isset($_POST['submitTelegram'])) {
     echo "test";
     $chatID = carbon_get_theme_option("crb_telegram_chat_id");
     $apiToken = carbon_get_theme_option("crb_telegram_api");
