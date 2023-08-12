@@ -1,3 +1,5 @@
+var $ = require("jquery");
+
 const addForm = document.querySelector("#form_add");
 addForm.addEventListener("submit", (e) => {
   e.preventDefault();
