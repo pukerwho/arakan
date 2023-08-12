@@ -22,7 +22,8 @@ addForm.addEventListener("submit", (e) => {
     success : function(data) {
       if (data) {
         console.log("відправили");
-        addForm.reset();         
+        addForm.reset();       
+        document.querySelector(".add-success").classList.remove("hidden");  
       }
     }
   });

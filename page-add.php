@@ -58,6 +58,7 @@ get_header();
           </div>
         </div>
       </form>
+      <div class="add-success hidden"><?php _e("Успешно отправлено!", "tarakan"); ?></div>
     </div>
 		
 	</div>
