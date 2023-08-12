@@ -442,3 +442,11 @@ function crb_get_i18n_theme_option( $option_name ) {
   $suffix = crb_get_i18n_suffix();
   return carbon_get_theme_option( $option_name . $suffix );
 }
+
+//Add Ajax
+add_action('wp_head', 'myplugin_ajaxurl');
+function myplugin_ajaxurl() {
+  echo '<script type="text/javascript">
+    var ajaxurl = "' . admin_url('admin-ajax.php') . '";
+  </script>';
+}
