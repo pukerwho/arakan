@@ -10,12 +10,14 @@ function telegramMessage() {
   $content .= "<b>Заклад</b>: $title\n";
   $content .= "<b>Місто</b>: $city\n";
   $content .= "<b>Контакт</b>: $email\n";
-  $data = [
-    'chat_id' => $chatID, 
-    'text' => $content,
-    'parse_mode' => 'HTML'
-  ];
-  $response = file_get_contents("https://api.telegram.org/bot".$apiToken."/sendMessage?" . http_build_query($data) );  
+  echo "test";
+  wp_die();
+  // $data = [
+  //   'chat_id' => $chatID, 
+  //   'text' => $content,
+  //   'parse_mode' => 'HTML'
+  // ];
+  // $response = file_get_contents("https://api.telegram.org/bot".$apiToken."/sendMessage?" . http_build_query($data) );  
 }
 
 add_action('wp_ajax_telegram_add_action', 'telegramMessage');
