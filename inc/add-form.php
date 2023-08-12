@@ -1,5 +1,9 @@
 <?php 
-function telegramMessage($title, $city, $email) {
+function telegramMessage() {
+  $title = stripslashes_deep($_POST['title']);
+  $city = stripslashes_deep($_POST['city']);
+  $email = stripslashes_deep($_POST['email']);
+
   $chatID = carbon_get_theme_option("crb_telegram_chat_id");
   $apiToken = carbon_get_theme_option("crb_telegram_api");
   $content = "";
