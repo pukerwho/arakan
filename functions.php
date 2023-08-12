@@ -116,7 +116,6 @@ function crb_load() {
 require_once get_template_directory() . '/inc/share-buttons.php';
 require_once get_template_directory() . '/inc/filters.php';
 require_once get_template_directory() . '/inc/footer-links.php';
-require_once get_template_directory() . '/inc/add-form.php';
 
 remove_action('wp_head', 'print_emoji_detection_script', 7);
 remove_action('wp_print_styles', 'print_emoji_styles');
@@ -440,6 +439,6 @@ function crb_get_i18n_suffix() {
 }
 
 function crb_get_i18n_theme_option( $option_name ) {
-    $suffix = crb_get_i18n_suffix();
-    return carbon_get_theme_option( $option_name . $suffix );
+  $suffix = crb_get_i18n_suffix();
+  return carbon_get_theme_option( $option_name . $suffix );
 }

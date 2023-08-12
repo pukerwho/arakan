@@ -56,7 +56,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
   \****************************/
 /***/ (function() {
 
-eval("const addForm = document.querySelector(\"#form_add\");\naddForm.addEventListener(\"submit\", (e) => {\n  e.preventDefault();\n  sendMessage(addForm);\n})\n\nasync function sendMessage(addForm) {\n  const formData = new FormData(addForm);\n  if (formData) {\n    const response = await fetch(ajaxurl, {\n      method: \"POST\",\n      body: formData\n    });\n    if (response.ok) {\n      addForm.reset();\n    }\n  }\n}\n\n//# sourceURL=webpack://world/./src/js/add_form.js?");
+eval("const addForm = document.querySelector(\"#form_add\");\naddForm.addEventListener(\"submit\", (e) => {\n  e.preventDefault();\n  const title = document.querySelector('#title-place').value;\n  const city = document.querySelector('#city-place').value;\n  const email = document.querySelector('#email-place').value;\n  let data = {\n    'action': 'telegram_add_action',\n    'title': title,\n    'city': city,\n    'email': email,\n  };\n  $.ajax({\n    url: ajaxurl,\n    data: data,\n    type: 'POST',\n    beforeSend : function(xhr) {\n      console.log('Загружаю')\n    },\n    success : function(data) {\n      if (data) {\n        console.log(\"відправили\");\n        addForm.reset();         \n      }\n    }\n  });\n  return;\n})\n\n//# sourceURL=webpack://world/./src/js/add_form.js?");
 
 /***/ }),
 

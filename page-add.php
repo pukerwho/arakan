@@ -43,13 +43,13 @@ get_header();
       <form name="form_add" id="form_add">
         <div class="flex flex-col ">
           <div class="mb-4">
-            <input type="text" name="Name" placeholder="<?php _e("Название заведения", "tarakan"); ?>" class="w-full custom-input" required>
+            <input id="title-place" type="text" name="Name" placeholder="<?php _e("Название заведения", "tarakan"); ?>" class="w-full custom-input" required>
           </div>
           <div class="mb-4 ">
-            <input type="tel" name="City" placeholder="<?php _e("Город", "tarakan"); ?>" class="w-full custom-input" required>
+            <input id="city-place" type="text" name="City" placeholder="<?php _e("Город", "tarakan"); ?>" class="w-full custom-input" required>
           </div>
           <div class="mb-4">
-            <input type="tel" name="Contacts" placeholder="<?php _e("Контакты", "tarakan"); ?>" class="w-full custom-input" required>
+            <input id="email-place" type="email" name="Contacts" placeholder="<?php _e("Email", "tarakan"); ?>" class="w-full custom-input" required>
           </div>
           <div class="">
             <button type="submit" name="submitTelegram" class="w-full block bg-indigo-500 text-white rounded px-4 py-2 mb-2">
