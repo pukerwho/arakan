@@ -21,6 +21,8 @@ function sendMessage(addForm) {
   };
   $.ajax({
     url: ajaxurl,
+    processData: false,
+    contentType: false,
     data: data,
     type: 'POST',
     beforeSend : function(xhr) {
