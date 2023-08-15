@@ -1,7 +1,7 @@
 var $ = require("jquery");
 
 const addForm = document.querySelector("#form_add");
-addForm.addEventListener("submit", (e) => {
+$(document).on('submit', '#form_add', function(e){
   e.preventDefault();
   sendMessage(addForm);
   // const title = document.querySelector('#title-place').value;
