@@ -6,7 +6,7 @@ addForm.addEventListener("submit", (e) => {
   // const title = document.querySelector('#title-place').value;
   // const city = document.querySelector('#city-place').value;
   // const email = document.querySelector('#email-place').value;
-  const formData = new formData(addForm);
+  const formData = new FormData(addForm);
   let data = {
     'action': 'telegram_add_action',
     // 'title': title,
