@@ -5,7 +5,7 @@ function telegramMessage() {
   // $email = stripslashes_deep($_POST['email']);
   $content = "";
   $formData = $_POST['formData'];
-  var_dump($formData);
+  echo $formData;
   foreach ($formData as $key => $value ) {
     $content .= "<b>".$key."</b>: <i>".$value."</i>\n";
   }
