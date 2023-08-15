@@ -48,6 +48,7 @@ get_header();
           <div class="mb-4 ">
             <input id="city-place" type="text" name="City" placeholder="<?php _e("Город", "tarakan"); ?>" class="w-full custom-input" required>
           </div>
+          
           <div class="mb-4">
             <input id="email-place" type="email" name="Contacts" placeholder="<?php _e("Email", "tarakan"); ?>" class="w-full custom-input" required>
           </div>

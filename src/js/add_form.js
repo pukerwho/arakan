@@ -3,14 +3,16 @@ var $ = require("jquery");
 const addForm = document.querySelector("#form_add");
 addForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  const title = document.querySelector('#title-place').value;
-  const city = document.querySelector('#city-place').value;
-  const email = document.querySelector('#email-place').value;
+  // const title = document.querySelector('#title-place').value;
+  // const city = document.querySelector('#city-place').value;
+  // const email = document.querySelector('#email-place').value;
+  const formData = new formData(addForm);
   let data = {
     'action': 'telegram_add_action',
-    'title': title,
-    'city': city,
-    'email': email,
+    // 'title': title,
+    // 'city': city,
+    // 'email': email,
+    'formData': formData
   };
   $.ajax({
     url: ajaxurl,
