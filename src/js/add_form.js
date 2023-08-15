@@ -3,9 +3,14 @@ var $ = require("jquery");
 const addForm = document.querySelector("#form_add");
 addForm.addEventListener("submit", (e) => {
   e.preventDefault();
+  sendMessage(addForm);
   // const title = document.querySelector('#title-place').value;
   // const city = document.querySelector('#city-place').value;
   // const email = document.querySelector('#email-place').value;
+  
+})
+
+function sendMessage(addForm) {
   const formData = new FormData(addForm);
   let data = {
     'action': 'telegram_add_action',
@@ -30,4 +35,4 @@ addForm.addEventListener("submit", (e) => {
     }
   });
   return;
-})
+}
