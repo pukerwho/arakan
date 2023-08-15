@@ -645,10 +645,6 @@ video {
   position: relative;
 }
 
-.bottom-2 {
-  bottom: 0.5rem;
-}
-
 .left-4 {
   left: 1rem;
 }
@@ -812,6 +808,10 @@ video {
   margin-top: -8rem;
 }
 
+.ml-2 {
+  margin-left: 0.5rem;
+}
+
 .mb-0 {
   margin-bottom: 0px;
 }
@@ -894,12 +894,12 @@ video {
   height: 3rem;
 }
 
-.h-\[150px\] {
-  height: 150px;
-}
-
 .h-4 {
   height: 1rem;
+}
+
+.h-\[150px\] {
+  height: 150px;
 }
 
 .h-10 {
@@ -946,12 +946,12 @@ video {
   width: 3rem;
 }
 
-.w-64 {
-  width: 16rem;
-}
-
 .w-4 {
   width: 1rem;
+}
+
+.w-64 {
+  width: 16rem;
 }
 
 .w-\[2\.5rem\] {
@@ -1096,10 +1096,6 @@ video {
   border-radius: 0.25rem;
 }
 
-.rounded-md {
-  border-radius: 0.375rem;
-}
-
 .rounded-full {
   border-radius: 9999px;
 }
@@ -1227,11 +1223,6 @@ video {
 .bg-gray-800 {
   --tw-bg-opacity: 1;
   background-color: rgb(31 41 55 / var(--tw-bg-opacity));
-}
-
-.bg-blue-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(59 130 246 / var(--tw-bg-opacity));
 }
 
 .bg-gray-200 {
@@ -1600,14 +1591,14 @@ video {
   color: rgb(249 250 251 / var(--tw-text-opacity));
 }
 
+.text-blue-600 {
+  --tw-text-opacity: 1;
+  color: rgb(37 99 235 / var(--tw-text-opacity));
+}
+
 .text-gray-400 {
   --tw-text-opacity: 1;
   color: rgb(156 163 175 / var(--tw-text-opacity));
-}
-
-.text-gray-200 {
-  --tw-text-opacity: 1;
-  color: rgb(229 231 235 / var(--tw-text-opacity));
 }
 
 .text-green-600 {
@@ -1841,13 +1832,21 @@ body {
   color: rgb(248 113 113 / var(--tw-text-opacity));
 }
 
+.focus\:ring-2:focus {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  -webkit-box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+          box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+}
+
+.focus\:ring-blue-500:focus {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(59 130 246 / var(--tw-ring-opacity));
+}
+
 @media (min-width: 768px) {
   .md\:block {
     display: block;
-  }
-
-  .md\:hidden {
-    display: none;
   }
 }
 
@@ -2121,11 +2120,6 @@ body {
   .lg\:text-3xl {
     font-size: 1.875rem;
     line-height: 2.25rem;
-  }
-
-  .lg\:text-2xl {
-    font-size: 1.5rem;
-    line-height: 2rem;
   }
 
   .lg\:leading-relaxed {
