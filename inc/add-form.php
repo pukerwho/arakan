@@ -1,5 +1,6 @@
 <?php 
 function telegramMessage() {
+  echo "hi!!!";
   // $title = stripslashes_deep($_POST['title']);
   // $city = stripslashes_deep($_POST['city']);
   // $email = stripslashes_deep($_POST['email']);
