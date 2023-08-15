@@ -1,22 +1,15 @@
 <?php 
 function telegramMessage() {
-  echo "hi!!!";
-  // $title = stripslashes_deep($_POST['title']);
-  // $city = stripslashes_deep($_POST['city']);
-  // $email = stripslashes_deep($_POST['email']);
-  $content = "";
-  $formData = $_POST['formData'];
-  echo $formData;
-  foreach ($formData as $key => $value ) {
-    $content .= "<b>".$key."</b>: <i>".$value."</i>\n";
-  }
+  $title = stripslashes_deep($_POST['title']);
+  $city = stripslashes_deep($_POST['city']);
+  $email = stripslashes_deep($_POST['email']);
 
   $chatID = carbon_get_theme_option("crb_telegram_chat_id");
   $apiToken = carbon_get_theme_option("crb_telegram_api");
-  // $content = "";
-  // $content .= "<b>Заклад</b>: $title\n";
-  // $content .= "<b>Місто</b>: $city\n";
-  // $content .= "<b>Контакт</b>: $email\n";
+  $content = "";
+  $content .= "<b>Заклад</b>: $title\n";
+  $content .= "<b>Місто</b>: $city\n";
+  $content .= "<b>Контакт</b>: $email\n";
   $data = [
     'chat_id' => $chatID, 
     'text' => $content,
