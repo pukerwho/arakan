@@ -49,16 +49,19 @@ get_header();
             <input id="city-place" type="text" name="City" placeholder="<?php _e("Город", "tarakan"); ?>" class="w-full custom-input" required>
           </div>
           <div class="mb-4 ">
-            <input id="address-place" type="text" name="Address" placeholder="<?php _e("Адреса: вулиця, будинок", "tarakan"); ?>" class="w-full custom-input" required>
+            <input id="address-place" type="text" name="Address" placeholder="<?php _e("Адрес: улица, дом", "tarakan"); ?>" class="w-full custom-input" required>
           </div>
           <div class="mb-4 ">
-            <input id="phone-place" type="text" name="Phone" placeholder="<?php _e("Телефон закладу", "tarakan"); ?>" class="w-full custom-input" required>
+            <input id="phone-place" type="text" name="Phone" placeholder="<?php _e("Телефон заведения", "tarakan"); ?>" class="w-full custom-input" required>
           </div>
           <div class="mb-4 ">
             <input id="price-place" type="text" name="Price" placeholder="<?php _e("Средний чек", "tarakan"); ?>" class="w-full custom-input">
           </div>
+          <div class="mb-4 ">
+            <input id="menu-place" type="text" name="Menu" placeholder="<?php _e("Ссылка на меню", "tarakan"); ?>" class="w-full custom-input">
+          </div>
           <div class="mb-4">
-            <input id="email-place" type="email" name="Contacts" placeholder="<?php _e("Email для зворотного зв'язку", "tarakan"); ?>" class="w-full custom-input" required>
+            <input id="email-place" type="email" name="Contacts" placeholder="<?php _e("Email для обратной связи", "tarakan"); ?>" class="w-full custom-input" required>
           </div>
           <div class="text-xl font-bold mb-6"><?php _e("Дополнительная информация", "tarakan"); ?></div>
           <div class="mb-4">
