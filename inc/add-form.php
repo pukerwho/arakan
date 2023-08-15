@@ -5,7 +5,7 @@ function telegramMessage() {
   // $email = stripslashes_deep($_POST['email']);
   $content = "";
   foreach ($_POST as $key => $value ) {
-    $content .= "<b>$key</b>: <i>$value</i>\n";
+    $content .= "<b>".$key."</b>: <i>".$value."</i>\n";
   }
 
   $chatID = carbon_get_theme_option("crb_telegram_chat_id");
