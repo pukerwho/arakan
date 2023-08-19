@@ -26,13 +26,13 @@
               <meta itemprop="position" content="2">
             </li>
             <?php 
-            $current_term = wp_get_post_terms(  get_the_ID() , 'place-type', array( 'parent' => 0 ) );
-            foreach (array_slice($current_term, 0,1) as $myterm); {
+            $current_term = wp_get_post_terms( $current_id, 'place-type', array( 'parent' => 0 ) );
+            foreach (array_slice($current_term, 0,1) as $term_type); {
             } ?>
-            <?php if ($myterm): ?>
+            <?php if ($term_type): ?>
             <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="breadcrumbs_item" >
-              <a itemprop="item" href="<?php echo get_term_link($myterm->term_id, 'place-type') ?>" class="text-white opacity-90">
-                <span itemprop="name"><?php echo $myterm->name; ?></span>
+              <a itemprop="item" href="<?php echo get_term_link($term_type->term_id, 'place-type') ?>" class="text-white opacity-90">
+                <span itemprop="name"><?php echo $term_type->name; ?></span>
               </a>
               <meta itemprop="position" content="3" />
             </li>
