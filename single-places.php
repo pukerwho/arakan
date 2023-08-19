@@ -208,7 +208,7 @@
               <?php endif; ?>
 
               <div class="text-gray-700 font-semibold mb-4">
-                <?php _e('Категория', 'tarakan'); ?>: <a href="<?php echo get_term_link($myterm->term_id, 'place-type') ?>" class="text-red-400"><?php echo $myterm->name; ?></a>
+                <?php _e('Категория', 'tarakan'); ?>: <a href="<?php echo get_term_link($term_type->term_id, 'place-type') ?>" class="text-red-400"><?php echo $term_type->name; ?></a>
               </div>
 
               <div class="text-gray-700 font-semibold">
