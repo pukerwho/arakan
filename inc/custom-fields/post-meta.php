@@ -24,6 +24,10 @@ function crb_post_theme_options() {
       Field::make( 'text', 'crb_place_address', 'Адрес' ),
       Field::make( 'text', 'crb_place_email', 'Email' ),
       Field::make( 'text', 'crb_place_phones', 'Телефоны' ),
+      Field::make( 'complex', 'crb_place_other', 'Інші' )->add_fields( array(
+          Field::make( 'text', 'crb_place_other_address', 'Адрес' ),
+          Field::make( 'text', 'crb_place_other_phone', 'Телефон' ),
+      )),
       Field::make( 'text', 'crb_place_rating', 'Рейтинг места' ),
       Field::make( 'text', 'crb_place_reviews_count', 'Кол-во отзывов' ),
       Field::make( 'text', 'crb_place_views_count', 'Кол-во просмотров' ),

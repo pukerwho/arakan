@@ -41,6 +41,9 @@
         </div>
         <!-- END Хлебные крошки -->
         <h1 class="text-2xl lg:text-4xl text-white font-semibold"><?php the_title(); ?> </h1>
+        <?php if (carbon_get_the_post_meta('crb_place_other')): ?>
+          <div class="text-gray-200 text-lg italic mt-6"><?php _e("Сеть заведений", "tarakan"); ?></div>
+        <?php endif; ?>
       </div>  
     </div>
     
@@ -162,6 +165,20 @@
               <div class="text-gray-700 mb-4">
                 <span class="font-semibold"><?php _e('Email', 'tarakan'); ?></span>: <span class=""><?php echo carbon_get_the_post_meta('crb_place_email'); ?></span>
               </div>
+              <?php endif; ?>
+
+              <?php if (carbon_get_the_post_meta('crb_place_other')): ?>
+                <div class="mb-4">
+                  <div class="text-lg font-bold mb-2"><?php _e("Еще адреса", "tarakan"); ?></div>
+                  <?php 
+                    $places_other = carbon_get_the_post_meta('crb_place_other');
+                    foreach( $places_other as $place_other ): ?>
+                    <div class="border-b-2 border-dotted border-gray-300 pb-4 mb-4">
+                      <div class="mb-2">📍 <?php echo $place_other['crb_place_other_address'] ?></div>
+                      <div>📞 <?php echo $place_other['crb_place_other_phone'] ?>	</div>
+                    </div>
+                  <?php endforeach; ?>
+                </div>
               <?php endif; ?>
 
               <?php if (carbon_get_the_post_meta('crb_place_url')): ?>
