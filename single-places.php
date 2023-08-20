@@ -44,6 +44,9 @@
         <?php if (carbon_get_the_post_meta('crb_place_other')): ?>
           <div class="text-gray-200 text-lg italic mt-6"><?php _e("Сеть заведений", "tarakan"); ?></div>
         <?php endif; ?>
+        <?php if (carbon_get_the_post_meta('crb_place_close')): ?>
+          <div class="inline-flex text-white text-lg bg-red-500 rounded px-4 py-2 mt-6"><?php _e("Закрыто/Не работает", "tarakan"); ?></div>
+        <?php endif; ?>
       </div>  
     </div>
     

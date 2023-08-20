@@ -19,6 +19,7 @@ function crb_post_theme_options() {
 	Container::make( 'post_meta', 'More' )
     ->where( 'post_type', '=', 'places' )
     ->add_fields( array(
+      Field::make( 'checkbox', 'crb_place_close', 'Закрито/Не працює' ),
       Field::make( 'media_gallery', 'crb_place_photos', 'Фотографії' )->set_type( array( 'image' ) ),
       Field::make( 'text', 'crb_place_url', 'Url сайта' ),
       Field::make( 'text', 'crb_place_address', 'Адрес' ),
