@@ -451,10 +451,3 @@ function myplugin_ajaxurl() {
     var ajaxurl = "' . admin_url('admin-ajax.php') . '";
   </script>';
 }
-
-add_filter('forminator_tinymce_args', function( $args ){
-if( is_string( $args ) ){
-$args = str_replace('WordPress', 'wordpress', $args);
-}
-return $args;
-});
