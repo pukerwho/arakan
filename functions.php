@@ -452,14 +452,9 @@ function myplugin_ajaxurl() {
   </script>';
 }
 
-add_filter(
-	'script_loader_tag',
-	function( $tag, $handle ) {
-		if ( 'tiny_mce' === $handle ) {
-			$tag = str_replace( '/WordPress/plugin.min.js', '/wordpress/plugin.min.js', $tag );
-		}
-		return $tag;
-	},
-	10,
-	2
-);
+add_filter('forminator_tinymce_args', function( $args ){
+if( is_string( $args ) ){
+$args = str_replace('WordPress', 'wordpress', $args);
+}
+return $args;
+});
