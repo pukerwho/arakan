@@ -3,6 +3,7 @@ function telegramMessage() {
   $title = stripslashes_deep($_POST['title']);
   $city = stripslashes_deep($_POST['city']);
   $email = stripslashes_deep($_POST['email']);
+  $phone = stripslashes_deep($_POST['phone']);
   $address = stripslashes_deep($_POST['address']);
   $menu = stripslashes_deep($_POST['menu']);
   $price = stripslashes_deep($_POST['price']);
@@ -26,6 +27,8 @@ function telegramMessage() {
   $content = "";
   $content .= "<b>Заклад</b>: $title\n";
   $content .= "<b>Місто</b>: $city\n";
+  $content .= "<b>Email</b>: $email\n";
+  $content .= "<b>Телефон</b>: $phone\n";
   $content .= "<b>Адреса</b>: $address\n";
   $content .= "<b>Меню</b>: $menu\n";
   $content .= "<b>Середній чек</b>: $price\n";

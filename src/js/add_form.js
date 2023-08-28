@@ -6,6 +6,7 @@ addForm.addEventListener('submit', (e) => {
   const title = document.querySelector('#title-place').value;
   const city = document.querySelector('#city-place').value;
   const email = document.querySelector('#email-place').value;
+  const phone = document.querySelector('#phone-place').value;
   const address = document.querySelector('#address-place').value;
   const menu = document.querySelector('#menu-place').value;
   const price = document.querySelector('#price-place').value;
@@ -28,6 +29,7 @@ addForm.addEventListener('submit', (e) => {
     'title': title,
     'city': city,
     'email': email,
+    'phone': phone,
     'address': address,
     'menu': menu,
     'price': price,
