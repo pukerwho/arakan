@@ -451,4 +451,3 @@ function myplugin_ajaxurl() {
     var ajaxurl = "' . admin_url('admin-ajax.php') . '";
   </script>';
 }
-add_filter ( 'user_can_richedit' , create_function ( '$a' , 'return false;' ) , 50 );
