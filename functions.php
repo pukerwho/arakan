@@ -451,3 +451,15 @@ function myplugin_ajaxurl() {
     var ajaxurl = "' . admin_url('admin-ajax.php') . '";
   </script>';
 }
+
+add_filter(
+	'script_loader_tag',
+	function( $tag, $handle ) {
+		if ( 'tiny_mce' === $handle ) {
+			$tag = str_replace( '/WordPress/plugin.min.js', '/wordpress/plugin.min.js', $tag );
+		}
+		return $tag;
+	},
+	10,
+	2
+);
