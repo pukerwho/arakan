@@ -192,9 +192,10 @@ function create_post_type() {
       'public' => true,
       'has_archive' => true,
       'hierarchical' => true,
-      'show_in_rest' => false,
+      'show_in_rest' => true,
       'menu_icon' => 'dashicons-megaphone',
-      'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments', 'custom-fields', 'revisions'),
+      'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments', 'custom-fields', 'revisions', 'page-attributes' ),
+
     )
   );
 }
