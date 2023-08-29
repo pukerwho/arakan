@@ -225,7 +225,7 @@ if (is_tax( 'city' )) {
             <!-- End Пошук -->
 
             <!-- Кнопка Добавить -->
-            <div class="flex items-center relative bg-indigo-500 rounded text-white text-sm lg:text-md px-4 lg:px-6 py-2 mr-6 lg:mr-4">
+            <div class="flex items-center relative bg-indigo-500 rounded text-white text-sm lg:text-md px-4 lg:px-6 py-2">
               <a href="<?php echo get_page_url('page-add'); ?>" class="w-full h-full absolute top-0 left-0 z-1"></a>
               <div class="mr-2">
                 <?php _e('Добавить', 'tarakan'); ?>
