@@ -279,68 +279,42 @@
       <div>
 
         <!-- Похожие места -->
-        <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between border-b border-gray-300 mb-6 pb-6">
-          <h2 class="text-2xl lg:text-4xl text-gray-700 font-semibold mb-4 lg:mb-0">
-            <?php _e('Похожие места', 'tarakan'); ?>
-          </h2>
-          <div>
-            <a href="<?php echo get_post_type_archive_link('places'); ?>" class="text-indigo-500 border border-indigo-500 rounded px-5 py-2">
-              <?php _e('Больше мест', 'tarakan'); ?>
-            </a>
+        <div class="bg-white shadow-lg rounded-lg px-8 py-6 mb-10">
+          <h2 class="text-2xl lg:text-4xl text-gray-700 font-semibold mb-8"><?php _e('Другие заведения в городе ', 'tarakan'); ?> <?php echo $c_term[0]->name; ?></h2>
+          <div class="flex flex-wrap lg:-mx-6">
+            <?php $children = get_terms( 'city', array(
+              'parent'    => $c_term[0]->term_id,
+              'hide_empty' => false
+            ) );
+            if ( $children ): ?>
+              <?php foreach( $children as $subcat): ?>
+                <div class="w-full lg:w-1/2 lg:px-6 mb-6">
+                  <h3 class="text-xl lg:text-2xl text-gray-700 font-semibold mb-4"><?php echo $subcat->name; ?></h3>
+                  <?php 
+                    $current_id = get_the_ID();
+                    $custom_query = new WP_Query( array( 
+                    'post_type' => 'places', 
+                    'posts_per_page' => 5,
+                    'post__not_in' => array($current_id),
+                    'orderby' => 'rand',
+                    'tax_query' => array(
+                      'relation' => 'AND',
+                      array(
+                        'taxonomy' => 'city',
+                        'terms' => $subcat->term_id,
+                        'field' => 'term_id',
+                        'include_children' => true,
+                        'operator' => 'IN'
+                      ),
+                    ),
+                  ) );
+                  if ($custom_query->have_posts()) : while ($custom_query->have_posts()) : $custom_query->the_post(); ?>
+                    <div class="text-lg mb-2 last-of-type:mb-0"><a href="<?php the_permalink(); ?>" class="hover:text-blue-500"><?php the_title(); ?></a></div>
+                  <?php endwhile; endif; wp_reset_postdata(); ?>
+                </div>
+              <?php endforeach; ?>
+            <?php endif; ?>
           </div>
-        </div>
-
-        <div class="overflow-x-auto shadow-xl mb-20">
-          <table class="w-full bg-white table-auto">
-            <thead class="bg-gray-100 text-gray-500 border border-gray-200 uppercase">
-              <tr>
-                <th class="text-left whitespace-nowrap px-2 py-3">
-                  <div class="text-left font-bold"><?php _e("Название", "tarakan"); ?></div>
-                </th>
-                <th class="text-left whitespace-nowrap px-2 py-3">
-                  <div class="text-left font-bold"><?php _e("Город", "tarakan"); ?></div>
-                </th>
-                <th class="text-left whitespace-nowrap px-2 py-3">
-                  <div class="text-left font-bold"><?php _e("Адрес", "tarakan"); ?></div>
-                </th>
-                <th class="text-left whitespace-nowrap px-2 py-3">
-                  <div class="text-left font-bold"><?php _e("Категория", "tarakan"); ?></div>
-                </th>
-                <th class="text-left whitespace-nowrap px-2 py-3">
-                  <div class="text-left font-bold"><?php _e("Рейтинг", "tarakan"); ?></div>
-                </th>
-              </tr>
-            </thead>
-            <tbody class="text-sm">
-              <?php 
-                $current_id = get_the_ID();
-                $custom_query = new WP_Query( array( 
-                'post_type' => 'places', 
-                'posts_per_page' => 5,
-                'post__not_in' => array($current_id),
-                'tax_query' => array(
-                  'relation' => 'AND',
-                  array(
-                    'taxonomy' => 'city',
-                    'terms' => $c_term[0]->term_id,
-                    'field' => 'term_id',
-                    'include_children' => true,
-                    'operator' => 'IN'
-                  ),
-                  array(
-                    'taxonomy' => 'place-type',
-                    'terms' => $myterm->term_id,
-                    'field' => 'term_id',
-                    'include_children' => true,
-                    'operator' => 'IN'
-                  ),
-                ),
-              ) );
-              if ($custom_query->have_posts()) : while ($custom_query->have_posts()) : $custom_query->the_post(); ?>
-                <?php get_template_part('template-parts/place-item-table'); ?>
-              <?php endwhile; endif; wp_reset_postdata(); ?>
-            </tbody>
-				  </table>
         </div>
         <!-- END Похожие места -->
 
