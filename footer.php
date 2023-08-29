@@ -52,7 +52,7 @@
             </div>
           </div>
           <!-- Переключатель языка -->
-          <div class="lang hidden lg:inline-flex items-center shadow mb-6">
+          <div class="lang inline-flex items-center shadow mb-6">
             <?php if (function_exists('pll_the_languages')) { 
               pll_the_languages(); 
             } ?>

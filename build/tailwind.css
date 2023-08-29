@@ -930,8 +930,8 @@ video {
   width: 35px;
 }
 
-.w-64 {
-  width: 16rem;
+.w-auto {
+  width: auto;
 }
 
 .w-8 {
@@ -952,6 +952,10 @@ video {
 
 .w-4 {
   width: 1rem;
+}
+
+.w-64 {
+  width: 16rem;
 }
 
 .w-\[2\.5rem\] {

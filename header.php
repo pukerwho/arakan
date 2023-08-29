@@ -203,12 +203,6 @@ if (is_tax( 'city' )) {
               </div>
             </div>
 
-            <!-- Поиск -->
-            <div class="hidden w-full">
-              <?php echo get_search_form(); ?>	
-            </div>
-            <!-- END Поиск -->
-
           </div>
           <!-- END Left Side -->
 
@@ -216,14 +210,14 @@ if (is_tax( 'city' )) {
           <div class="flex items-center">
 
             <!-- Пошук -->
-            <div class="mr-6 lg:mr-4">
+            <div class="hidden lg:block mr-6 lg:mr-4">
               <form role="search" method="get" class="search-form flex items-center relative" action="<?php echo home_url( '/' ); ?>">
                 <div class="absolute left-3 top-3 text-gray-400">
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                     <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
                   </svg>  
                 </div>
-                <input type="text" value="<?php echo get_search_query() ?>" name="s" id="s" class="w-64 border border-gray-300 text-gray-700 shadow-sm rounded px-4 pl-10 py-2" placeholder="<?php _e('Поиск', 'tarakan'); ?>" />
+                <input type="text" value="<?php echo get_search_query() ?>" name="s" id="s" class="w-auto border border-gray-300 text-gray-700 shadow-sm rounded px-4 pl-10 py-2" placeholder="<?php _e('Поиск', 'tarakan'); ?>" />
                 <input type="hidden" name="post_type" value="places" />
                 <input type="submit" class="search-submit hidden" value="<?php echo esc_attr_x( 'Найти', 'submit button' ) ?>" />
               </form>
@@ -318,16 +312,21 @@ if (is_tax( 'city' )) {
     </div>
 	</header><!-- #masthead -->
 
-	<!-- На мобильном поиск -->
-	<div class="container hidden px-2 mx-auto">
-		<div class="pb-4">
-			<?php echo get_search_form(); ?>
-		</div>
-	</div>
-	<!-- END На мобильном поиск -->
-
 	<div class="mobile-menu hidden h-full w-full fixed top-auto bottom-0 left-0 overflow-y-scroll pt-[68px]">
-		<div class="bg-white dark:bg-dark-xl p-4">
+		<div class="bg-white p-4">
+      <div class="mb-6">
+        <div class="text-xl mb-4"><?php _e("Поиск", "tarakan"); ?></div>
+        <form role="search" method="get" class="search-form flex items-center relative" action="<?php echo home_url( '/' ); ?>">
+          <div class="absolute left-3 top-3 text-gray-400">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
+            </svg>  
+          </div>
+          <input type="text" value="<?php echo get_search_query() ?>" name="s" id="s" class="w-full border border-gray-300 text-gray-700 shadow-sm rounded px-4 pl-10 py-2" placeholder="<?php _e('Поиск', 'tarakan'); ?>" />
+          <input type="hidden" name="post_type" value="places" />
+          <input type="submit" class="search-submit hidden" value="<?php echo esc_attr_x( 'Найти', 'submit button' ) ?>" />
+        </form>
+      </div>
 			<div class="text-xl mb-4"><?php _e("Меню", "tarakan"); ?>:</div>
 			<?php wp_nav_menu([
 	      'theme_location' => 'menu-1',
