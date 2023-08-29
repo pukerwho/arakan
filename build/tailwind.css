@@ -713,6 +713,11 @@ video {
   margin-bottom: 1rem;
 }
 
+.-mx-4 {
+  margin-left: -1rem;
+  margin-right: -1rem;
+}
+
 .-mx-1 {
   margin-left: -0.25rem;
   margin-right: -0.25rem;
@@ -910,6 +915,10 @@ video {
   height: 2.5rem;
 }
 
+.h-\[15px\] {
+  height: 15px;
+}
+
 .min-h-screen {
   min-height: 100vh;
 }
@@ -960,6 +969,10 @@ video {
 
 .w-\[2\.5rem\] {
   width: 2.5rem;
+}
+
+.w-\[1px\] {
+  width: 1px;
 }
 
 .min-w-\[2\.5rem\] {
@@ -1266,6 +1279,36 @@ video {
 .bg-green-300 {
   --tw-bg-opacity: 1;
   background-color: rgb(134 239 172 / var(--tw-bg-opacity));
+}
+
+.bg-gray-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(156 163 175 / var(--tw-bg-opacity));
+}
+
+.bg-yellow-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(234 179 8 / var(--tw-bg-opacity));
+}
+
+.bg-yellow-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(250 204 21 / var(--tw-bg-opacity));
+}
+
+.bg-blue-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(59 130 246 / var(--tw-bg-opacity));
+}
+
+.bg-blue-50 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(239 246 255 / var(--tw-bg-opacity));
+}
+
+.bg-blue-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(219 234 254 / var(--tw-bg-opacity));
 }
 
 .bg-gradient-to-r {
@@ -1629,6 +1672,11 @@ video {
   color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
+.text-blue-500 {
+  --tw-text-opacity: 1;
+  color: rgb(59 130 246 / var(--tw-text-opacity));
+}
+
 .opacity-90 {
   opacity: 0.9;
 }
@@ -1859,6 +1907,10 @@ body {
   color: rgb(59 130 246 / var(--tw-text-opacity));
 }
 
+.hover\:underline:hover {
+  text-decoration-line: underline;
+}
+
 .focus\:ring-2:focus {
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
   --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
@@ -1874,6 +1926,10 @@ body {
 @media (min-width: 768px) {
   .md\:block {
     display: block;
+  }
+
+  .md\:w-1\/2 {
+    width: 50%;
   }
 }
 
@@ -1961,6 +2017,13 @@ body {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
+  }
+
+  .lg\:inline-flex {
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
   }
 
   .lg\:hidden {
@@ -2133,6 +2196,10 @@ body {
 
   .lg\:pr-10 {
     padding-right: 2.5rem;
+  }
+
+  .lg\:pt-32 {
+    padding-top: 8rem;
   }
 
   .lg\:pt-0 {

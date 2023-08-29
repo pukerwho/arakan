@@ -215,6 +215,21 @@ if (is_tax( 'city' )) {
           <!-- Right Side -->
           <div class="flex items-center">
 
+            <!-- Пошук -->
+            <div class="mr-6 lg:mr-4">
+              <form role="search" method="get" class="search-form flex items-center relative" action="<?php echo home_url( '/' ); ?>">
+                <div class="absolute left-3 top-3 text-gray-400">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
+                  </svg>  
+                </div>
+                <input type="text" value="<?php echo get_search_query() ?>" name="s" id="s" class="w-64 border border-gray-300 text-gray-700 shadow-sm rounded px-4 pl-10 py-2" placeholder="<?php _e('Поиск', 'tarakan'); ?>" />
+                <input type="hidden" name="post_type" value="places" />
+                <input type="submit" class="search-submit hidden" value="<?php echo esc_attr_x( 'Найти', 'submit button' ) ?>" />
+              </form>
+            </div>
+            <!-- End Пошук -->
+
             <!-- Кнопка Добавить -->
             <div class="flex items-center relative bg-indigo-500 rounded text-white text-sm lg:text-md px-4 lg:px-6 py-2 mr-6 lg:mr-4">
               <a href="<?php echo get_page_url('page-add'); ?>" class="w-full h-full absolute top-0 left-0 z-1"></a>
@@ -228,14 +243,6 @@ if (is_tax( 'city' )) {
               </div>
             </div>
             <!-- END Кнопка Добавить -->
-            
-            <!-- Переключатель языка -->
-            <div class="lang hidden lg:flex items-center shadow">
-              <?php if (function_exists('pll_the_languages')) { 
-                pll_the_languages(); 
-              } ?>
-            </div>
-            <!-- END Переключатель языка -->
 
             <!-- Гамбургер -->
             <div class="hamburger-toggle block lg:hidden relative">

@@ -51,6 +51,13 @@
               <?php _e('отзывов', 'tarakan'); ?>
             </div>
           </div>
+          <!-- Переключатель языка -->
+          <div class="lang hidden lg:inline-flex items-center shadow mb-6">
+            <?php if (function_exists('pll_the_languages')) { 
+              pll_the_languages(); 
+            } ?>
+          </div>
+          <!-- END Переключатель языка -->
           <div class="flex items-center">
             <a href="https://sdamkvartiry.com/">
               <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/sdamkvartiry.jpg" alt="sdamkvartiry.com" loading="lazy">

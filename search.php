@@ -1,53 +1,32 @@
-<?php
-/**
- * The template for displaying search results pages
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
- *
- * @package G-Info
- */
+<?php get_header(); ?>
+<div class="container lg:pt-32">
+  <div class="flex flex-wrap lg:-mx-4 mb-10">
+    <div class="w-full lg:w-3/4 lg:px-4 mb-6 lg:mb-0">
+      <h1 class="text-4xl font-bold mb-6"><?php printf( esc_html__('Результаты поиска', 'tarakan' )); ?></h1>
+      <div class="mb-6">
+        <form role="search" method="get" class="search-form flex items-center relative" action="<?php echo home_url( '/' ); ?>">
+          <div class="absolute left-3 top-3 text-gray-400">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
+            </svg>  
+          </div>
+          <input type="text" value="<?php echo get_search_query() ?>" name="s" id="s" class="w-64 border border-gray-300 text-gray-700 shadow-sm rounded px-4 pl-10 py-2" placeholder="<?php _e('Поиск', 'tarakan'); ?>" />
+          <input type="hidden" name="post_type" value="places" />
+          <input type="submit" class="search-submit hidden" value="<?php echo esc_attr_x( 'Найти', 'submit button' ) ?>" />
+        </form>
+      </div>
+      <div class="flex flex-wrap lg:-mx-4 mb-6">
+        <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+          <div class="w-full lg:w-1/2 lg:px-4 mb-8">
+            <?php get_template_part('template-parts/places/modern-style-other'); ?>
+          </div>
+        <?php endwhile; endif; wp_reset_postdata(); ?>
+      </div>
+    </div>
+    <div class="w-full lg:w-1/4 lg:px-4">
+      <?php get_template_part("template-parts/sidebar"); ?>
+    </div>
+  </div>
 
-get_header();
-?>
-
-	<main id="primary">
-
-		<?php if ( have_posts() ) : ?>
-
-			<header>
-				<h1>
-					<?php
-					/* translators: %s: search query. */
-					printf( esc_html__( 'Search Results for: %s', 'g-info' ), '<span>' . get_search_query() . '</span>' );
-					?>
-				</h1>
-			</header>
-
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
-
-				/**
-				 * Run the loop for the search to output the results.
-				 * If you want to overload this in a child theme then include a file
-				 * called content-search.php and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', 'search' );
-
-			endwhile;
-
-			the_posts_navigation();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif;
-		?>
-
-	</main><!-- #main -->
-
-<?php
-get_sidebar();
-get_footer();
+</div>
+<?php get_footer(); ?>
