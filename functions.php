@@ -194,7 +194,7 @@ function create_post_type() {
       'hierarchical' => true,
       'show_in_rest' => true,
       'menu_icon' => 'dashicons-megaphone',
-      'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments', 'custom-fields', 'revisions', 'page-attributes' ),
+      'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments', 'custom-fields', 'revisions',  ),
 
     )
   );
