@@ -17,12 +17,13 @@ Template Name: All Links
     <table class="place-rating w-full bg-gray-100  shadow-lg border-b-transparent text-sm lg:text-md mb-20">
       <tbody>
         <?php 
-        $current_page = !empty( $_GET['page'] ) ? $_GET['page'] : 1;
+        global $wp_query, $wp_rewrite;  
+        $wp_query->query_vars['paged'] > 1 ? $current = $wp_query->query_vars['paged'] : $current = 1;
         $query = new WP_Query( array( 
           'post_type' => 'places', 
           'posts_per_page' => 100,
           'order'    => 'DESC',
-          'paged' => $current_page,
+          'paged' => $current,
           'meta_query' => array(
             array(
               'key' => '_crb_place_url',
@@ -43,9 +44,9 @@ Template Name: All Links
       <?php 
         $big = 9999999991; // уникальное число
         echo paginate_links( array(
-          'format' => '?page=%#%',
+          'format' => 'page/%#%',
           'total' => $query->max_num_pages,
-          'current' => $current_page,
+          'current' => $current,
           'prev_next' => true,
           'next_text' => (''),
           'prev_text' => (''),
