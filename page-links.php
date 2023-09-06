@@ -21,7 +21,7 @@ Template Name: All Links
         $wp_query->query_vars['paged'] > 1 ? $current = $wp_query->query_vars['paged'] : $current = 1;
         $query = new WP_Query( array( 
           'post_type' => 'places', 
-          'posts_per_page' => 100,
+          'posts_per_page' => 1000,
           'order'    => 'DESC',
           'paged' => $current,
           'meta_query' => array(
