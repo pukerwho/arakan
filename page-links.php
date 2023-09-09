@@ -34,6 +34,8 @@ Template Name: All Links
           // ),
         ) );
         if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
+
+        <?php $post_id = get_the_ID(); open_place_comment($post_id); ?>
           <tr class="border-b border-gray-300">
             <td><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></td>
             <td><?php echo carbon_get_the_post_meta('crb_place_url'); ?></td>

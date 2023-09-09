@@ -307,6 +307,15 @@ function add_meta_query_mainhide() {
   }
 }
 
+function open_place_comment($post_id) {
+  $my_post = array(
+    'ID' => $post_id,
+    'post_type' => 'places',
+    'comment_status' => 'open',
+  );
+  wp_update_post( $my_post );
+}
+
 // Создаем счетчик для записей
 function tutCount($id) {
   
