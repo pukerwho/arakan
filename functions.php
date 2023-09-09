@@ -292,7 +292,7 @@ function city_register_taxonomy() {
 add_action( 'init', 'city_register_taxonomy');
 
 // Задаємо дефолтное значення всім записам
-add_action( 'init', 'add_meta_query_mainhide');
+// add_action( 'init', 'add_meta_query_mainhide');
 function add_meta_query_mainhide() {
   $posts_args = array('numberposts' => -1, 'post_type' => 'places');
   $all_posts = get_posts($posts_args);
