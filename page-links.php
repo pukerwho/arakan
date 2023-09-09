@@ -24,13 +24,14 @@ Template Name: All Links
           'posts_per_page' => 1000,
           'order'    => 'DESC',
           'paged' => $current,
-          'meta_query' => array(
-            array(
-              'key' => '_crb_place_url',
-              'value' => array(''),
-              'compare' => 'NOT IN'
-            ),
-          ),
+          'comment_status' => 'closed',
+          // 'meta_query' => array(
+          //   array(
+          //     'key' => '_crb_place_url',
+          //     'value' => array(''),
+          //     'compare' => 'NOT IN'
+          //   ),
+          // ),
         ) );
         if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
           <tr class="border-b border-gray-300">
