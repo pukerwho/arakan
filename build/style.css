@@ -514,6 +514,11 @@ input[type=number] {
   z-index: 11;
 }
 
+.custom-cards::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+
 .single-subjects-inner li {
   padding-left: 0;
   margin-bottom: 0.25rem;

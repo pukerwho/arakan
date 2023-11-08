@@ -245,7 +245,6 @@
     }
     img {
       width: 100%;
-      height: 100%;
       -o-object-fit: cover;
       object-fit: cover;
       margin-bottom: 10px;
@@ -355,6 +354,13 @@
     -webkit-backdrop-filter: blur(6px);
     backdrop-filter: blur(6px);
     z-index: 11;
+  }
+}
+
+.custom-cards {
+  &::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
   }
 }
 

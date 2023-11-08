@@ -46,7 +46,7 @@
 
       <div class="w-full lg:w-8/12 lg:px-8 lg:py-6 lg:border-r-2 mb-4 lg:mb-0">
         <div class="mb-6">
-          <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>" class="w-full h-full object-cover rounded-lg">
+          <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>" class="w-full object-cover rounded-lg">
         </div>
       	<div class="content">
           <div class="single-subjects mb-5">

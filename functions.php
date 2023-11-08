@@ -198,6 +198,21 @@ function create_post_type() {
 
     )
   );
+  register_post_type( 'rating',
+    array(
+      'labels' => array(
+          'name' => __( 'Рейтинг' ),
+          'singular_name' => __( 'Рейтинг' )
+      ),
+      'public' => true,
+      'has_archive' => true,
+      'hierarchical' => true,
+      'show_in_rest' => true,
+      'menu_icon' => 'dashicons-megaphone',
+      'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments', 'custom-fields', 'revisions',  ),
+
+    )
+  );
 }
 add_action( 'init', 'create_post_type' );
 
@@ -242,7 +257,7 @@ function category_register_taxonomy() {
     ),
   );
 
-  register_taxonomy( 'place-type', array( 'places' ), $args );
+  register_taxonomy( 'place-type', array( 'places', 'rating' ), $args );
 }
 add_action( 'init', 'category_register_taxonomy');
 
@@ -287,7 +302,7 @@ function city_register_taxonomy() {
     ),
   );
 
-  register_taxonomy( 'city', array( 'places' ), $args );
+  register_taxonomy( 'city', array( 'places', 'rating' ), $args );
 }
 add_action( 'init', 'city_register_taxonomy');
 
@@ -441,8 +456,8 @@ function searchfilter($query) {
   if ($query->is_search && !is_admin() ) {
     if (isset($_GET['post_type'])) {
       $type = $_GET['post_type'];
-      if ($type == 'book') {
-        $query->set('post_type',array('book'));
+      if ($type == 'places') {
+        $query->set('post_type',array('places'));
       }
     }       
   }

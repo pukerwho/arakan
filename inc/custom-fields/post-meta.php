@@ -16,6 +16,17 @@ function crb_post_theme_options() {
       Field::make( 'text', 'crb_post_keywords', 'Keywords' ),
       Field::make( 'checkbox', 'crb_post_mainhide', 'Не виводити на головній сторінці' ),
   ) );
+  Container::make( 'post_meta', 'More' )
+    ->where( 'post_type', '=', 'rating' )
+    ->add_fields( array(
+      Field::make( 'association', 'crb_rating_our_place', 'Наш вибір')
+      ->set_types( array(
+        array(
+          'type'      => 'post',
+          'post_type' => 'places',
+        )
+      ) )
+  ) );
 	Container::make( 'post_meta', 'More' )
     ->where( 'post_type', '=', 'places' )
     ->add_fields( array(
