@@ -111,6 +111,7 @@ function crb_load() {
     require_once get_template_directory() . '/inc/custom-fields/page-meta.php';
     require_once get_template_directory() . '/inc/custom-fields/term-meta.php';
     require_once get_template_directory() . '/inc/custom-fields/comment-meta.php';
+    require_once get_template_directory() . '/inc/custom-fields/gutenberg-blocks.php';
 }
 
 require_once get_template_directory() . '/inc/share-buttons.php';

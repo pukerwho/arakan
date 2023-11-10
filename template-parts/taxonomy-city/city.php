@@ -75,6 +75,12 @@
                 <div class="text-left font-bold"><?php _e("Название", "tarakan"); ?></div>
               </th>
               <th class="whitespace-nowrap px-3 py-3">
+                <div class="text-left font-bold"><?php _e("Категория", "tarakan"); ?></div>
+              </th>
+              <th class="whitespace-nowrap px-3 py-3">
+                <div class="text-left font-bold"><?php _e("Адрес", "tarakan"); ?></div>
+              </th>
+              <th class="whitespace-nowrap px-3 py-3">
                 <div class="text-left font-bold"><?php _e("Просмотров", "tarakan"); ?></div>
               </th>
               <th class="whitespace-nowrap px-3 py-3">
@@ -107,6 +113,17 @@
                 <td class="whitespace-nowrap px-3">
                   <div class="hover:text-red-400 font-bold"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div>
                 </td>
+                <td class="whitespace-nowrap px-3">
+                  <?php 
+                  $other_current_terms = wp_get_post_terms(  get_the_ID() , 'place-type', array( 'parent' => 0 ) );
+                  foreach (array_slice($other_current_terms, 0,1) as $other_place_term):
+                  ?>
+                    <?php if ($other_place_term): ?>
+                      <div class="text-gray-500 hover:text-red-400"><a href="<?php echo get_term_link( $other_place_term ) ;?>"><?php echo $other_place_term->name; ?></a></div> 
+                    <?php endif; ?>
+                  <?php endforeach; ?>
+                </td>
+                <td class="whitespace-nowrap px-3"><?php echo carbon_get_the_post_meta('crb_place_address'); ?></td>
                 <td class="whitespace-nowrap px-3"><?php echo get_post_meta( get_the_ID(), 'place_count', true ); ?></td>
                 <td class="whitespace-nowrap px-3"><?php echo carbon_get_the_post_meta('crb_place_rating'); ?></span>/5</td>
               </tr>

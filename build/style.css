@@ -320,6 +320,13 @@ input[type=number] {
   opacity: 1;
 }
 
+.custom-style-text {
+  color: #1b1b1b;
+  font-size: 18px;
+  line-height: 1.5;
+  font-weight: 300;
+}
+
 .sketch-underline {
   background: url(b061dac05705c11ccd4d.svg) bottom left/100% 0.75rem no-repeat;
   padding-bottom: 0.1rem;
@@ -413,7 +420,6 @@ input[type=number] {
 .content .wp-caption img,
 .content .wp-block-image img {
   width: 100%;
-  height: 100%;
   -o-object-fit: cover;
   object-fit: cover;
   margin-bottom: 10px;
