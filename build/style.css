@@ -356,6 +356,11 @@ input[type=number] {
   font-weight: 600;
   padding: 15px 0;
 }
+.content h4 {
+  font-size: 18px;
+  font-weight: 400;
+  padding: 12px 0;
+}
 .content a {
   color: #0666f5;
 }
