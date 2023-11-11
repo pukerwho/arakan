@@ -31,8 +31,19 @@ $(".city-filter-submit-js").on("click", function () {
       averageCheckValue: averageCheckValue,
       keyArray: keyArray,
     },
+    beforeSend: function() {
+      $(".filter-button").removeClass('city-filter-submit-js');
+      $(".filter-button").addClass('bg-black/80');
+      console.log("before");
+    },
     success: function (res) {
       $("#response").html(res);
+      $(".filter-button").addClass('city-filter-submit-js');
+      $(".filter-button").removeClass('bg-black/80');
+      $([document.documentElement, document.body]).animate({
+        scrollTop: $("#response").offset().top - 50
+      }, 500);
+      console.log("відповідь");
       // closeModal();
     },
   });

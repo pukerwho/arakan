@@ -57,7 +57,7 @@
           </div>
           <!-- Разное -->
 
-          <div class="bg-indigo-500 rounded-b-lg cursor-pointer city-filter-submit-js px-2 py-4">
+          <div class="filter-button bg-indigo-500 rounded-b-lg cursor-pointer city-filter-submit-js px-2 py-4">
             <div class="text-center text-gray-50 text-lg"><?php _e("Применить", "tarakan"); ?></div>
           </div>
 

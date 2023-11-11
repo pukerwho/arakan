@@ -128,8 +128,7 @@
             <?php echo $footer_link->top_links; ?>
           <?php endforeach; ?>
 
-          <?php do_shortcode('[render-footer-links]'); ?>
-          <?php echo do_shortcode('[render-footer-top-links]'); ?>
+          
         </div>
         <div class="footer_treba_links-content" data-seo-content-tab="cities">
           <div class="flex flex-wrap lg:-mx-4">
