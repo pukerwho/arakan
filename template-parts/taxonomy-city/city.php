@@ -123,7 +123,6 @@
                   foreach (array_slice($termchildren, 0,1) as $termchild):
                   ?>
                     <?php if ($termchild): ?>
-                      
                       <div class="text-gray-500 hover:text-red-400"><a href="<?php echo get_term_link( $termchild ) ;?>"><?php echo $termchild->name; ?></a></div> 
                     <?php endif; ?>
                   <?php endforeach; ?>

@@ -1776,6 +1776,18 @@ video {
   text-decoration-line: underline;
 }
 
+.decoration-indigo-500 {
+  text-decoration-color: #6366f1;
+}
+
+.decoration-double {
+  text-decoration-style: double;
+}
+
+.decoration-wavy {
+  text-decoration-style: wavy;
+}
+
 .opacity-90 {
   opacity: 0.9;
 }
@@ -2061,12 +2073,12 @@ body {
     margin-right: 1.25rem;
   }
 
-  .md\:mb-0 {
-    margin-bottom: 0px;
-  }
-
   .md\:mb-6 {
     margin-bottom: 1.5rem;
+  }
+
+  .md\:mb-0 {
+    margin-bottom: 0px;
   }
 
   .md\:block {

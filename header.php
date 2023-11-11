@@ -304,7 +304,7 @@ if (is_tax( 'city' )) {
           </div>
 
           <!-- right side -->
-          <div class="text-sm text-gray-700">
+          <div class="hidden text-sm text-gray-700">
             <?php _e("Обновлено", "tarakan"); ?>: <?php echo get_the_date("d.m.Y"); ?>
           </div>
         </div>
