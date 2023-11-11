@@ -107,7 +107,10 @@
                 ),
               ) );
             if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
-            <?php $i=$i+1; ?>
+              <?php 
+                $i=$i+1; 
+                $current_place_id = get_the_ID();
+              ?>
               <tr class="border-b border-gray-200 text-gray-600 even:bg-white first-of-type:bg-green-200">
                 <td class="whitespace-nowrap px-3 py-3"><?php echo $i; ?></td>
                 <td class="whitespace-nowrap px-3">
@@ -115,11 +118,13 @@
                 </td>
                 <td class="whitespace-nowrap px-3">
                   <?php 
-                  $other_current_terms = wp_get_post_terms(  get_the_ID() , 'place-type', array( 'parent' => 0 ) );
-                  foreach (array_slice($other_current_terms, 0,1) as $other_place_term):
+                  $args = array( 'hide_empty' => '0','taxonomy' => 'city', 'parent' => get_queried_object_id());
+                  $termchildren = wp_get_post_terms($current_place_id, 'city', $args);
+                  foreach (array_slice($termchildren, 0,1) as $termchild):
                   ?>
-                    <?php if ($other_place_term): ?>
-                      <div class="text-gray-500 hover:text-red-400"><a href="<?php echo get_term_link( $other_place_term ) ;?>"><?php echo $other_place_term->name; ?></a></div> 
+                    <?php if ($termchild): ?>
+                      
+                      <div class="text-gray-500 hover:text-red-400"><a href="<?php echo get_term_link( $termchild ) ;?>"><?php echo $termchild->name; ?></a></div> 
                     <?php endif; ?>
                   <?php endforeach; ?>
                 </td>

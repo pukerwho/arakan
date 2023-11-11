@@ -82,7 +82,7 @@ $other_items = [
   // ],
 ];
 foreach ($other_items as $other_item): ?>
-  <div class="w-full lg:w-1/3 flex items-center lg:px-4 mb-4">
+  <div class="mb-4 last-of-type:mb-0">
     <input type="checkbox" name="filter-place-<?php echo $other_item["slug"]; ?>" id="filter-place-<?php echo $other_item["slug"]; ?>" class="filter-checkbox" value="yes" data-key="<?php echo $other_item["key"]; ?>" />
     <label for="filter-place-<?php echo $other_item["slug"]; ?>"><?php _e($other_item["name"], "tarakan"); ?></label>
   </div>
