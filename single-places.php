@@ -4,6 +4,9 @@
   $current_id = get_the_ID();
   $countNumber = tutCount(get_the_ID());
   $c_term = wp_get_post_terms(  get_the_ID() , 'city', array( 'parent' => 0 ) );
+  $type_term = wp_get_post_terms( $current_id, 'place-type', array( 'parent' => 0 ) );
+  $city_categories_args = array( 'hide_empty' => '0','taxonomy' => 'city', 'parent' => $c_term[0]->term_id);
+  $city_categories = wp_get_post_terms($current_id, 'city', $city_categories_args);
 ?>
 
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
@@ -19,24 +22,27 @@
               </a>                        
               <meta itemprop="position" content="1">
             </li>
-            <li itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem' class="breadcrumbs_item mr-8">
-              <a itemprop="item" href="<?php echo get_post_type_archive_link('places'); ?>" class="text-white opacity-90">
-                <span itemprop="name"><?php _e( 'Каталог', 'tarakan' ); ?></span>
-              </a>                        
-              <meta itemprop="position" content="2">
-            </li>
-            <?php 
-            $current_term = wp_get_post_terms( $current_id, 'place-type', array( 'parent' => 0 ) );
-            foreach (array_slice($current_term, 0,1) as $term_type); {
-            } ?>
-            <?php if ($term_type): ?>
-            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="breadcrumbs_item" >
-              <a itemprop="item" href="<?php echo get_term_link($term_type->term_id, 'place-type') ?>" class="text-white opacity-90">
-                <span itemprop="name"><?php echo $term_type->name; ?></span>
+
+            <?php foreach (array_slice($c_term, 0,1) as $city); {} ?>
+            <?php if ($city): ?>
+            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="breadcrumbs_item mr-8" >
+              <a itemprop="item" href="<?php echo get_term_link($city->term_id, 'city') ?>" class="text-white opacity-90">
+                <span itemprop="name"><?php echo $city->name; ?></span>
               </a>
-              <meta itemprop="position" content="3" />
+              <meta itemprop="position" content="2" />
             </li>
             <?php endif; ?>
+
+            <?php foreach (array_slice($city_categories, 0,1) as $city_category); {} ?>
+            <?php if ($city_category): ?>
+            <li itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem' class="breadcrumbs_item">
+              <a itemprop="item" href="<?php echo get_term_link($city_category->term_id, 'city') ?>" class="text-white opacity-90">
+                <span itemprop="name"><?php echo $city_category->name; ?></span>
+              </a>                        
+              <meta itemprop="position" content="3">
+            </li>
+            <?php endif; ?>
+
           </ul>
         </div>
         <!-- END Хлебные крошки -->
@@ -211,7 +217,13 @@
               <?php endif; ?>
 
               <div class="text-gray-700 font-semibold mb-4">
-                <?php _e('Категория', 'tarakan'); ?>: <a href="<?php echo get_term_link($term_type->term_id, 'place-type') ?>" class="text-red-400"><?php echo $term_type->name; ?></a>
+                <?php _e('Категория', 'tarakan'); ?>: 
+                <?php foreach (array_slice($city_categories, 0,1) as $city_category); {} ?>
+                <?php if ($city_category): ?>
+                  <a href="<?php echo get_term_link($city_category->term_id, 'city') ?>" class="text-red-400">
+                    <?php echo $city_category->name; ?>
+                  </a>
+                <?php endif; ?>
               </div>
 
               <div class="text-gray-700 font-semibold">
