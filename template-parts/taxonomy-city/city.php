@@ -118,7 +118,7 @@
                 </td>
                 <td class="whitespace-nowrap px-3">
                   <?php 
-                  $args = array( 'hide_empty' => '0','taxonomy' => 'city', 'parent' => get_queried_object_id());
+                  $args = array( 'hide_empty' => '0','taxonomy' => 'city', 'parent' => $current_cat_id);
                   $termchildren = wp_get_post_terms($current_place_id, 'city', $args);
                   foreach (array_slice($termchildren, 0,1) as $termchild):
                   ?>
@@ -144,9 +144,8 @@
       <h2 class="text-2xl md:text-3xl lg:text-4xl text-black/80 text-center mb-6">👀 <?php _e("Ищите что-то конкретное", "tarakan"); ?>?</h2>
       <div class="text-lg text-center opacity-75 mb-10"><?php _e("Какие заведения есть в городе", "tarakan"); ?>.</div>
       <div class="flex flex-wrap lg:-mx-4">
-        <?php $parent_id = get_queried_object_id();
-        $child_terms = get_terms($taxonomyName, array('parent' => $parent_id, 'hide_empty' => false ));
-        var_dump($child_terms);
+        <?php 
+        $child_terms = get_terms($taxonomyName, array('parent' => $current_cat_id, 'hide_empty' => false ));
         foreach ( $child_terms as $child ): ?>
           <div class="w-full md:w-1/2 lg:w-1/3 md:px-4 mb-4 md:mb-6">
             <div class="relative flex justify-between items-center bg-white border border-gray-400 rounded p-4">
