@@ -146,6 +146,7 @@
       <div class="flex flex-wrap lg:-mx-4">
         <?php $parent_id = get_queried_object_id();
         $child_terms = get_terms($taxonomyName, array('parent' => $parent_id, 'hide_empty' => false ));
+        var_dump($child_terms);
         foreach ( $child_terms as $child ): ?>
           <div class="w-full md:w-1/2 lg:w-1/3 md:px-4 mb-4 md:mb-6">
             <div class="relative flex justify-between items-center bg-white border border-gray-400 rounded p-4">
