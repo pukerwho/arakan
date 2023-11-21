@@ -13,4 +13,4 @@ Container::make( 'comment_meta', 'Comment Information' )
 		'1' => 1,
 	) ),
 ) );
-
+?>

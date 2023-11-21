@@ -32,6 +32,7 @@ if ( ! function_exists( 'tarakan_setup' ) ) :
 				'script',
 			)
 		);
+
 		add_theme_support(
 			'custom-background',
 			apply_filters(
@@ -43,14 +44,8 @@ if ( ! function_exists( 'tarakan_setup' ) ) :
 			)
 		);
 
-		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
 
-		/**
-		 * Add support for core custom logo.
-		 *
-		 * @link https://codex.wordpress.org/Theme_Logo
-		 */
 		add_theme_support(
 			'custom-logo',
 			array(
@@ -64,13 +59,6 @@ if ( ! function_exists( 'tarakan_setup' ) ) :
 endif;
 add_action( 'after_setup_theme', 'tarakan_setup' );
 
-/**
- * Set the content width in pixels, based on the theme's design and stylesheet.
- *
- * Priority 0 to make it available to lower priority callbacks.
- *
- * @global int $content_width
- */
 function tarakan_content_width() {
 	$GLOBALS['content_width'] = apply_filters( 'tarakan_content_width', 640 );
 }
@@ -117,9 +105,6 @@ remove_action( 'wp_head', 'feed_links', 2 );
 
 include('inc/enqueues.php');
 
-/**
- * Enqueue scripts and styles.
- */
 function tarakan_scripts() {
 	wp_enqueue_style( 'tailwind', get_stylesheet_directory_uri() . '/build/tailwind.css', false, time() );
 	wp_enqueue_style( 'styles', get_stylesheet_directory_uri() . '/build/style.css', false, time() );
@@ -138,30 +123,12 @@ function tarakan_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'tarakan_scripts' );
 
-/**
- * Implement the Custom Header feature.
- */
 require get_template_directory() . '/inc/custom-header.php';
-
-/**
- * Custom template tags for this theme.
- */
 require get_template_directory() . '/inc/template-tags.php';
-
-/**
- * Functions which enhance the theme by hooking into WordPress.
- */
 require get_template_directory() . '/inc/template-functions.php';
-
 require get_template_directory() . '/inc/comments-functions.php';
-
-/**
- * Customizer additions.
- */
 require get_template_directory() . '/inc/customizer.php';
 
-
-// Создаем новый тип записи - объявления
 function create_post_type() {
   register_post_type( 'places',
     array(
@@ -286,7 +253,6 @@ function city_register_taxonomy() {
 }
 add_action( 'init', 'city_register_taxonomy');
 
-// Задаємо дефолтное значення всім записам
 // add_action( 'init', 'add_meta_query_mainhide');
 function add_meta_query_mainhide() {
   $posts_args = array('numberposts' => -1, 'post_type' => 'places');

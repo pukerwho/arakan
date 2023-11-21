@@ -1,4 +1,3 @@
-
 <form role="search" method="get" id="searchform" action="<?php echo home_url( '/' ) ?>" class="relative">
   <div class="absolute left-3 top-3 text-gray-400">
     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">

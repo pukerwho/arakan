@@ -41,3 +41,4 @@ function registerJqueryFromCdn() {
 	wp_register_script( 'jquery-ui-core', 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js', array( 'jquery' ), '', true);
 }
 add_action('wp_head', 'registerJqueryFromCdn', 1 );
+?>

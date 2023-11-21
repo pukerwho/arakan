@@ -113,7 +113,6 @@ if (is_tax( 'city' )) {
     }   
   } 
 }
-
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>

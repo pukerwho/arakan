@@ -4,10 +4,7 @@ Template Name: Додати
 */
 ?>
 
-<?php 
-get_header(); 
-
-?>
+<?php get_header(); ?>
 
 <div class="bg-gradient-to-r from-indigo-600 to-indigo-400 pt-20 pb-32 lg:py-32">
   <div class="container mx-auto px-2 lg:px-5">

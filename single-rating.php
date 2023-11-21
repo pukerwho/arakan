@@ -318,4 +318,4 @@ $countNumber = tutCount(get_the_ID());
 
 </div>
 
-<?php get_footer();
+<?php get_footer(); ?>

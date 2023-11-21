@@ -1,12 +1,5 @@
 <?php
-/**
- * Functions which enhance the theme by hooking into WordPress
- *
- * @package G-Info
- */
 
-
-// Меняем поля в форме комментиривания
 add_filter( 'comment_form_default_fields', 'truemisha_change_labels', 25 );
 function truemisha_change_labels( $fields ){
   // можно подсмотреть исходный HTML через:
@@ -37,7 +30,6 @@ function add_rating_comment() { ?>
     </div>
   </div>
 <?php } ?>
-
 <?php
 // Save the comment meta data along with comment
 add_action( 'comment_post', 'save_comment_meta_data' );
@@ -100,3 +92,5 @@ add_filter( 'comment_post_redirect', function( $location, $comment ) {
   $location = get_permalink( $comment->comment_post_ID ) . '#wait_approval';
   return $location;
 }, 10, 2 );
+
+?>
