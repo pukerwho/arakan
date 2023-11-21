@@ -1,25 +1,10 @@
 <?php
-/**
- * G-Info functions and definitions
- *
- * @link https://developer.wordpress.org/themes/basics/theme-functions/
- *
- * @package G-Info
- */
 
 if ( ! defined( 'TARAKAN_VERSION' ) ) {
-	// Replace the version number of the theme on each release.
 	define( 'TARAKAN_VERSION', '1.0.0' );
 }
 
 if ( ! function_exists( 'tarakan_setup' ) ) :
-	/**
-	 * Sets up theme defaults and registers support for various WordPress features.
-	 *
-	 * Note that this function is hooked into the after_setup_theme hook, which
-	 * runs before the init hook. The init hook is too late for some features, such
-	 * as indicating support for post thumbnails.
-	 */
 	function tarakan_setup() {
 		load_theme_textdomain( 'tarakan', get_template_directory() . '/languages' );
 
@@ -35,10 +20,6 @@ if ( ! function_exists( 'tarakan_setup' ) ) :
 			)
 		);
 
-		/*
-		 * Switch default core markup for search form, comment form, and comments
-		 * to output valid HTML5.
-		 */
 		add_theme_support(
 			'html5',
 			array(
@@ -51,8 +32,6 @@ if ( ! function_exists( 'tarakan_setup' ) ) :
 				'script',
 			)
 		);
-
-		// Set up the WordPress core custom background feature.
 		add_theme_support(
 			'custom-background',
 			apply_filters(
