@@ -151,7 +151,7 @@
             $home_blogs_args = array(
               'post_type' => 'post',
 							'orderby' => 'date',
-							'posts_per_page' => 5,
+							'posts_per_page' => 10,
               'meta_query' => array(
                 array(
                   'key' => '_crb_post_mainhide',
