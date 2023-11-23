@@ -209,9 +209,9 @@
 							</div>
 						<?php endwhile; endif; wp_reset_postdata(); ?>
 					</div>
-          <div>
-            <h2 class="text-2xl lg:text-3xl text-gray-700 font-semibold lg:px-4 mb-6"><?php _e('Кулинария: рецепты и советы', 'tarakan'); ?></h2>
-            <div class="flex flex-wrap -mx-3">
+          <div class="lg:px-4">
+            <h2 class="text-2xl lg:text-3xl text-gray-700 font-semibold mb-6"><?php _e('Кулинария: рецепты и советы', 'tarakan'); ?></h2>
+            <div class="flex flex-wrap -mx-2">
               <?php 
               $home_blogs = new WP_Query( array(
                 'post_type' => 'post',
@@ -222,6 +222,7 @@
                     'taxonomy'  => 'category',
                     'field'     => 'term_id',
                     'terms'     => array( 2571, 2573, 30245, 30243 ),
+                    'terms'     => array( 1 ),
                   )
                 ),
                 'meta_query' => array(
@@ -233,13 +234,15 @@
                 ),
               ));
               if ($home_blogs->have_posts()) : while ($home_blogs->have_posts()) : $home_blogs->the_post(); ?>
-                <div class="w-1/2 lg:w-1/4 px-3 mb-6">
-                  <div class="mb-4">
-                    <img src="<?php echo $medium_thumb = get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" alt="<?php the_title(); ?>" loading="lazy" class="w-full h-[225px] object-cover rounded">
+                <div class="w-1/2 lg:w-1/4 px-2 mb-4">
+                  <div class="relative">
+                    <a href="<?php the_permalink(); ?>" class="w-full h-full absolute top-0 left-0"></a>
+                    <div class="mb-4">
+                      <img src="<?php echo $medium_thumb = get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" alt="<?php the_title(); ?>" loading="lazy" class="w-full h-[150px] lg:h-[225px] object-cover rounded">
+                    </div>
+                    <div class="text-lg text-gray-700 font-medium mb-2"><?php the_title(); ?></div>
                   </div>
-                  <div class="text-lg text-gray-700 font-medium mb-2"><?php the_title(); ?></div>
                 </div>
-                
               <?php endwhile; endif; wp_reset_postdata(); ?>
             </div>
           </div>
