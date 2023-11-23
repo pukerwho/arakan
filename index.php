@@ -222,7 +222,6 @@
                     'taxonomy'  => 'category',
                     'field'     => 'term_id',
                     'terms'     => array( 2571, 2573, 30245, 30243 ),
-                    'terms'     => array( 1 ),
                   )
                 ),
                 'meta_query' => array(
