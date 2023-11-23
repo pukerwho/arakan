@@ -761,6 +761,11 @@ video {
   margin-bottom: 3rem;
 }
 
+.-mx-3 {
+  margin-left: -0.75rem;
+  margin-right: -0.75rem;
+}
+
 .mb-4 {
   margin-bottom: 1rem;
 }
@@ -945,6 +950,18 @@ video {
 
 .h-\[250px\] {
   height: 250px;
+}
+
+.h-\[350px\] {
+  height: 350px;
+}
+
+.h-\[225px\] {
+  height: 225px;
+}
+
+.h-\[175px\] {
+  height: 175px;
 }
 
 .max-h-\[185px\] {
@@ -1782,10 +1799,6 @@ video {
 
 .decoration-double {
   text-decoration-style: double;
-}
-
-.decoration-wavy {
-  text-decoration-style: wavy;
 }
 
 .opacity-90 {

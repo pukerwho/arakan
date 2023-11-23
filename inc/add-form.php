@@ -51,7 +51,8 @@ function telegramMessage() {
     'text' => $content,
     'parse_mode' => 'HTML'
   ];
-  $response = file_get_contents("https://api.telegram.org/bot".$apiToken."/sendMessage?" . http_build_query($data) );  
+  $response = file_get_contents("https://api.telegram.org/bot".$apiToken."/sendMessage?" . http_build_query($data) );
+  echo "yes";
   wp_die();
 }
 

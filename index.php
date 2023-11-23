@@ -146,7 +146,7 @@
 				</div>
 				<div class="w-full mb-6">
 					<h2 class="text-2xl lg:text-3xl text-gray-700 font-semibold lg:px-4 mb-6"><?php _e('Новые записи', 'tarakan'); ?></h2>
-					<div class="flex flex-wrap lg:px-4">
+					<div class="flex flex-wrap lg:px-4 mb-10">
 						<?php 
             $home_blogs_args = array(
               'post_type' => 'post',
@@ -209,6 +209,40 @@
 							</div>
 						<?php endwhile; endif; wp_reset_postdata(); ?>
 					</div>
+          <div>
+            <h2 class="text-2xl lg:text-3xl text-gray-700 font-semibold lg:px-4 mb-6"><?php _e('Кулинария: рецепты и советы', 'tarakan'); ?></h2>
+            <div class="flex flex-wrap -mx-3">
+              <?php 
+              $home_blogs = new WP_Query( array(
+                'post_type' => 'post',
+                'order' => 'DESC',
+                'posts_per_page' => 4,
+                'tax_query' => array(
+                  array(
+                    'taxonomy'  => 'category',
+                    'field'     => 'term_id',
+                    'terms'     => array( 2571, 2573, 30245, 30243 ),
+                  )
+                ),
+                'meta_query' => array(
+                  array(
+                    'key' => '_crb_post_mainhide',
+                    'value' => 'yes',
+                    'compare' => '!='
+                  ),
+                ),
+              ));
+              if ($home_blogs->have_posts()) : while ($home_blogs->have_posts()) : $home_blogs->the_post(); ?>
+                <div class="w-1/2 lg:w-1/4 px-3 mb-6">
+                  <div class="mb-4">
+                    <img src="<?php echo $medium_thumb = get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" alt="<?php the_title(); ?>" loading="lazy" class="w-full h-[225px] object-cover rounded">
+                  </div>
+                  <div class="text-lg text-gray-700 font-medium mb-2"><?php the_title(); ?></div>
+                </div>
+                
+              <?php endwhile; endif; wp_reset_postdata(); ?>
+            </div>
+          </div>
 				</div>
 				<div class="relative flex justify-center">
 					<a href="<?php echo get_page_url('page-blog'); ?>" class="w-full h-full absolute top-0 left-0 z-10"></a>
