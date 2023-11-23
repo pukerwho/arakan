@@ -927,8 +927,8 @@ video {
   height: 8rem;
 }
 
-.h-\[125px\] {
-  height: 125px;
+.h-\[150px\] {
+  height: 150px;
 }
 
 .h-12 {
@@ -937,10 +937,6 @@ video {
 
 .h-4 {
   height: 1rem;
-}
-
-.h-\[150px\] {
-  height: 150px;
 }
 
 .h-10 {
@@ -1657,14 +1653,14 @@ video {
   line-height: 1.75rem;
 }
 
-.text-xs {
-  font-size: 0.75rem;
-  line-height: 1rem;
-}
-
 .text-base {
   font-size: 1rem;
   line-height: 1.5rem;
+}
+
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
 }
 
 .font-semibold {
@@ -2442,14 +2438,14 @@ body {
     line-height: 2.25rem;
   }
 
-  .lg\:text-2xl {
-    font-size: 1.5rem;
-    line-height: 2rem;
-  }
-
   .lg\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
+  }
+
+  .lg\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 
   .lg\:text-lg {

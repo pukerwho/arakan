@@ -191,7 +191,7 @@
 											</div>
 										</div>
 										<div class="px-2">
-											<div class="text-xl text-gray-600 mb-3">
+											<div class="text-base lg:text-xl text-gray-600 mb-3 mr-2">
 												<?php the_title(); ?>
 											</div>
 											<div class="hidden lg:block content text-sm pr-4 lg:pr-10 mb-3">
