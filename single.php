@@ -23,7 +23,7 @@
         </li>
         <?php 
         $post_categories = wp_get_post_categories( get_the_ID(), array('fields' => 'all') );
-        foreach ($post_categories as $post_category): ?>
+        foreach (array_slice($post_categories, 0,1) as $post_category): ?>
 	        <?php if ($post_category): ?>
 	        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="breadcrumbs_item" >
 	          <a itemprop="item" href="<?php echo get_category_link($post_category->term_id) ?>" class="text-white opacity-90">
