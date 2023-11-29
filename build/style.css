@@ -382,11 +382,11 @@ input[type=number] {
   font-weight: 300;
   margin: 20px 0;
 }
-.content ul li {
+.content ul > li {
   position: relative;
   padding-left: 20px;
 }
-.content ul li:before {
+.content ul > li:before {
   content: "";
   width: 10px;
   height: 10px;
@@ -399,7 +399,7 @@ input[type=number] {
 .content ol {
   margin-left: 20px;
 }
-.content ol li {
+.content ol > li {
   list-style-type: decimal;
 }
 .content .wp-caption,
