@@ -62,7 +62,7 @@
       <div class="w-full lg:w-4/12 px-4 lg:px-10 py-10 ">
 
       <div class="border-b-2 pb-4 mb-4">
-        <div class="flex justify-between">
+        <div class="flex justify-between mb-2">
           <div class="font-semibold mr-2">
             <?php _e('Автор', 'tarakan'); ?>
           </div>
@@ -85,7 +85,17 @@
             <?php endif; ?>
           </div>
         </div>
-      </div>  
+        <?php if (carbon_get_the_post_meta('crb_post_editor')): ?>
+          <div class="flex justify-between">
+            <div class="font-semibold mr-2">
+              <?php _e('Редактор', 'tarakan'); ?>
+            </div>
+            <div class="text-right font-light text-gray-600">
+              <span class="text-right italic"><?php echo carbon_get_the_post_meta('crb_post_editor'); ?></span>
+            </div>
+          </div>
+        <?php endif; ?>
+      </div>
       
       <div class="border-b-2 pb-4 mb-4">
           <div class="flex justify-between">
