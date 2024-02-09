@@ -46,7 +46,7 @@
           </ul>
         </div>
         <!-- END Хлебные крошки -->
-        <h1 class="text-2xl lg:text-4xl text-white font-semibold"><?php the_title(); ?> </h1>
+        <h1 id="place-title" class="text-2xl lg:text-4xl text-white font-semibold"><?php the_title(); ?> </h1>
         <?php if (carbon_get_the_post_meta('crb_place_other')): ?>
           <div class="text-gray-200 text-lg italic mt-6"><?php _e("Сеть заведений", "tarakan"); ?></div>
         <?php endif; ?>
@@ -163,16 +163,16 @@
             <div class="border-b-2 pb-6 mb-6">
 
               <div class="text-gray-700 mb-4">
-                <span class="font-semibold"><?php _e('Адрес', 'tarakan'); ?></span>: <span class="italic"><?php echo carbon_get_the_post_meta('crb_place_address'); ?></span>
+                <span class="font-semibold"><?php _e('Адрес', 'tarakan'); ?></span>: <span id="place-address" class="italic"><?php echo carbon_get_the_post_meta('crb_place_address'); ?></span>
               </div>
 
               <div class="text-gray-700 mb-4">
-                <span class="font-semibold"><?php _e('Телефоны', 'tarakan'); ?></span>: <span class=""><?php echo carbon_get_the_post_meta('crb_place_phones'); ?></span>
+                <span class="font-semibold"><?php _e('Телефоны', 'tarakan'); ?></span>: <span id="place-phones" class=""><?php echo carbon_get_the_post_meta('crb_place_phones'); ?></span>
               </div>
 
               <?php if (carbon_get_the_post_meta('crb_place_email')): ?>
               <div class="text-gray-700 mb-4">
-                <span class="font-semibold"><?php _e('Email', 'tarakan'); ?></span>: <span class=""><?php echo carbon_get_the_post_meta('crb_place_email'); ?></span>
+                <span class="font-semibold"><?php _e('Email', 'tarakan'); ?></span>: <span id="place-email" class=""><?php echo carbon_get_the_post_meta('crb_place_email'); ?></span>
               </div>
               <?php endif; ?>
 
@@ -194,19 +194,19 @@
                 <?php if (carbon_get_the_post_meta('crb_template_sad') === 'yes' ||  carbon_get_the_post_meta('crb_template_school') === 'yes' || carbon_get_the_post_meta('crb_template_univer') === 'yes'): ?>
                   <?php if (carbon_get_the_post_meta('crb_place_url') !== '--не указано--'): ?>
                   <div class="text-gray-700 mb-4">
-                    <span class="font-semibold"><?php _e('Сайт', 'tarakan'); ?></span>: <a href="//<?php echo carbon_get_the_post_meta('crb_place_url'); ?>" target="_blank" rel="nofollow" class="text-indigo-500"><?php echo carbon_get_the_post_meta('crb_place_url'); ?></a>
+                    <span class="font-semibold"><?php _e('Сайт', 'tarakan'); ?></span>: <a href="//<?php echo carbon_get_the_post_meta('crb_place_url'); ?>" target="_blank" rel="nofollow" class="text-indigo-500" id="place-url"><?php echo carbon_get_the_post_meta('crb_place_url'); ?></a>
                   </div>
                   <?php endif; ?>
                 <?php else: ?>
                   <div class="text-gray-700 mb-4">
-                    <span class="font-semibold"><?php _e('Меню', 'tarakan'); ?></span>: <a href="<?php echo carbon_get_the_post_meta('crb_place_url'); ?>" target="_blank" rel="nofollow" class="text-indigo-500"><?php _e("Посмотреть", "tarakan"); ?></a>
+                    <span class="font-semibold"><?php _e('Меню', 'tarakan'); ?></span>: <a href="<?php echo carbon_get_the_post_meta('crb_place_url'); ?>" target="_blank" rel="nofollow" class="text-indigo-500" id="place-url"><?php _e("Посмотреть", "tarakan"); ?></a>
                   </div>
                 <?php endif; ?>
               <?php endif; ?>
 
               <?php if (carbon_get_the_post_meta('crb_place_price')): ?>
                 <div class="text-gray-700 mb-4">
-                  <span class="font-semibold"><?php _e('Средний чек', 'tarakan'); ?></span>: <span class=""><?php echo carbon_get_the_post_meta('crb_place_price'); ?></span>
+                  <span class="font-semibold"><?php _e('Средний чек', 'tarakan'); ?></span>: <span id="place-money" class=""><?php echo carbon_get_the_post_meta('crb_place_price'); ?></span>
                 </div>
               <?php endif; ?>
 
@@ -220,14 +220,14 @@
                 <?php _e('Категория', 'tarakan'); ?>: 
                 <?php foreach (array_slice($city_categories, 0,1) as $city_category); {} ?>
                 <?php if ($city_category): ?>
-                  <a href="<?php echo get_term_link($city_category->term_id, 'city') ?>" class="text-red-400">
+                  <a href="<?php echo get_term_link($city_category->term_id, 'city') ?>" class="text-red-400" id="place-category">
                     <?php echo $city_category->name; ?>
                   </a>
                 <?php endif; ?>
               </div>
 
               <div class="text-gray-700 font-semibold">
-                <?php _e('Город', 'tarakan'); ?>: <a href="<?php echo get_term_link($c_term[0]->term_id, 'city') ?>" class="text-red-400"><?php echo $c_term[0]->name; ?></a>
+                <?php _e('Город', 'tarakan'); ?>: <a href="<?php echo get_term_link($c_term[0]->term_id, 'city') ?>" class="text-red-400" id="place-city"><?php echo $c_term[0]->name; ?></a>
               </div>
             </div>
 
