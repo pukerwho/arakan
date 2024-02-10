@@ -32,6 +32,10 @@ if ( is_singular( 'places' ) ) {
 	//Город
 	$current_cities = wp_get_post_terms(  get_the_ID() , 'city', array( 'parent' => 0 ) );
   $current_city = $current_cities[0]->name;
+  //Категорія
+	$city_categories_args = array( 'hide_empty' => '0','taxonomy' => 'city', 'parent' => $current_cities[0]->term_id);
+  $city_categories = wp_get_post_terms(get_the_ID(), 'city', $city_categories_args);
+  $current_category = $city_categories[0]->name;
   
   //SEO
   $place_after_title = crb_get_i18n_theme_option('crb_seo_place_aftertitle'); 
@@ -59,6 +63,9 @@ if ( is_singular( 'places' ) ) {
   } else {
     $after_title = $place_after_title;
     $after_description = $place_after_description;
+    // if (mb_strlen($place_title) < 25) {
+    //   $place_title = $current_category .' '. $place_title . ' (' . $current_city . ') - ' . $after_title;
+    // }
     // 'Отзывы, контакты, телефоны, доставка';
   }
 	
@@ -164,7 +171,6 @@ if (is_tax( 'city' )) {
     <div class="bg-gray-100 py-2">
       <div class="container px-2 lg:px-5 mx-auto">
         <div class="flex items-center justify-between">
-
           <!-- Left Side -->
           <div class="flex items-center">
             <!-- Лого -->
@@ -354,3 +360,4 @@ if (is_tax( 'city' )) {
 			</div>
 		</div>
 	</div>
+  
