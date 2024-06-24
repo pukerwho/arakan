@@ -269,7 +269,7 @@
         ) );
         if ($all_posts->have_posts()) : while ($all_posts->have_posts()) : $all_posts->the_post(); 
       ?>
-        <div class="w-full lg:w-1/3 mb-6 lg:mb-0 lg:px-4">
+        <div class="w-full lg:w-1/3 mb-6 lg:px-4">
 					<div class="border border-gray-300 rounded">
 						<div class="h-52 mb-4">
 							<img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>" class="w-full h-full object-cover rounded-t">
