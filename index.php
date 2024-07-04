@@ -209,6 +209,32 @@
 							</div>
 						<?php endwhile; endif; wp_reset_postdata(); ?>
 					</div>
+          <div class="mb-10">
+            <h2 class="text-2xl lg:text-3xl text-gray-700 font-semibold lg:px-4 mb-6"><?php _e('Категории', 'tarakan'); ?></h2>
+            <div class="flex flex-wrap -mx-2 lg:mx-2">
+              <?php 
+                $categories_mainpage = crb_get_i18n_theme_option('crb_main_page_category');
+                foreach ($categories_mainpage as $cat_mainpage):
+              ?>
+                <?php 
+                  $cat_mainpage_id = $cat_mainpage['id']; 
+                  $get_term_name = get_term( $cat_mainpage_id )->name;
+                  $get_term_id = get_term( $cat_mainpage_id )->term_id;
+                  $get
+                ?>
+                <div class="w-1/2 lg:w-1/3 mb-4 lg:mb-0 px-2">
+                  <div class="relative h-[225px] lg:h-[250px] ">
+                    <img src="<?php echo carbon_get_term_meta($get_term_id, 'crb_category_img' ); ?>" alt="<?php echo $get_term_name; ?>" class="w-full h-[225px] lg:h-[250px] object-cover rounded-lg">
+                    <div class="w-full h-full absolute top-0 left-0 bg-gradient-to-b from-transparent to-black/75 rounded-lg z-1"></div>
+                    <div class="w-full absolute left-4 bottom-4 z-1">
+                      <div class="inline-block text-lg lg:text-xl bg-zinc-100 rounded-lg px-4 py-2"><?php echo $get_term_name; ?></div>
+                    </div>
+                    <a href="<?php echo get_term_link($get_term_id, 'category') ?>" class="w-full h-full absolute top-0 left-0 z-1"></a>
+                  </div>
+                </div>
+              <?php endforeach; ?>
+            </div>
+          </div>
           <div class="lg:px-4">
             <h2 class="text-2xl lg:text-3xl text-gray-700 font-semibold mb-6"><?php _e('Кулинария: рецепты и советы', 'tarakan'); ?></h2>
             <div class="flex flex-wrap -mx-2">

@@ -27,6 +27,15 @@ function crb_attach_theme_options() {
     Field::make( 'text', 'crb_seo_univer_aftertitle' . crb_get_i18n_suffix(), 'Універ - AfterTitle' ),
     Field::make( 'text', 'crb_seo_univer_afterdescription' . crb_get_i18n_suffix(), 'Універ - AfterDescription' ),
   ))
+  ->add_tab( __('Settings'), array(
+    Field::make( 'association', 'crb_main_page_category' . crb_get_i18n_suffix(), __( 'Категорії на головній' ) )
+    ->set_types( array(
+      array(
+        'type'      => 'term',
+        'taxonomy' => 'category',
+      )
+    ) )
+  ))
   ->add_tab( __('Скрипты'), array(
     Field::make( 'textarea', 'crb_google_analytics', 'Google Analytics' ),
     Field::make( 'footer_scripts', 'crb_footer_scripts', 'Скрипты в футере' ),
