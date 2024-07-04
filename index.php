@@ -222,7 +222,7 @@
                   $get_term_id = get_term( $cat_mainpage_id )->term_id;
                   $get
                 ?>
-                <div class="w-1/2 lg:w-1/3 mb-4 lg:mb-0 px-2">
+                <div class="w-1/2 lg:w-1/3 mb-4 px-2">
                   <div class="relative h-[225px] lg:h-[250px] ">
                     <img src="<?php echo carbon_get_term_meta($get_term_id, 'crb_category_img' ); ?>" alt="<?php echo $get_term_name; ?>" class="w-full h-[225px] lg:h-[250px] object-cover rounded-lg">
                     <div class="w-full h-full absolute top-0 left-0 bg-gradient-to-b from-transparent to-black/75 rounded-lg z-1"></div>
